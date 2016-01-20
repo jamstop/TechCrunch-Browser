@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "BFEEBA651C500F860075BC5C"
-               BuildableName = "TechCrunch Browser.app"
+               BuildableName = "TC Browser.app"
                BlueprintName = "TechCrunch Browser"
                ReferencedContainer = "container:TechCrunch Browser.xcodeproj">
             </BuildableReference>
@@ -53,7 +53,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BFEEBA651C500F860075BC5C"
-            BuildableName = "TechCrunch Browser.app"
+            BuildableName = "TC Browser.app"
             BlueprintName = "TechCrunch Browser"
             ReferencedContainer = "container:TechCrunch Browser.xcodeproj">
          </BuildableReference>
@@ -76,7 +76,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BFEEBA651C500F860075BC5C"
-            BuildableName = "TechCrunch Browser.app"
+            BuildableName = "TC Browser.app"
             BlueprintName = "TechCrunch Browser"
             ReferencedContainer = "container:TechCrunch Browser.xcodeproj">
          </BuildableReference>
@@ -95,7 +95,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BFEEBA651C500F860075BC5C"
-            BuildableName = "TechCrunch Browser.app"
+            BuildableName = "TC Browser.app"
             BlueprintName = "TechCrunch Browser"
             ReferencedContainer = "container:TechCrunch Browser.xcodeproj">
          </BuildableReference>
