@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		20AD2412F5249E82807C79A2 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 146D910ECE263C9E6B11AB18 /* Pods.framework */; };
 		BFEEBA6A1C500F860075BC5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEEBA691C500F860075BC5C /* AppDelegate.swift */; };
-		BFEEBA6C1C500F860075BC5C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEEBA6B1C500F860075BC5C /* ViewController.swift */; };
 		BFEEBA6F1C500F860075BC5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFEEBA6D1C500F860075BC5C /* Main.storyboard */; };
 		BFEEBA711C500F860075BC5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFEEBA701C500F860075BC5C /* Assets.xcassets */; };
 		BFEEBA741C500F860075BC5C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFEEBA721C500F860075BC5C /* LaunchScreen.storyboard */; };
@@ -40,7 +39,6 @@
 		81A81D524942F9A736B9681D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		BFEEBA661C500F860075BC5C /* TechCrunch Browser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TechCrunch Browser.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFEEBA691C500F860075BC5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BFEEBA6B1C500F860075BC5C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BFEEBA6E1C500F860075BC5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BFEEBA701C500F860075BC5C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BFEEBA731C500F860075BC5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -121,11 +119,11 @@
 		BFEEBA681C500F860075BC5C /* TechCrunch Browser */ = {
 			isa = PBXGroup;
 			children = (
+				BFEEBA9A1C50202A0075BC5C /* UI */,
+				BFEEBA981C50202A0075BC5C /* Server */,
+				BFEEBA971C50202A0075BC5C /* Persistence */,
 				BFEEBA691C500F860075BC5C /* AppDelegate.swift */,
-				BFEEBA6B1C500F860075BC5C /* ViewController.swift */,
-				BFEEBA6D1C500F860075BC5C /* Main.storyboard */,
 				BFEEBA701C500F860075BC5C /* Assets.xcassets */,
-				BFEEBA721C500F860075BC5C /* LaunchScreen.storyboard */,
 				BFEEBA751C500F860075BC5C /* Info.plist */,
 			);
 			path = "TechCrunch Browser";
@@ -147,6 +145,77 @@
 				BFEEBA8B1C500F870075BC5C /* Info.plist */,
 			);
 			path = "TechCrunch BrowserUITests";
+			sourceTree = "<group>";
+		};
+		BFEEBA971C50202A0075BC5C /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		BFEEBA981C50202A0075BC5C /* Server */ = {
+			isa = PBXGroup;
+			children = (
+				BFEEBA991C50202A0075BC5C /* JSON */,
+			);
+			path = Server;
+			sourceTree = "<group>";
+		};
+		BFEEBA991C50202A0075BC5C /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
+		BFEEBA9A1C50202A0075BC5C /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				BFEEBA9B1C50202A0075BC5C /* Protocols */,
+				BFEEBA9C1C50202A0075BC5C /* Storyboards */,
+				BFEEBA9D1C50202A0075BC5C /* View Controllers */,
+				BFEEBA9E1C50202A0075BC5C /* View Models */,
+				BFEEBA9F1C50202A0075BC5C /* Views */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		BFEEBA9B1C50202A0075BC5C /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		BFEEBA9C1C50202A0075BC5C /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				BFEEBA721C500F860075BC5C /* LaunchScreen.storyboard */,
+				BFEEBA6D1C500F860075BC5C /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		BFEEBA9D1C50202A0075BC5C /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		BFEEBA9E1C50202A0075BC5C /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		BFEEBA9F1C50202A0075BC5C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -331,7 +400,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BFEEBA6C1C500F860075BC5C /* ViewController.swift in Sources */,
 				BFEEBA6A1C500F860075BC5C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -374,6 +442,7 @@
 				BFEEBA6E1C500F860075BC5C /* Base */,
 			);
 			name = Main.storyboard;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 		BFEEBA721C500F860075BC5C /* LaunchScreen.storyboard */ = {
@@ -382,6 +451,7 @@
 				BFEEBA731C500F860075BC5C /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
