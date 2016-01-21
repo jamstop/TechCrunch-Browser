@@ -5,12 +5,13 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
-        <!--Feed-->
+        <!--Top Stories-->
         <scene sceneID="ndR-7L-8JA">
             <objects>
                 <navigationController id="c1p-3Q-TRH" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Feed" id="PM9-8A-q98"/>
+                    <tabBarItem key="tabBarItem" title="Top Stories" image="Top Stories" id="PM9-8A-q98"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="vnS-7N-LWr">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -32,7 +33,7 @@
                         <viewControllerLayoutGuide type="bottom" id="zjY-bY-twq"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Kix-io-eL3">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -43,4 +44,7 @@
             <point key="canvasLocation" x="594" y="117"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Top Stories" width="23" height="23"/>
+    </resources>
 </document>
