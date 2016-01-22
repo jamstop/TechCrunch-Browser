@@ -12,7 +12,9 @@ import RealmSwift
 class RealmCategory: Object {
     dynamic var id = ""
     dynamic var name = ""
-    dynamic var posts: [RealmPost] {
-        return linkingObjects(RealmPost.self, forProperty: "category")
+    dynamic var posts: [RealmPost]?
+    
+    override static func primaryKey() -> String? {
+        return "name"
     }
 }

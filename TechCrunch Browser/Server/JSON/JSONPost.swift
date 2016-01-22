@@ -30,6 +30,7 @@ struct JSONPost: Decodable {
         self.title = "title" <~~ json
         self.content = "content" <~~ json
         self.excerpt = "excerpt" <~~ json
+        self.imageUrl = "featured_image" <~~ json
         self.likeCount = "like_count" <~~ json
     }
     
@@ -41,8 +42,8 @@ struct JSONPost: Decodable {
             "title" ~~> self.title,
             "content" ~~> self.content,
             "excerpt" ~~> self.excerpt,
-            "imageUrl" ~~> self.imageUrl,
-            "likeCount" ~~> self.likeCount
+            "featured_image" ~~> self.imageUrl,
+            "like_count" ~~> self.likeCount
             ])
     }
 }

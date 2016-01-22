@@ -7,10 +7,15 @@
 //
 
 import UIKit
+import RxSwift
+import Gloss
 
 class TopStoriesViewController: UIViewController {
     
+    var disposeBag = DisposeBag()
+    
     let screenHeight = UIScreen.mainScreen().bounds.width
+    private let API = TechcrunchAPI()
     
     // MARK: - Properties
     
@@ -22,6 +27,34 @@ class TopStoriesViewController: UIViewController {
         super.viewDidLoad()
         
         setup()
+    
+        
+        API.test_getPost().map { jsonResp -> [JSONPost] in
+            guard let postJSONArray = jsonResp["posts"] else {
+                throw TechcrunchAPI.APIError.ErrorParsingJSON
+            }
+            print(postJSONArray)
+            
+            guard let posts = JSONPost.modelsFromJSONArray(postJSONArray as! [JSON]) else {
+                throw TechcrunchAPI.APIError.ErrorParsingJSON
+            }
+            
+            return posts
+            
+            }.subscribe (
+                onNext: { (posts) -> Void in
+                    print(posts)
+                },
+                onError: { (error) -> Void in
+                    print("Error logging in: \(error)")
+                },
+                onCompleted: { () -> Void in
+                    print("Completed")
+                },
+                onDisposed: { () -> Void in
+                    
+            })
+            .addDisposableTo(disposeBag)
 
     }
     
@@ -41,6 +74,9 @@ class TopStoriesViewController: UIViewController {
 
 extension TopStoriesViewController: UITableViewDelegate {
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        if indexPath.row == 0 {
+            return screenHeight
+        }
         return screenHeight/3
     }
 
@@ -55,10 +91,15 @@ extension TopStoriesViewController: UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        return 10
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        if indexPath.row == 0 {
+            let cell = tableView.dequeueReusableCellWithIdentifier("FeaturedPostTableViewCell") as! FeaturedPostTableViewCell
+            
+            return cell
+        }
         
         let cell = tableView.dequeueReusableCellWithIdentifier("PostTableViewCell") as! PostTableViewCell
         

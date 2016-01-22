@@ -18,4 +18,7 @@ class RealmComment: Object {
     dynamic var date = ""
     dynamic var likecount = 0
     
+    override static func primaryKey() -> String? {
+        return "id"
+    }
 }

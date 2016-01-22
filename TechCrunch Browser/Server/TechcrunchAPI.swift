@@ -15,6 +15,7 @@ import RxSwift
 */
 
 class TechcrunchAPI {
+    typealias Tags = [String]
     typealias JSON = [String: AnyObject]
     typealias CompletionHandler = (response: JSON? , error: APIError?) -> Void
     
@@ -26,6 +27,16 @@ class TechcrunchAPI {
     }
     
     private let baseURL = "https://public-api.wordpress.com/rest/v1.1/sites/techcrunch.com/"
+    
+//    private func rx_getPostWithTags(tags: Tags,
+    
+    func test_getPost() -> Observable<JSON> {
+        return get("posts", parameters: ["number":1])
+    }
+    
+    func rx_loadFeaturedPage() -> Observable<JSON> {
+        return get("posts", parameters: ["number":10])
+    }
     
     // MARK: - Basic HTTP Functions (RESTful TechCrunch)
     
@@ -71,7 +82,7 @@ class TechcrunchAPI {
         let encoding: Alamofire.ParameterEncoding = method == Alamofire.Method.GET ? .URL : .JSON
         
         return Observable.create { observer in
-            
+            print(self.baseURL + endpoint)
             Alamofire.request(method, self.baseURL + endpoint, parameters: parameters, encoding: encoding, headers: nil).responseJSON(options: .AllowFragments) { (resp) -> Void in
                 guard let response = resp.response else {
                     observer.onError(APIError.NoResponse)

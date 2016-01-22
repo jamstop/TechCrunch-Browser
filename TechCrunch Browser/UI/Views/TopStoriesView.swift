@@ -24,8 +24,11 @@ class TopStoriesView: UIView {
     private func setupTableView () {
         
         // register nib
-        let nib = UINib(nibName: "PostTableViewCell", bundle: nil)
-        tableView.registerNib(nib, forCellReuseIdentifier: "PostTableViewCell")
+        let postNib = UINib(nibName: "PostTableViewCell", bundle: nil)
+        tableView.registerNib(postNib, forCellReuseIdentifier: "PostTableViewCell")
+        
+        let featuredPostNib = UINib(nibName: "FeaturedPostTableViewCell", bundle: nil)
+        tableView.registerNib(featuredPostNib, forCellReuseIdentifier: "FeaturedPostTableViewCell")
         
     }
     

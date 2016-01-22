@@ -23,6 +23,10 @@
 		BF9474F31C51ABF70079878D /* JSONCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9474F21C51ABF70079878D /* JSONCategory.swift */; };
 		BF9474F51C51AC010079878D /* JSONComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9474F41C51AC010079878D /* JSONComment.swift */; };
 		BF9474F71C51C4EE0079878D /* JSONAuthor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9474F61C51C4EE0079878D /* JSONAuthor.swift */; };
+		BF9474F91C52BB4E0079878D /* FeaturedPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9474F81C52BB4E0079878D /* FeaturedPostTableViewCell.swift */; };
+		BF9474FB1C52BB790079878D /* FeaturedPostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF9474FA1C52BB790079878D /* FeaturedPostTableViewCell.xib */; };
+		BF9474FD1C52E6370079878D /* RealmHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9474FC1C52E6370079878D /* RealmHelper.swift */; };
+		BF9475001C52F68F0079878D /* NSDateISO8601.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9474FF1C52F68F0079878D /* NSDateISO8601.swift */; };
 		BFEEBA6A1C500F860075BC5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEEBA691C500F860075BC5C /* AppDelegate.swift */; };
 		BFEEBA6F1C500F860075BC5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFEEBA6D1C500F860075BC5C /* Main.storyboard */; };
 		BFEEBA711C500F860075BC5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFEEBA701C500F860075BC5C /* Assets.xcassets */; };
@@ -69,6 +73,10 @@
 		BF9474F21C51ABF70079878D /* JSONCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONCategory.swift; sourceTree = "<group>"; };
 		BF9474F41C51AC010079878D /* JSONComment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONComment.swift; sourceTree = "<group>"; };
 		BF9474F61C51C4EE0079878D /* JSONAuthor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONAuthor.swift; sourceTree = "<group>"; };
+		BF9474F81C52BB4E0079878D /* FeaturedPostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeaturedPostTableViewCell.swift; sourceTree = "<group>"; };
+		BF9474FA1C52BB790079878D /* FeaturedPostTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeaturedPostTableViewCell.xib; sourceTree = "<group>"; };
+		BF9474FC1C52E6370079878D /* RealmHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmHelper.swift; sourceTree = "<group>"; };
+		BF9474FF1C52F68F0079878D /* NSDateISO8601.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateISO8601.swift; sourceTree = "<group>"; };
 		BFEEBA661C500F860075BC5C /* TC Browser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TC Browser.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFEEBA691C500F860075BC5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFEEBA6E1C500F860075BC5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -136,6 +144,14 @@
 			path = Designables;
 			sourceTree = "<group>";
 		};
+		BF9474FE1C52F66C0079878D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BF9474FF1C52F68F0079878D /* NSDateISO8601.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		BFEEBA5D1C500F860075BC5C = {
 			isa = PBXGroup;
 			children = (
@@ -161,6 +177,8 @@
 		BFEEBA681C500F860075BC5C /* TechCrunch Browser */ = {
 			isa = PBXGroup;
 			children = (
+				BF9474FE1C52F66C0079878D /* Extensions */,
+				BFEEBA9B1C50202A0075BC5C /* Protocols */,
 				BFEEBA9A1C50202A0075BC5C /* UI */,
 				BFEEBA981C50202A0075BC5C /* Server */,
 				BFEEBA971C50202A0075BC5C /* Persistence */,
@@ -195,6 +213,7 @@
 				BF9474D91C504F920079878D /* RealmPost.swift */,
 				BF9474DB1C504FA30079878D /* RealmCategory.swift */,
 				BF9474DF1C5080370079878D /* RealmComment.swift */,
+				BF9474FC1C52E6370079878D /* RealmHelper.swift */,
 			);
 			path = Persistence;
 			sourceTree = "<group>";
@@ -223,7 +242,6 @@
 			isa = PBXGroup;
 			children = (
 				BF9474D61C5049C20079878D /* Designables */,
-				BFEEBA9B1C50202A0075BC5C /* Protocols */,
 				BFEEBA9C1C50202A0075BC5C /* Storyboards */,
 				BFEEBA9D1C50202A0075BC5C /* View Controllers */,
 				BFEEBA9E1C50202A0075BC5C /* View Models */,
@@ -236,7 +254,8 @@
 			isa = PBXGroup;
 			children = (
 			);
-			path = Protocols;
+			name = Protocols;
+			path = UI/Protocols;
 			sourceTree = "<group>";
 		};
 		BFEEBA9C1C50202A0075BC5C /* Storyboards */ = {
@@ -273,6 +292,8 @@
 				BF9474E81C519CFF0079878D /* PostTableViewCell.swift */,
 				BF9474EA1C519D100079878D /* PostTableViewCell.xib */,
 				BF9474EE1C51A2F70079878D /* TopStoriesView.swift */,
+				BF9474F81C52BB4E0079878D /* FeaturedPostTableViewCell.swift */,
+				BF9474FA1C52BB790079878D /* FeaturedPostTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -386,6 +407,7 @@
 			files = (
 				BFEEBA741C500F860075BC5C /* LaunchScreen.storyboard in Resources */,
 				BF9474E21C5193CF0079878D /* Browse.storyboard in Resources */,
+				BF9474FB1C52BB790079878D /* FeaturedPostTableViewCell.xib in Resources */,
 				BFEEBA711C500F860075BC5C /* Assets.xcassets in Resources */,
 				BF9474E61C5193E60079878D /* Saved.storyboard in Resources */,
 				BFEEBA6F1C500F860075BC5C /* Main.storyboard in Resources */,
@@ -465,16 +487,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF9474E91C519CFF0079878D /* PostTableViewCell.swift in Sources */,
+				BF9474FD1C52E6370079878D /* RealmHelper.swift in Sources */,
 				BF9474F51C51AC010079878D /* JSONComment.swift in Sources */,
 				BF9474D81C5049D10079878D /* DesignableTabBarItem.swift in Sources */,
 				BF9474DC1C504FA30079878D /* RealmCategory.swift in Sources */,
 				BF9474F11C51ABEC0079878D /* JSONPost.swift in Sources */,
 				BFEEBA6A1C500F860075BC5C /* AppDelegate.swift in Sources */,
+				BF9475001C52F68F0079878D /* NSDateISO8601.swift in Sources */,
 				BF9474F71C51C4EE0079878D /* JSONAuthor.swift in Sources */,
 				BF9474ED1C51A16D0079878D /* TopStoriesViewController.swift in Sources */,
 				BF9474EF1C51A2F70079878D /* TopStoriesView.swift in Sources */,
 				BF9474E01C5080370079878D /* RealmComment.swift in Sources */,
 				BF9474F31C51ABF70079878D /* JSONCategory.swift in Sources */,
+				BF9474F91C52BB4E0079878D /* FeaturedPostTableViewCell.swift in Sources */,
 				BFEEBAA11C50216C0075BC5C /* TechcrunchAPI.swift in Sources */,
 				BF9474DA1C504F920079878D /* RealmPost.swift in Sources */,
 			);

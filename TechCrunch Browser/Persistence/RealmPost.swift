@@ -18,7 +18,13 @@ class RealmPost: Object {
     dynamic var excerpt = ""
     dynamic var likes = 0
     dynamic var imageUrl = ""
-    dynamic var category: RealmCategory?
+    var categories: [RealmCategory] {
+        return linkingObjects(RealmCategory.self, forProperty: "posts")
+    }
     dynamic var favorited = false
+    
+    override static func primaryKey() -> String? {
+        return "id"
+    }
     
 }

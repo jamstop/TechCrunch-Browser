@@ -28,7 +28,7 @@
         <!--Top Stories-->
         <scene sceneID="2iv-W3-1pB">
             <objects>
-                <viewController id="J6Y-vi-WUg" customClass="TopStoriesViewController" customModule="TC_Browser" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="J6Y-vi-WUg" customClass="TopStoriesViewController" customModule="TC_Browser" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UTi-kG-kqk"/>
                         <viewControllerLayoutGuide type="bottom" id="zjY-bY-twq"/>
