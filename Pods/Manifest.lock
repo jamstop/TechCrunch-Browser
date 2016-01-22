@@ -18,7 +18,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
-  - Gloss (~> 0.6)
+  - Gloss
   - RealmSwift
   - RxBlocking (~> 2.1)
   - RxCocoa (~> 2.1)

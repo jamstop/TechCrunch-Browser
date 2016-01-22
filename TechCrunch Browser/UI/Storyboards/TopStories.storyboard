@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Top Stories-->
@@ -24,24 +25,42 @@
             </objects>
             <point key="canvasLocation" x="-150" y="117"/>
         </scene>
-        <!--View Controller-->
+        <!--Top Stories-->
         <scene sceneID="2iv-W3-1pB">
             <objects>
-                <viewController id="J6Y-vi-WUg" sceneMemberID="viewController">
+                <viewController id="J6Y-vi-WUg" customClass="TopStoriesViewController" customModule="TC_Browser" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UTi-kG-kqk"/>
                         <viewControllerLayoutGuide type="bottom" id="zjY-bY-twq"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Kix-io-eL3">
+                    <view key="view" contentMode="scaleToFill" id="Kix-io-eL3" customClass="TopStoriesView" customModule="TC_Browser" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IuM-07-iyG">
+                                <rect key="frame" x="-4" y="64" width="383" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="zjY-bY-twq" firstAttribute="top" secondItem="IuM-07-iyG" secondAttribute="bottom" id="6fO-EZ-8Ms"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="IuM-07-iyG" secondAttribute="trailing" constant="-20" id="M9Z-5J-HUh"/>
+                            <constraint firstItem="IuM-07-iyG" firstAttribute="leading" secondItem="Kix-io-eL3" secondAttribute="leadingMargin" constant="-20" id="QgO-2b-hsd"/>
+                            <constraint firstItem="IuM-07-iyG" firstAttribute="top" secondItem="UTi-kG-kqk" secondAttribute="bottom" id="sj0-tk-Lmr"/>
+                        </constraints>
+                        <connections>
+                            <outlet property="tableView" destination="IuM-07-iyG" id="0Wb-Sp-4HY"/>
+                        </connections>
                     </view>
-                    <navigationItem key="navigationItem" id="4Nn-AW-3EK"/>
+                    <navigationItem key="navigationItem" title="Top Stories" id="4Nn-AW-3EK"/>
+                    <connections>
+                        <outlet property="mainView" destination="Kix-io-eL3" id="W2H-4r-wBe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vMI-XP-tdB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="594" y="117"/>
+            <point key="canvasLocation" x="593.5" y="116.5"/>
         </scene>
     </scenes>
     <resources>

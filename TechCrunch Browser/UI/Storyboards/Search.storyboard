@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Bbp-VL-8qU">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <scenes>
+        <!--Search-->
+        <scene sceneID="cuB-eb-364">
+            <objects>
+                <navigationController id="Bbp-VL-8qU" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Search" image="Search" id="bxr-up-mNK"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="LaS-s0-oYy">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="cLj-PP-LxH" kind="relationship" relationship="rootViewController" id="wkM-Cd-GiP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QaA-UR-KvC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-167" y="364"/>
+        </scene>
+        <!--Search-->
+        <scene sceneID="hlj-mS-Zeb">
+            <objects>
+                <viewController id="cLj-PP-LxH" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MWw-x3-6JM"/>
+                        <viewControllerLayoutGuide type="bottom" id="2nk-Ut-aU7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="IOd-Is-4gp">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Search" id="TlC-fh-KWF"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sOe-EL-I4x" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="623" y="379"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Search" width="25" height="25"/>
+    </resources>
+</document>

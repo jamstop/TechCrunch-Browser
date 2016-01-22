@@ -19,5 +19,6 @@ class RealmPost: Object {
     dynamic var likes = 0
     dynamic var imageUrl = ""
     dynamic var category: RealmCategory?
+    dynamic var favorited = false
     
 }
