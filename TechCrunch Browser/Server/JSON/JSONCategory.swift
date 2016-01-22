@@ -11,5 +11,20 @@ import Gloss
 
 
 struct JSONCategory: Decodable {
+    // MARK: Properties
     
+    let ID: String?
+    let name: String?
+    
+    init?(json: JSON) {
+        self.ID = "ID" <~~ json
+        self.name = "name" <~~ json
+    }
+    
+    func toJSON() -> JSON? {
+        return jsonify([
+            "ID" ~~> self.ID,
+            "name" ~~> self.name
+            ])
+    }
 }

@@ -19,6 +19,7 @@ struct JSONPost: Decodable {
     let date: String?
     let title: String?
     let content: String?
+    let excerpt: String?
     let imageUrl: String?
     let likeCount: Int?
     
@@ -28,16 +29,20 @@ struct JSONPost: Decodable {
         self.date = "date" <~~ json
         self.title = "title" <~~ json
         self.content = "content" <~~ json
+        self.excerpt = "excerpt" <~~ json
         self.likeCount = "like_count" <~~ json
     }
     
     func toJSON() -> JSON? {
         return jsonify([
             "ID" ~~> self.ID,
-            "post" ~~> self.post,
             "author" ~~> self.author,
             "date" ~~> self.date,
-            "content" ~~> self.content
+            "title" ~~> self.title,
+            "content" ~~> self.content,
+            "excerpt" ~~> self.excerpt,
+            "imageUrl" ~~> self.imageUrl,
+            "likeCount" ~~> self.likeCount
             ])
     }
 }
