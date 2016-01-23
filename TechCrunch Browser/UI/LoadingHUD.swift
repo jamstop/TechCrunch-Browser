@@ -58,6 +58,7 @@ class LoadingHUD: UIView
         self.hide()
         self.frame = view.frame
         setIndicator()
+        setBackGround(view)
         progressIndicator?.frame.origin = getIndicatorOrigin(backGroundView!, activityIndicatorView: progressIndicator!)
         backGroundView?.addSubview(progressIndicator!)
         view.addSubview(self)

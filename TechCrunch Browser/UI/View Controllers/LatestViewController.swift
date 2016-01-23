@@ -27,7 +27,7 @@ class LatestViewController: UIViewController {
     
     // MARK: - Properties
     
-    @IBOutlet weak var mainView: TopStoriesView!
+    @IBOutlet weak var mainView: LatestView!
     
     // MARK: - Overrides
 
@@ -37,8 +37,9 @@ class LatestViewController: UIViewController {
         setup()
         
         loadFeed()
-
-
+        
+        loading = true
+        mainView.startInitialLoad()
     }
     
     // MARK: - Helpers
@@ -66,6 +67,7 @@ class LatestViewController: UIViewController {
             }.subscribe (
                 onNext: { (posts) -> Void in
                     self.newPosts.appendContentsOf(posts)
+                    self.mainView.endInitialLoad()
                 },
                 onError: { (error) -> Void in
                     print("Error logging in: \(error)")
@@ -102,19 +104,26 @@ extension LatestViewController: UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return newPosts.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        var cell: PostTableViewCell!
+        
         if indexPath.row == 0 {
-            let cell = tableView.dequeueReusableCellWithIdentifier("FeaturedPostTableViewCell") as! FeaturedPostTableViewCell
+            cell = tableView.dequeueReusableCellWithIdentifier("FeaturedPostTableViewCell") as! PostTableViewCell
             
-            return cell
         }
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("PostTableViewCell") as! PostTableViewCell
+        else {
+            cell = tableView.dequeueReusableCellWithIdentifier("PostTableViewCell") as! PostTableViewCell
+        }
+        
+        cell.post = newPosts[indexPath.row]
+
         
         return cell
         
     }
 }
+

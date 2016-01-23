@@ -1,5 +1,5 @@
 //
-//  TopStoriesView.swift
+//  LatestView.swift
 //  TechCrunch Browser
 //
 //  Created by Jimmy Yue on 1/21/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TopStoriesView: UIView {
+class LatestView: UIView {
     
     // MARK: Properties
     
@@ -40,8 +40,13 @@ class TopStoriesView: UIView {
     }
     
     func endInitialLoad() {
+        LoadingHUD.sharedHUD.hide()
         tableView.hidden = false
-//        UIView.animateWithDuration(
+        UIView.animateWithDuration(0.5, animations: {
+            self.tableView.alpha = 1
+        })
+        tableView.reloadData()
+        
         
     }
     

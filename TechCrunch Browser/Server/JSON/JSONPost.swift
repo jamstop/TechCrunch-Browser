@@ -23,6 +23,8 @@ struct JSONPost: Decodable {
     let imageUrl: String?
     let likeCount: Int?
     
+    var name: String!
+    
     init?(json: JSON) {
         self.ID = "ID" <~~ json
         self.author = "author" <~~ json
@@ -32,6 +34,8 @@ struct JSONPost: Decodable {
         self.excerpt = "excerpt" <~~ json
         self.imageUrl = "featured_image" <~~ json
         self.likeCount = "like_count" <~~ json
+        
+        name = (self.author?.firstName)! + " " + (self.author?.lastName)!
     }
     
     func toJSON() -> JSON? {

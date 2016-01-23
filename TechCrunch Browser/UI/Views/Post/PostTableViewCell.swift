@@ -17,16 +17,13 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var postedBy: UILabel!
     @IBOutlet weak var title: UILabel!
     
-//    var post: JSONPost? {
-//        didSet {
-//            post["
-//            mentor?.image.bindTo(profileImage.bnd_image)
-//            mentor?.userName.bindTo(name.bnd_text)
-//            mentor?.userJobTitle.bindTo(jobTitle.bnd_text)
-//            mentor?.userAbout.bindTo(summary.bnd_text)
-//            canConnect = User.currentUser()?.isUserConnectedWithMentor(mentor!)
-//        }
-//    }
+    var post: JSONPost? {
+        didSet {
+            thumbnail.sd_setImageWithURL(NSURL(string: (post?.imageUrl!)!)!, placeholderImage: nil, options: .HighPriority)
+            postedBy.text = post?.name
+            title.text = post?.title
+        }
+    }
     
 //    weak var delegate: FeedCellDelegate?
     
