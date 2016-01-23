@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class LatestView: UIView {
     
@@ -14,10 +15,13 @@ class LatestView: UIView {
     
     @IBOutlet weak var tableView: UITableView!
     
+    var refreshControl: UIRefreshControl!
+    
     // MARK: - Awake from nib
     
     override func awakeFromNib() {
         setupTableView()
+        
         
     }
     
@@ -29,6 +33,10 @@ class LatestView: UIView {
         
         let featuredPostNib = UINib(nibName: "FeaturedPostTableViewCell", bundle: nil)
         tableView.registerNib(featuredPostNib, forCellReuseIdentifier: "FeaturedPostTableViewCell")
+        
+        refreshControl = UIRefreshControl()
+        refreshControl.tintColor = UIColor(red: 1, green: 128/255, blue: 128/255, alpha: 1.0)
+        tableView.addSubview(refreshControl)
         
     }
     

@@ -17,7 +17,7 @@ class RealmPost: Object {
     dynamic var content = ""
     dynamic var excerpt = ""
     dynamic var likes = 0
-    dynamic var imageUrl = ""
+    dynamic var image: UIImage?
     var categories: [RealmCategory] {
         return linkingObjects(RealmCategory.self, forProperty: "posts")
     }

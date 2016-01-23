@@ -49,7 +49,15 @@ class LatestViewController: UIViewController {
         // table view setup
         mainView.tableView.delegate = self
         mainView.tableView.dataSource = self
+        mainView.refreshControl.addTarget(self, action: "pullToRefresh:", forControlEvents: .ValueChanged)
         
+    }
+    
+    func pullToRefresh(sender: UIRefreshControl) {
+        currentOffset = 0
+        newPosts = []
+        
+        loadFeed()
     }
     
     private func loadFeed() {
@@ -67,7 +75,14 @@ class LatestViewController: UIViewController {
             }.subscribe (
                 onNext: { (posts) -> Void in
                     self.newPosts.appendContentsOf(posts)
-                    self.mainView.endInitialLoad()
+                    if self.loading {
+                        self.mainView.endInitialLoad()
+                        self.loading = false
+                    }
+                    else {
+                        self.mainView.refreshControl.endRefreshing()
+                    }
+                    self.currentOffset += 10
                 },
                 onError: { (error) -> Void in
                     print("Error logging in: \(error)")
@@ -119,7 +134,9 @@ extension LatestViewController: UITableViewDataSource {
             cell = tableView.dequeueReusableCellWithIdentifier("PostTableViewCell") as! PostTableViewCell
         }
         
-        cell.post = newPosts[indexPath.row]
+        if indexPath.row < newPosts.count {
+            cell.post = newPosts[indexPath.row]
+        }
 
         
         return cell
