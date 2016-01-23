@@ -28,14 +28,31 @@ class TechcrunchAPI {
     
     private let baseURL = "https://public-api.wordpress.com/rest/v1.1/sites/techcrunch.com/"
     
-//    private func rx_getPostWithTags(tags: Tags,
+    /**
+     * Testing API Connection
+    */
     
     func test_getPost() -> Observable<JSON> {
         return get("posts", parameters: ["number":1])
     }
     
+    /**
+     * Loads top 10 pages from up to a week ago
+    */
+    
     func rx_loadFeaturedPage() -> Observable<JSON> {
-        return get("posts", parameters: ["number":10])
+        let lastWeekDate = NSCalendar.currentCalendar().dateByAddingUnit(.WeekOfYear, value: -1, toDate: NSDate(), options: NSCalendarOptions())!
+        let lastWeekString = lastWeekDate.formattedISO8601
+        print(lastWeekString)
+        return get("posts", parameters: ["number": 10, "after": lastWeekString, "order_by": "comment_count"])
+    }
+    
+    /**
+     * Loads recent news by offset
+    */
+    
+    func rx_loadLatestNewsByOffset(offset: Int) -> Observable<JSON> {
+        return get("posts", parameters: ["number": 10, "offset": offset])
     }
     
     // MARK: - Basic HTTP Functions (RESTful TechCrunch)
@@ -104,7 +121,7 @@ class TechcrunchAPI {
                             message: message, error: String(error)))
                     } else {
                         // no errors
-                        print(responseJSON)
+                        // print(responseJSON)
                         observer.onNext(responseJSON)
                     }
                 } else {

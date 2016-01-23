@@ -13,7 +13,7 @@ import Gloss
 struct JSONCategory: Decodable {
     // MARK: Properties
     
-    let ID: String?
+    let ID: Int?
     let name: String?
     
     init?(json: JSON) {

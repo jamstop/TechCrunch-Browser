@@ -14,7 +14,7 @@ struct JSONAuthor: Decodable {
     
     // MARK: Properties
     
-    let ID: String?
+    let ID: Int?
     let firstName: String?
     let lastName: String?
     let avatarUrl: String?

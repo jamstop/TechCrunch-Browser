@@ -6,11 +6,11 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Top Stories-->
+        <!--Latest-->
         <scene sceneID="ndR-7L-8JA">
             <objects>
                 <navigationController id="c1p-3Q-TRH" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Top Stories" image="Top Stories" id="PM9-8A-q98"/>
+                    <tabBarItem key="tabBarItem" title="Latest" image="Top Stories" id="PM9-8A-q98"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="vnS-7N-LWr">
@@ -25,10 +25,10 @@
             </objects>
             <point key="canvasLocation" x="-150" y="117"/>
         </scene>
-        <!--Top Stories-->
+        <!--Latest-->
         <scene sceneID="2iv-W3-1pB">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="J6Y-vi-WUg" customClass="TopStoriesViewController" customModule="TC_Browser" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="J6Y-vi-WUg" customClass="LatestViewController" customModule="TC_Browser" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UTi-kG-kqk"/>
                         <viewControllerLayoutGuide type="bottom" id="zjY-bY-twq"/>
@@ -53,7 +53,7 @@
                             <outlet property="tableView" destination="IuM-07-iyG" id="0Wb-Sp-4HY"/>
                         </connections>
                     </view>
-                    <navigationItem key="navigationItem" title="Top Stories" id="4Nn-AW-3EK"/>
+                    <navigationItem key="navigationItem" title="Latest" id="4Nn-AW-3EK"/>
                     <connections>
                         <outlet property="mainView" destination="Kix-io-eL3" id="W2H-4r-wBe"/>
                     </connections>

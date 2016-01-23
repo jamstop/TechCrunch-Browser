@@ -30,10 +30,10 @@
             </objects>
             <point key="canvasLocation" x="-332" y="95"/>
         </scene>
-        <!--TopStories-->
+        <!--Latest-->
         <scene sceneID="5qA-Zw-YFK">
             <objects>
-                <viewControllerPlaceholder storyboardName="TopStories" id="hTX-Hu-mYj" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Latest" id="hTX-Hu-mYj" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Feed" id="X0c-go-evU"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gmf-7L-SRS" userLabel="First Responder" sceneMemberID="firstResponder"/>

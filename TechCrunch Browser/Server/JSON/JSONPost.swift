@@ -14,7 +14,7 @@ struct JSONPost: Decodable {
     
     // MARK: Properties
     
-    let ID: String?
+    let ID: Int?
     let author: JSONAuthor?
     let date: String?
     let title: String?

@@ -1,5 +1,5 @@
 //
-//  TopStoriesViewController.swift
+//  LatestViewController.swift
 //  TechCrunch Browser
 //
 //  Created by Jimmy Yue on 1/21/16.
@@ -10,12 +10,18 @@ import UIKit
 import RxSwift
 import Gloss
 
-class TopStoriesViewController: UIViewController {
+class LatestViewController: UIViewController {
     
     var disposeBag = DisposeBag()
     
     let screenHeight = UIScreen.mainScreen().bounds.width
     private let API = TechcrunchAPI()
+    
+    let category = "Latest"
+    
+    var currentOffset = 0
+    
+    var newPosts: [JSONPost] = []
     
     // MARK: - Properties
     
@@ -27,34 +33,9 @@ class TopStoriesViewController: UIViewController {
         super.viewDidLoad()
         
         setup()
-    
         
-        API.test_getPost().map { jsonResp -> [JSONPost] in
-            guard let postJSONArray = jsonResp["posts"] else {
-                throw TechcrunchAPI.APIError.ErrorParsingJSON
-            }
-            print(postJSONArray)
-            
-            guard let posts = JSONPost.modelsFromJSONArray(postJSONArray as! [JSON]) else {
-                throw TechcrunchAPI.APIError.ErrorParsingJSON
-            }
-            
-            return posts
-            
-            }.subscribe (
-                onNext: { (posts) -> Void in
-                    print(posts)
-                },
-                onError: { (error) -> Void in
-                    print("Error logging in: \(error)")
-                },
-                onCompleted: { () -> Void in
-                    print("Completed")
-                },
-                onDisposed: { () -> Void in
-                    
-            })
-            .addDisposableTo(disposeBag)
+        loadFeed()
+
 
     }
     
@@ -67,12 +48,42 @@ class TopStoriesViewController: UIViewController {
         mainView.tableView.dataSource = self
         
     }
+    
+    private func loadFeed() {
+        API.rx_loadLatestNewsByOffset(currentOffset).map { jsonResp -> [JSONPost] in
+            guard let postJSONArray = jsonResp["posts"] else {
+                throw TechcrunchAPI.APIError.ErrorParsingJSON
+            }
+            
+            print(postJSONArray)
+            
+            guard let posts = JSONPost.modelsFromJSONArray(postJSONArray as! [JSON]) else {
+                throw TechcrunchAPI.APIError.ErrorParsingJSON
+            }
+            
+            return posts
+            
+            }.subscribe (
+                onNext: { (posts) -> Void in
+//                    print(posts)
+                },
+                onError: { (error) -> Void in
+                    print("Error logging in: \(error)")
+                },
+                onCompleted: { () -> Void in
+                    print("Completed")
+                },
+                onDisposed: { () -> Void in
+                    
+            })
+            .addDisposableTo(disposeBag)
+    }
 
 }
 
 // MARK: - UITableViewDelegate
 
-extension TopStoriesViewController: UITableViewDelegate {
+extension LatestViewController: UITableViewDelegate {
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         if indexPath.row == 0 {
             return screenHeight
@@ -84,7 +95,7 @@ extension TopStoriesViewController: UITableViewDelegate {
 
 // MARK: - UITableViewDataSource
 
-extension TopStoriesViewController: UITableViewDataSource {
+extension LatestViewController: UITableViewDataSource {
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1

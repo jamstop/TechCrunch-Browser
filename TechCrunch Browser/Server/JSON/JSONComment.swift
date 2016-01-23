@@ -14,7 +14,7 @@ struct JSONComment: Decodable {
     
     // MARK: Properties
     
-    let ID: String?
+    let ID: Int?
     let post: JSONPost?
     let author: JSONAuthor?
     let date: String?

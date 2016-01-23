@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class PostTableViewCell: UITableViewCell {
 
@@ -15,6 +16,17 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var thumbnail: UIImageView!
     @IBOutlet weak var postedBy: UILabel!
     @IBOutlet weak var title: UILabel!
+    
+//    var post: JSONPost? {
+//        didSet {
+//            post[
+//            mentor?.image.bindTo(profileImage.bnd_image)
+//            mentor?.userName.bindTo(name.bnd_text)
+//            mentor?.userJobTitle.bindTo(jobTitle.bnd_text)
+//            mentor?.userAbout.bindTo(summary.bnd_text)
+//            canConnect = User.currentUser()?.isUserConnectedWithMentor(mentor!)
+//        }
+//    }
     
 //    weak var delegate: FeedCellDelegate?
     
