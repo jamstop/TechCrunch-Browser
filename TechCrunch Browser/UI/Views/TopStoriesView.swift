@@ -32,4 +32,17 @@ class TopStoriesView: UIView {
         
     }
     
+    func startInitialLoad() {
+        tableView.hidden = true
+        tableView.alpha = 0
+        LoadingHUD.sharedHUD.showInView(self)
+
+    }
+    
+    func endInitialLoad() {
+        tableView.hidden = false
+//        UIView.animateWithDuration(
+        
+    }
+    
 }

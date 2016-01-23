@@ -23,6 +23,8 @@ class LatestViewController: UIViewController {
     
     var newPosts: [JSONPost] = []
     
+    var loading = false
+    
     // MARK: - Properties
     
     @IBOutlet weak var mainView: TopStoriesView!
@@ -55,8 +57,6 @@ class LatestViewController: UIViewController {
                 throw TechcrunchAPI.APIError.ErrorParsingJSON
             }
             
-            print(postJSONArray)
-            
             guard let posts = JSONPost.modelsFromJSONArray(postJSONArray as! [JSON]) else {
                 throw TechcrunchAPI.APIError.ErrorParsingJSON
             }
@@ -65,7 +65,7 @@ class LatestViewController: UIViewController {
             
             }.subscribe (
                 onNext: { (posts) -> Void in
-//                    print(posts)
+                    self.newPosts.appendContentsOf(posts)
                 },
                 onError: { (error) -> Void in
                     print("Error logging in: \(error)")
