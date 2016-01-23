@@ -23,14 +23,14 @@
                             <constraint firstAttribute="width" secondItem="xxe-23-QsK" secondAttribute="height" multiplier="319:218" id="dY1-BN-ZRn"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Article Title Article Title Article Title Article Title Article Title Article Title" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="eks-Wz-li1">
-                        <rect key="frame" x="192" y="18" width="261" height="61"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Article Title Article Title Article Title Article Title Article Title Article Title" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eks-Wz-li1">
+                        <rect key="frame" x="192" y="13" width="261" height="61"/>
                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hunter Larco" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="TiW-4A-4dy">
-                        <rect key="frame" x="191.5" y="82" width="79" height="16"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hunter Larco" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TiW-4A-4dy">
+                        <rect key="frame" x="191.5" y="77" width="79" height="16"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" red="1" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -44,7 +44,7 @@
                     <constraint firstItem="eks-Wz-li1" firstAttribute="leading" secondItem="xxe-23-QsK" secondAttribute="trailing" constant="12" id="Scq-9k-6RC"/>
                     <constraint firstAttribute="trailingMargin" secondItem="TiW-4A-4dy" secondAttribute="trailing" constant="20" id="U30-rG-Ze2"/>
                     <constraint firstItem="xxe-23-QsK" firstAttribute="width" secondItem="B7v-gH-OfE" secondAttribute="height" multiplier="50:69" id="coy-u5-GXN"/>
-                    <constraint firstItem="eks-Wz-li1" firstAttribute="top" secondItem="B7v-gH-OfE" secondAttribute="topMargin" constant="10" id="grM-bl-O2Y"/>
+                    <constraint firstItem="eks-Wz-li1" firstAttribute="top" secondItem="B7v-gH-OfE" secondAttribute="topMargin" constant="5" id="grM-bl-O2Y"/>
                     <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="TiW-4A-4dy" secondAttribute="bottom" constant="5" id="hZ6-QK-fTn"/>
                     <constraint firstItem="xxe-23-QsK" firstAttribute="leading" secondItem="B7v-gH-OfE" secondAttribute="leadingMargin" constant="6" id="hpj-kW-ylw"/>
                     <constraint firstItem="xxe-23-QsK" firstAttribute="top" secondItem="B7v-gH-OfE" secondAttribute="topMargin" constant="5" id="kz3-ZH-P0t"/>

@@ -4,6 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -18,28 +19,44 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="ZdF-Ju-V4V">
-                                <rect key="frame" x="109" y="255" width="156" height="157"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Launch" translatesAutoresizingMaskIntoConstraints="NO" id="ZdF-Ju-V4V">
+                                <rect key="frame" x="74.5" y="277.5" width="225" height="112.5"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" secondItem="ZdF-Ju-V4V" secondAttribute="height" multiplier="225:112" id="ps5-Mx-xGs"/>
                                     <constraint firstAttribute="width" secondItem="ZdF-Ju-V4V" secondAttribute="height" multiplier="156:157" id="u0C-3z-zuN"/>
+                                    <constraint firstAttribute="width" secondItem="ZdF-Ju-V4V" secondAttribute="height" multiplier="2:1" id="yWj-Iq-emo"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="u0C-3z-zuN"/>
+                                        <exclude reference="yWj-Iq-emo"/>
+                                    </mask>
+                                </variation>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ZdF-Ju-V4V" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="156:667" id="VNb-hs-NgW"/>
                             <constraint firstItem="ZdF-Ju-V4V" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="YQC-BS-1z0"/>
+                            <constraint firstItem="ZdF-Ju-V4V" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="226:667" id="Ygn-nV-5hi"/>
+                            <constraint firstItem="ZdF-Ju-V4V" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="0.6" id="dFX-ru-uCf"/>
                             <constraint firstItem="ZdF-Ju-V4V" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="yRL-OI-haY"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="VNb-hs-NgW"/>
+                                <exclude reference="Ygn-nV-5hi"/>
+                            </mask>
+                        </variation>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52.5" y="374.5"/>
         </scene>
     </scenes>
     <resources>
-        <image name="Logo" width="512" height="512"/>
+        <image name="Launch" width="432" height="216"/>
     </resources>
 </document>

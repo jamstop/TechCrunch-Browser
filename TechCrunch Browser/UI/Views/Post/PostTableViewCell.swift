@@ -20,8 +20,8 @@ class PostTableViewCell: UITableViewCell {
     var post: JSONPost? {
         didSet {
             thumbnail.sd_setImageWithURL(NSURL(string: (post?.imageUrl!)!)!, placeholderImage: nil, options: .HighPriority)
-            postedBy.text = post?.name
-            title.text = post?.title
+            postedBy.text = post?.name.stringByDecodingHTMLEntities
+            title.text = post?.title?.stringByDecodingHTMLEntities
         }
     }
     
