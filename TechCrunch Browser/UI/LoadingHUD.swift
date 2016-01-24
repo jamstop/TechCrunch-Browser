@@ -31,21 +31,21 @@ class LoadingHUD: UIView
     init()
     {
         //Initialising Code
-        backGroundColor = UIColor.whiteColor()
+        backGroundColor = UIColor.clearColor()
         loaderColor = UIColor(red: 1, green: 128/255, blue: 128/255, alpha: 1.0)
         super.init(frame: CGRectZero)
     }
     
     required init?(coder aDecoder: NSCoder)
     {
-        backGroundColor = UIColor.whiteColor()
+        backGroundColor = UIColor.clearColor()
         loaderColor = UIColor(red: 1, green: 128/255, blue: 128/255, alpha: 1.0)
         super.init(coder: aDecoder)
     }
     
     override init(frame: CGRect)
     {
-        backGroundColor = UIColor.whiteColor()
+        backGroundColor = UIColor.clearColor()
         loaderColor = UIColor(red: 1, green: 128/255, blue: 128/255, alpha: 1.0)
         super.init(frame: frame)
     }

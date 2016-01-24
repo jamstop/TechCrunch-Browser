@@ -58,4 +58,18 @@ class LatestView: UIView {
         
     }
     
+    func startLoadMore() {
+        LoadingHUD.sharedHUD.showInView(self)
+    }
+    
+    func endLoadMore() {
+        LoadingHUD.sharedHUD.hide()
+        tableView.reloadData()
+    }
+    
+    func finishRefreshing() {
+        self.refreshControl.endRefreshing()
+        self.tableView.reloadData()
+    }
+    
 }

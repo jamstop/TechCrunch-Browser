@@ -23,7 +23,14 @@ class LatestViewController: UIViewController {
     
     var newPosts: [JSONPost] = []
     
-    var loading = false
+    enum LoadingState {
+        case Idle
+        case Loading
+        case Refreshing
+        case LoadingMore
+    }
+    
+    var currentState = LoadingState.Loading
     
     // MARK: - Properties
     
@@ -38,7 +45,7 @@ class LatestViewController: UIViewController {
         
         loadFeed()
         
-        loading = true
+        currentState = .Loading
         mainView.startInitialLoad()
     }
     
@@ -54,10 +61,13 @@ class LatestViewController: UIViewController {
     }
     
     func pullToRefresh(sender: UIRefreshControl) {
-        currentOffset = 0
-        newPosts = []
-        
-        loadFeed()
+        if currentState == .Idle {
+            currentOffset = 0
+            newPosts = []
+            
+            currentState = .Refreshing
+            loadFeed()
+        }
     }
     
     private func loadFeed() {
@@ -75,13 +85,21 @@ class LatestViewController: UIViewController {
             }.subscribe (
                 onNext: { (posts) -> Void in
                     self.newPosts.appendContentsOf(posts)
-                    if self.loading {
+                    switch self.currentState {
+                    case .Idle:
+                        print("Cannot load without command")
+                    
+                    case .Loading:
                         self.mainView.endInitialLoad()
-                        self.loading = false
+
+                    case .Refreshing:
+                        self.mainView.finishRefreshing()
+                    
+                    case .LoadingMore:
+                        self.mainView.endLoadMore()
                     }
-                    else {
-                        self.mainView.refreshControl.endRefreshing()
-                    }
+                    
+                    self.currentState = .Idle
                     self.currentOffset += 10
                 },
                 onError: { (error) -> Void in
@@ -106,6 +124,16 @@ extension LatestViewController: UITableViewDelegate {
             return screenHeight
         }
         return screenHeight/3
+    }
+    
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        if ((scrollView.contentOffset.y + scrollView.frame.size.height) >= scrollView.contentSize.height) {
+            if currentState == .Idle {
+                currentState = .LoadingMore
+                mainView.startLoadMore()
+                loadFeed()
+            }
+        }
     }
 
 }
