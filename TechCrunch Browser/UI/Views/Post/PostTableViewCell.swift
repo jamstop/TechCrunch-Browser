@@ -8,6 +8,7 @@
 
 import UIKit
 import SDWebImage
+import RealmSwift
 
 class PostTableViewCell: UITableViewCell {
 
@@ -17,7 +18,9 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var postedBy: UILabel!
     @IBOutlet weak var title: UILabel!
     
-    let downloader = SDWebImageDownloader()
+    let realm = try! Realm()
+    
+    var persistedPost: RealmPost!
     
     var post: JSONPost? {
         didSet {
@@ -28,8 +31,16 @@ class PostTableViewCell: UITableViewCell {
             
             postedBy.text = post?.name.stringByDecodingHTMLEntities
             title.text = post?.title?.stringByDecodingHTMLEntities
+            
+            persistedPost = RealmPost()
+            persistedPost.id = post!.ID!
+            persistedPost.author = postedBy.text!
+            persistedPost.content = post!.content!
+            persistedPost.imageUrl = (post?.imageUrl)!
+            
         }
     }
+
     
 //    weak var delegate: FeedCellDelegate?
     

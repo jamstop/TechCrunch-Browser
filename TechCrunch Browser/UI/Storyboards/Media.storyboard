@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ztC-04-uRE">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <scenes>
+        <!--Media-->
+        <scene sceneID="2BY-Eg-Zhi">
+            <objects>
+                <navigationController id="ztC-04-uRE" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Media" image="Media" id="whi-D7-N11"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="oFm-jZ-Fto">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="bfB-nM-EAO" kind="relationship" relationship="rootViewController" id="Pe0-dm-fgQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Piu-40-H5b" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-87" y="277"/>
+        </scene>
+        <!--Media-->
+        <scene sceneID="z7d-4H-oEa">
+            <objects>
+                <viewController id="bfB-nM-EAO" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cjK-5k-mJj"/>
+                        <viewControllerLayoutGuide type="bottom" id="307-ge-eZ4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YR3-rF-3lm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Media" id="bzJ-Fa-wZS"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wus-AZ-b5g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="526.5" y="276.5"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Media" width="25" height="15"/>
+    </resources>
+</document>

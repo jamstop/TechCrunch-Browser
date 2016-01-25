@@ -12,7 +12,7 @@ import RealmSwift
 class RealmCategory: Object {
     dynamic var id = ""
     dynamic var name = ""
-    dynamic var posts: [RealmPost]?
+    let posts = List<RealmPost>()
     
     override static func primaryKey() -> String? {
         return "name"

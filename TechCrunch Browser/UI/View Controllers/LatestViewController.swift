@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import Gloss
+import RealmSwift
 
 class LatestViewController: UIViewController {
     
@@ -22,6 +23,9 @@ class LatestViewController: UIViewController {
     var currentOffset = 0
     
     var newPosts: [JSONPost] = []
+    var realmPosts: [RealmPost] = []
+    
+    let realm = try! Realm()
     
     enum LoadingState {
         case Idle
@@ -64,6 +68,7 @@ class LatestViewController: UIViewController {
         if currentState == .Idle {
             currentOffset = 0
             newPosts = []
+            realmPosts = []
             
             currentState = .Refreshing
             loadFeed()
@@ -135,6 +140,21 @@ extension LatestViewController: UITableViewDelegate {
             }
         }
     }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let currentPost = RealmCurrentPost()
+        
+        currentPost.post = realmPosts[indexPath.row]
+        currentPost.id = 0
+        
+        try! realm.write {
+            realm.add(currentPost, update: true)
+        }
+        
+        
+        
+        
+    }
 
 }
 
@@ -164,6 +184,7 @@ extension LatestViewController: UITableViewDataSource {
         
         if indexPath.row < newPosts.count {
             cell.post = newPosts[indexPath.row]
+            realmPosts.append(cell.persistedPost)
         }
 
         

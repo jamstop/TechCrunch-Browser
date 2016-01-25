@@ -12,7 +12,7 @@ import RealmSwift
 class RealmComment: Object {
     dynamic var id = ""
     dynamic var name = ""
-    dynamic var avatar: UIImage?
+    dynamic var avatarUrl = ""
     dynamic var content = ""
     dynamic var date = ""
     dynamic var likecount = 0

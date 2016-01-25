@@ -13,6 +13,13 @@ class RealmHelper {
     
     let realm = try! Realm()
     
-//    func 
+    func setPostsForCategory(categoryName: String, posts: [RealmPost]) {
+        let category = RealmCategory()
+        category.name = categoryName
+//        category.posts = posts
+        
+        
+        
+    }
     
 }

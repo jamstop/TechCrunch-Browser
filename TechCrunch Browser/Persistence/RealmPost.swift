@@ -10,14 +10,14 @@ import Foundation
 import RealmSwift
 
 class RealmPost: Object {
-    dynamic var id = ""
+    dynamic var id = 0
     dynamic var author = ""
     dynamic var date = ""
     dynamic var title = ""
     dynamic var content = ""
     dynamic var excerpt = ""
     dynamic var likes = 0
-    dynamic var image: UIImage?
+    dynamic var imageUrl = ""
     var categories: [RealmCategory] {
         return linkingObjects(RealmCategory.self, forProperty: "posts")
     }

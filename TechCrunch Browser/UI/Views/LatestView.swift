@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import RealmSwift
 
 class LatestView: UIView {
     
@@ -21,7 +20,6 @@ class LatestView: UIView {
     
     override func awakeFromNib() {
         setupTableView()
-        
         
     }
     

@@ -15,6 +15,8 @@
 		BF3217381C56BF3200EDC50D /* ArticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3217371C56BF3200EDC50D /* ArticleView.swift */; };
 		BF32173A1C56BFA500EDC50D /* ArticleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF3217391C56BFA500EDC50D /* ArticleView.xib */; };
 		BF32173E1C56C28100EDC50D /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF32173D1C56C28100EDC50D /* PostTableViewCell.swift */; };
+		BF3217401C56C32400EDC50D /* RealmCurrentPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF32173F1C56C32400EDC50D /* RealmCurrentPost.swift */; };
+		BF3217421C56EB2100EDC50D /* Media.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF3217411C56EB2100EDC50D /* Media.storyboard */; };
 		BF9474D81C5049D10079878D /* DesignableTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9474D71C5049D10079878D /* DesignableTabBarItem.swift */; };
 		BF9474DA1C504F920079878D /* RealmPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9474D91C504F920079878D /* RealmPost.swift */; };
 		BF9474DC1C504FA30079878D /* RealmCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9474DB1C504FA30079878D /* RealmCategory.swift */; };
@@ -70,6 +72,8 @@
 		BF3217371C56BF3200EDC50D /* ArticleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArticleView.swift; path = "TechCrunch Browser/UI/Views/ArticleView.swift"; sourceTree = SOURCE_ROOT; };
 		BF3217391C56BFA500EDC50D /* ArticleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ArticleView.xib; path = "TechCrunch Browser/UI/Views/ArticleView.xib"; sourceTree = SOURCE_ROOT; };
 		BF32173D1C56C28100EDC50D /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		BF32173F1C56C32400EDC50D /* RealmCurrentPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmCurrentPost.swift; sourceTree = "<group>"; };
+		BF3217411C56EB2100EDC50D /* Media.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Media.storyboard; sourceTree = "<group>"; };
 		BF9474D71C5049D10079878D /* DesignableTabBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableTabBarItem.swift; sourceTree = "<group>"; };
 		BF9474D91C504F920079878D /* RealmPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmPost.swift; sourceTree = "<group>"; };
 		BF9474DB1C504FA30079878D /* RealmCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmCategory.swift; sourceTree = "<group>"; };
@@ -246,6 +250,7 @@
 				BF9474DB1C504FA30079878D /* RealmCategory.swift */,
 				BF9474DF1C5080370079878D /* RealmComment.swift */,
 				BF9474FC1C52E6370079878D /* RealmHelper.swift */,
+				BF32173F1C56C32400EDC50D /* RealmCurrentPost.swift */,
 			);
 			path = Persistence;
 			sourceTree = "<group>";
@@ -299,6 +304,7 @@
 				BF9474E11C5193CF0079878D /* Browse.storyboard */,
 				BF9474E31C5193E00079878D /* Search.storyboard */,
 				BF9474E51C5193E60079878D /* Saved.storyboard */,
+				BF3217411C56EB2100EDC50D /* Media.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -435,6 +441,7 @@
 				BF9474E61C5193E60079878D /* Saved.storyboard in Resources */,
 				BF32173A1C56BFA500EDC50D /* ArticleView.xib in Resources */,
 				BFEEBA6F1C500F860075BC5C /* Main.storyboard in Resources */,
+				BF3217421C56EB2100EDC50D /* Media.storyboard in Resources */,
 				BF9474E41C5193E00079878D /* Search.storyboard in Resources */,
 				BFEEBAA31C5043290075BC5C /* Latest.storyboard in Resources */,
 				BF9474EB1C519D100079878D /* PostTableViewCell.xib in Resources */,
@@ -521,6 +528,7 @@
 				BFEEBA6A1C500F860075BC5C /* AppDelegate.swift in Sources */,
 				BF9475001C52F68F0079878D /* NSDateISO8601.swift in Sources */,
 				BF9474F71C51C4EE0079878D /* JSONAuthor.swift in Sources */,
+				BF3217401C56C32400EDC50D /* RealmCurrentPost.swift in Sources */,
 				BF9474ED1C51A16D0079878D /* LatestViewController.swift in Sources */,
 				BF9474EF1C51A2F70079878D /* LatestView.swift in Sources */,
 				BF32173E1C56C28100EDC50D /* PostTableViewCell.swift in Sources */,
