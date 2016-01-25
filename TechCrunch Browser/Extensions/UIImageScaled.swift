@@ -10,9 +10,9 @@ import Foundation
 import UIKit
 
 extension UIImage {
-    func imageWithImage(image: UIImage, newSize: CGSize) -> UIImage {
+    func resizeImageTo(newSize: CGSize) -> UIImage {
         UIGraphicsBeginImageContext(newSize)
-        image.drawInRect(CGRectMake(0,0,newSize.width,newSize.height))
+        self.drawInRect(CGRectMake(0,0,newSize.width,newSize.height))
         let newImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         

@@ -59,7 +59,7 @@ class LatestView: UIView {
     }
     
     func startLoadMore() {
-        LoadingHUD.sharedHUD.showInView(self)
+//        LoadingHUD.sharedHUD.showInView(self)
     }
     
     func endLoadMore() {

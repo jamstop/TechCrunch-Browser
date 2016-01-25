@@ -56,11 +56,31 @@
                     <navigationItem key="navigationItem" title="Latest" id="4Nn-AW-3EK"/>
                     <connections>
                         <outlet property="mainView" destination="Kix-io-eL3" id="W2H-4r-wBe"/>
+                        <segue destination="vZD-A4-R2z" kind="show" id="7iR-ux-ZQo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vMI-XP-tdB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="593.5" y="116.5"/>
+            <point key="canvasLocation" x="677.5" y="116.5"/>
+        </scene>
+        <!--Article View Controller-->
+        <scene sceneID="DIw-cW-PsA">
+            <objects>
+                <viewController id="vZD-A4-R2z" customClass="ArticleViewController" customModule="TC_Browser" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tsi-II-XxH"/>
+                        <viewControllerLayoutGuide type="bottom" id="kcB-T9-N5b"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sbV-68-WgM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mYt-D3-22A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1181.5" y="116.5"/>
         </scene>
     </scenes>
     <resources>

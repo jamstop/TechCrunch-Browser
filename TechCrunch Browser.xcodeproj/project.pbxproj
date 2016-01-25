@@ -11,6 +11,10 @@
 		BF3217281C5423D500EDC50D /* LoadingHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3217271C5423D500EDC50D /* LoadingHUD.swift */; };
 		BF3217301C5438EF00EDC50D /* StringExtensionHTML.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF32172F1C5438EF00EDC50D /* StringExtensionHTML.swift */; };
 		BF3217341C56B74200EDC50D /* UIImageScaled.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3217331C56B74200EDC50D /* UIImageScaled.swift */; };
+		BF3217361C56BEA300EDC50D /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3217351C56BEA200EDC50D /* ArticleViewController.swift */; };
+		BF3217381C56BF3200EDC50D /* ArticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3217371C56BF3200EDC50D /* ArticleView.swift */; };
+		BF32173A1C56BFA500EDC50D /* ArticleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF3217391C56BFA500EDC50D /* ArticleView.xib */; };
+		BF32173E1C56C28100EDC50D /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF32173D1C56C28100EDC50D /* PostTableViewCell.swift */; };
 		BF9474D81C5049D10079878D /* DesignableTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9474D71C5049D10079878D /* DesignableTabBarItem.swift */; };
 		BF9474DA1C504F920079878D /* RealmPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9474D91C504F920079878D /* RealmPost.swift */; };
 		BF9474DC1C504FA30079878D /* RealmCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9474DB1C504FA30079878D /* RealmCategory.swift */; };
@@ -18,7 +22,6 @@
 		BF9474E21C5193CF0079878D /* Browse.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF9474E11C5193CF0079878D /* Browse.storyboard */; };
 		BF9474E41C5193E00079878D /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF9474E31C5193E00079878D /* Search.storyboard */; };
 		BF9474E61C5193E60079878D /* Saved.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF9474E51C5193E60079878D /* Saved.storyboard */; };
-		BF9474E91C519CFF0079878D /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9474E81C519CFF0079878D /* PostTableViewCell.swift */; };
 		BF9474EB1C519D100079878D /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF9474EA1C519D100079878D /* PostTableViewCell.xib */; };
 		BF9474ED1C51A16D0079878D /* LatestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9474EC1C51A16C0079878D /* LatestViewController.swift */; };
 		BF9474EF1C51A2F70079878D /* LatestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9474EE1C51A2F70079878D /* LatestView.swift */; };
@@ -63,6 +66,10 @@
 		BF3217271C5423D500EDC50D /* LoadingHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingHUD.swift; sourceTree = "<group>"; };
 		BF32172F1C5438EF00EDC50D /* StringExtensionHTML.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensionHTML.swift; sourceTree = "<group>"; };
 		BF3217331C56B74200EDC50D /* UIImageScaled.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageScaled.swift; sourceTree = "<group>"; };
+		BF3217351C56BEA200EDC50D /* ArticleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
+		BF3217371C56BF3200EDC50D /* ArticleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArticleView.swift; path = "TechCrunch Browser/UI/Views/ArticleView.swift"; sourceTree = SOURCE_ROOT; };
+		BF3217391C56BFA500EDC50D /* ArticleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ArticleView.xib; path = "TechCrunch Browser/UI/Views/ArticleView.xib"; sourceTree = SOURCE_ROOT; };
+		BF32173D1C56C28100EDC50D /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		BF9474D71C5049D10079878D /* DesignableTabBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableTabBarItem.swift; sourceTree = "<group>"; };
 		BF9474D91C504F920079878D /* RealmPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmPost.swift; sourceTree = "<group>"; };
 		BF9474DB1C504FA30079878D /* RealmCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmCategory.swift; sourceTree = "<group>"; };
@@ -70,15 +77,14 @@
 		BF9474E11C5193CF0079878D /* Browse.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Browse.storyboard; sourceTree = "<group>"; };
 		BF9474E31C5193E00079878D /* Search.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		BF9474E51C5193E60079878D /* Saved.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Saved.storyboard; sourceTree = "<group>"; };
-		BF9474E81C519CFF0079878D /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostTableViewCell.swift; path = Post/PostTableViewCell.swift; sourceTree = "<group>"; };
-		BF9474EA1C519D100079878D /* PostTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
+		BF9474EA1C519D100079878D /* PostTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PostTableViewCell.xib; path = "TechCrunch Browser/UI/Views/PostTableViewCell.xib"; sourceTree = SOURCE_ROOT; };
 		BF9474EC1C51A16C0079878D /* LatestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LatestViewController.swift; sourceTree = "<group>"; };
-		BF9474EE1C51A2F70079878D /* LatestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LatestView.swift; sourceTree = "<group>"; };
+		BF9474EE1C51A2F70079878D /* LatestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LatestView.swift; path = ../LatestView.swift; sourceTree = "<group>"; };
 		BF9474F01C51ABEC0079878D /* JSONPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONPost.swift; sourceTree = "<group>"; };
 		BF9474F21C51ABF70079878D /* JSONCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONCategory.swift; sourceTree = "<group>"; };
 		BF9474F41C51AC010079878D /* JSONComment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONComment.swift; sourceTree = "<group>"; };
 		BF9474F61C51C4EE0079878D /* JSONAuthor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONAuthor.swift; sourceTree = "<group>"; };
-		BF9474FA1C52BB790079878D /* FeaturedPostTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeaturedPostTableViewCell.xib; sourceTree = "<group>"; };
+		BF9474FA1C52BB790079878D /* FeaturedPostTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FeaturedPostTableViewCell.xib; path = ../FeaturedPostTableViewCell.xib; sourceTree = "<group>"; };
 		BF9474FC1C52E6370079878D /* RealmHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmHelper.swift; sourceTree = "<group>"; };
 		BF9474FF1C52F68F0079878D /* NSDateISO8601.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateISO8601.swift; sourceTree = "<group>"; };
 		BFEEBA661C500F860075BC5C /* TC Browser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TC Browser.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -138,6 +144,26 @@
 				146D910ECE263C9E6B11AB18 /* Pods.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BF32173B1C56C28100EDC50D /* Article */ = {
+			isa = PBXGroup;
+			children = (
+				BF3217371C56BF3200EDC50D /* ArticleView.swift */,
+				BF3217391C56BFA500EDC50D /* ArticleView.xib */,
+			);
+			path = Article;
+			sourceTree = "<group>";
+		};
+		BF32173C1C56C28100EDC50D /* Post */ = {
+			isa = PBXGroup;
+			children = (
+				BF9474FA1C52BB790079878D /* FeaturedPostTableViewCell.xib */,
+				BF9474EE1C51A2F70079878D /* LatestView.swift */,
+				BF9474EA1C519D100079878D /* PostTableViewCell.xib */,
+				BF32173D1C56C28100EDC50D /* PostTableViewCell.swift */,
+			);
+			path = Post;
 			sourceTree = "<group>";
 		};
 		BF9474D61C5049C20079878D /* Designables */ = {
@@ -281,6 +307,7 @@
 			isa = PBXGroup;
 			children = (
 				BF9474EC1C51A16C0079878D /* LatestViewController.swift */,
+				BF3217351C56BEA200EDC50D /* ArticleViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -288,10 +315,8 @@
 		BFEEBA9F1C50202A0075BC5C /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				BF9474E81C519CFF0079878D /* PostTableViewCell.swift */,
-				BF9474EA1C519D100079878D /* PostTableViewCell.xib */,
-				BF9474EE1C51A2F70079878D /* LatestView.swift */,
-				BF9474FA1C52BB790079878D /* FeaturedPostTableViewCell.xib */,
+				BF32173B1C56C28100EDC50D /* Article */,
+				BF32173C1C56C28100EDC50D /* Post */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -408,6 +433,7 @@
 				BF9474FB1C52BB790079878D /* FeaturedPostTableViewCell.xib in Resources */,
 				BFEEBA711C500F860075BC5C /* Assets.xcassets in Resources */,
 				BF9474E61C5193E60079878D /* Saved.storyboard in Resources */,
+				BF32173A1C56BFA500EDC50D /* ArticleView.xib in Resources */,
 				BFEEBA6F1C500F860075BC5C /* Main.storyboard in Resources */,
 				BF9474E41C5193E00079878D /* Search.storyboard in Resources */,
 				BFEEBAA31C5043290075BC5C /* Latest.storyboard in Resources */,
@@ -486,18 +512,20 @@
 			files = (
 				BF3217301C5438EF00EDC50D /* StringExtensionHTML.swift in Sources */,
 				BF3217281C5423D500EDC50D /* LoadingHUD.swift in Sources */,
-				BF9474E91C519CFF0079878D /* PostTableViewCell.swift in Sources */,
 				BF9474FD1C52E6370079878D /* RealmHelper.swift in Sources */,
 				BF9474F51C51AC010079878D /* JSONComment.swift in Sources */,
 				BF9474D81C5049D10079878D /* DesignableTabBarItem.swift in Sources */,
 				BF9474DC1C504FA30079878D /* RealmCategory.swift in Sources */,
+				BF3217381C56BF3200EDC50D /* ArticleView.swift in Sources */,
 				BF9474F11C51ABEC0079878D /* JSONPost.swift in Sources */,
 				BFEEBA6A1C500F860075BC5C /* AppDelegate.swift in Sources */,
 				BF9475001C52F68F0079878D /* NSDateISO8601.swift in Sources */,
 				BF9474F71C51C4EE0079878D /* JSONAuthor.swift in Sources */,
 				BF9474ED1C51A16D0079878D /* LatestViewController.swift in Sources */,
 				BF9474EF1C51A2F70079878D /* LatestView.swift in Sources */,
+				BF32173E1C56C28100EDC50D /* PostTableViewCell.swift in Sources */,
 				BF9474E01C5080370079878D /* RealmComment.swift in Sources */,
+				BF3217361C56BEA300EDC50D /* ArticleViewController.swift in Sources */,
 				BF9474F31C51ABF70079878D /* JSONCategory.swift in Sources */,
 				BF3217341C56B74200EDC50D /* UIImageScaled.swift in Sources */,
 				BFEEBAA11C50216C0075BC5C /* TechcrunchAPI.swift in Sources */,

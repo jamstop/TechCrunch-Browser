@@ -17,9 +17,15 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var postedBy: UILabel!
     @IBOutlet weak var title: UILabel!
     
+    let downloader = SDWebImageDownloader()
+    
     var post: JSONPost? {
         didSet {
+
+            
             thumbnail.sd_setImageWithURL(NSURL(string: (post?.imageUrl!)!)!, placeholderImage: nil, options: .HighPriority)
+            
+            
             postedBy.text = post?.name.stringByDecodingHTMLEntities
             title.text = post?.title?.stringByDecodingHTMLEntities
         }
