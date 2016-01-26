@@ -56,7 +56,7 @@
                     <navigationItem key="navigationItem" title="Latest" id="4Nn-AW-3EK"/>
                     <connections>
                         <outlet property="mainView" destination="Kix-io-eL3" id="W2H-4r-wBe"/>
-                        <segue destination="vZD-A4-R2z" kind="show" id="7iR-ux-ZQo"/>
+                        <segue destination="vZD-A4-R2z" kind="show" identifier="segueToArticle" id="7iR-ux-ZQo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vMI-XP-tdB" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -71,7 +71,7 @@
                         <viewControllerLayoutGuide type="top" id="tsi-II-XxH"/>
                         <viewControllerLayoutGuide type="bottom" id="kcB-T9-N5b"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="sbV-68-WgM">
+                    <view key="view" contentMode="scaleToFill" id="sbV-68-WgM" customClass="ArticleView" customModule="TC_Browser" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

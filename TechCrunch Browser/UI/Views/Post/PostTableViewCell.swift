@@ -33,6 +33,7 @@ class PostTableViewCell: UITableViewCell {
             title.text = post?.title?.stringByDecodingHTMLEntities
             
             persistedPost = RealmPost()
+            persistedPost.title = post!.title!
             persistedPost.id = post!.ID!
             persistedPost.author = postedBy.text!
             persistedPost.content = post!.content!

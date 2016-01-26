@@ -151,7 +151,9 @@ extension LatestViewController: UITableViewDelegate {
             realm.add(currentPost, update: true)
         }
         
+        currentPost.post!.content.parseArticleContent()
         
+        self.performSegueWithIdentifier("segueToArticle", sender: self)
         
         
     }
