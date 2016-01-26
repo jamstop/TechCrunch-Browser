@@ -8,13 +8,43 @@
 
 /* Begin PBXBuildFile section */
 		20AD2412F5249E82807C79A2 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 146D910ECE263C9E6B11AB18 /* Pods.framework */; };
+		BF3217281C5423D500EDC50D /* LoadingHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3217271C5423D500EDC50D /* LoadingHUD.swift */; };
+		BF3217301C5438EF00EDC50D /* StringExtensionHTML.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF32172F1C5438EF00EDC50D /* StringExtensionHTML.swift */; };
+		BF3217341C56B74200EDC50D /* UIImageScaled.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3217331C56B74200EDC50D /* UIImageScaled.swift */; };
+		BF3217361C56BEA300EDC50D /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3217351C56BEA200EDC50D /* ArticleViewController.swift */; };
+		BF3217381C56BF3200EDC50D /* ArticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3217371C56BF3200EDC50D /* ArticleView.swift */; };
+		BF32173A1C56BFA500EDC50D /* ArticleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF3217391C56BFA500EDC50D /* ArticleView.xib */; };
+		BF32173E1C56C28100EDC50D /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF32173D1C56C28100EDC50D /* PostTableViewCell.swift */; };
+		BF3217401C56C32400EDC50D /* RealmCurrentPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF32173F1C56C32400EDC50D /* RealmCurrentPost.swift */; };
+		BF3217421C56EB2100EDC50D /* Media.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF3217411C56EB2100EDC50D /* Media.storyboard */; };
+		BF3217441C56EC6100EDC50D /* StringArticleParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3217431C56EC6100EDC50D /* StringArticleParser.swift */; };
+		BF3217461C57092700EDC50D /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3217451C57092700EDC50D /* SearchView.swift */; };
+		BF32174B1C5800ED00EDC50D /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF32174A1C5800ED00EDC50D /* SearchViewController.swift */; };
+		BF9474D81C5049D10079878D /* DesignableTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9474D71C5049D10079878D /* DesignableTabBarItem.swift */; };
+		BF9474DA1C504F920079878D /* RealmPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9474D91C504F920079878D /* RealmPost.swift */; };
+		BF9474DC1C504FA30079878D /* RealmCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9474DB1C504FA30079878D /* RealmCategory.swift */; };
+		BF9474E01C5080370079878D /* RealmComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9474DF1C5080370079878D /* RealmComment.swift */; };
+		BF9474E21C5193CF0079878D /* Browse.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF9474E11C5193CF0079878D /* Browse.storyboard */; };
+		BF9474E41C5193E00079878D /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF9474E31C5193E00079878D /* Search.storyboard */; };
+		BF9474E61C5193E60079878D /* Saved.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF9474E51C5193E60079878D /* Saved.storyboard */; };
+		BF9474EB1C519D100079878D /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF9474EA1C519D100079878D /* PostTableViewCell.xib */; };
+		BF9474ED1C51A16D0079878D /* LatestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9474EC1C51A16C0079878D /* LatestViewController.swift */; };
+		BF9474EF1C51A2F70079878D /* LatestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9474EE1C51A2F70079878D /* LatestView.swift */; };
+		BF9474F11C51ABEC0079878D /* JSONPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9474F01C51ABEC0079878D /* JSONPost.swift */; };
+		BF9474F31C51ABF70079878D /* JSONCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9474F21C51ABF70079878D /* JSONCategory.swift */; };
+		BF9474F51C51AC010079878D /* JSONComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9474F41C51AC010079878D /* JSONComment.swift */; };
+		BF9474F71C51C4EE0079878D /* JSONAuthor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9474F61C51C4EE0079878D /* JSONAuthor.swift */; };
+		BF9474FB1C52BB790079878D /* FeaturedPostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF9474FA1C52BB790079878D /* FeaturedPostTableViewCell.xib */; };
+		BF9474FD1C52E6370079878D /* RealmHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9474FC1C52E6370079878D /* RealmHelper.swift */; };
+		BF9475001C52F68F0079878D /* NSDateISO8601.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9474FF1C52F68F0079878D /* NSDateISO8601.swift */; };
 		BFEEBA6A1C500F860075BC5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEEBA691C500F860075BC5C /* AppDelegate.swift */; };
-		BFEEBA6C1C500F860075BC5C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEEBA6B1C500F860075BC5C /* ViewController.swift */; };
 		BFEEBA6F1C500F860075BC5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFEEBA6D1C500F860075BC5C /* Main.storyboard */; };
 		BFEEBA711C500F860075BC5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFEEBA701C500F860075BC5C /* Assets.xcassets */; };
 		BFEEBA741C500F860075BC5C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFEEBA721C500F860075BC5C /* LaunchScreen.storyboard */; };
 		BFEEBA7F1C500F860075BC5C /* TechCrunch_BrowserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEEBA7E1C500F860075BC5C /* TechCrunch_BrowserTests.swift */; };
 		BFEEBA8A1C500F870075BC5C /* TechCrunch_BrowserUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEEBA891C500F870075BC5C /* TechCrunch_BrowserUITests.swift */; };
+		BFEEBAA11C50216C0075BC5C /* TechcrunchAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEEBAA01C50216C0075BC5C /* TechcrunchAPI.swift */; };
+		BFEEBAA31C5043290075BC5C /* Latest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFEEBAA21C5043290075BC5C /* Latest.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,9 +68,37 @@
 		146D910ECE263C9E6B11AB18 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E67D9AE1F7C71F0E89FD516 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		81A81D524942F9A736B9681D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		BFEEBA661C500F860075BC5C /* TechCrunch Browser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TechCrunch Browser.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF3217271C5423D500EDC50D /* LoadingHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingHUD.swift; sourceTree = "<group>"; };
+		BF32172F1C5438EF00EDC50D /* StringExtensionHTML.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensionHTML.swift; sourceTree = "<group>"; };
+		BF3217331C56B74200EDC50D /* UIImageScaled.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageScaled.swift; sourceTree = "<group>"; };
+		BF3217351C56BEA200EDC50D /* ArticleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
+		BF3217371C56BF3200EDC50D /* ArticleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArticleView.swift; path = "TechCrunch Browser/UI/Views/ArticleView.swift"; sourceTree = SOURCE_ROOT; };
+		BF3217391C56BFA500EDC50D /* ArticleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ArticleView.xib; path = "TechCrunch Browser/UI/Views/ArticleView.xib"; sourceTree = SOURCE_ROOT; };
+		BF32173D1C56C28100EDC50D /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		BF32173F1C56C32400EDC50D /* RealmCurrentPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmCurrentPost.swift; sourceTree = "<group>"; };
+		BF3217411C56EB2100EDC50D /* Media.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Media.storyboard; sourceTree = "<group>"; };
+		BF3217431C56EC6100EDC50D /* StringArticleParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringArticleParser.swift; sourceTree = "<group>"; };
+		BF3217451C57092700EDC50D /* SearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchView.swift; path = "TechCrunch Browser/UI/Views/SearchView.swift"; sourceTree = SOURCE_ROOT; };
+		BF32174A1C5800ED00EDC50D /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		BF9474D71C5049D10079878D /* DesignableTabBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableTabBarItem.swift; sourceTree = "<group>"; };
+		BF9474D91C504F920079878D /* RealmPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmPost.swift; sourceTree = "<group>"; };
+		BF9474DB1C504FA30079878D /* RealmCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmCategory.swift; sourceTree = "<group>"; };
+		BF9474DF1C5080370079878D /* RealmComment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmComment.swift; sourceTree = "<group>"; };
+		BF9474E11C5193CF0079878D /* Browse.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Browse.storyboard; sourceTree = "<group>"; };
+		BF9474E31C5193E00079878D /* Search.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
+		BF9474E51C5193E60079878D /* Saved.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Saved.storyboard; sourceTree = "<group>"; };
+		BF9474EA1C519D100079878D /* PostTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PostTableViewCell.xib; path = "TechCrunch Browser/UI/Views/PostTableViewCell.xib"; sourceTree = SOURCE_ROOT; };
+		BF9474EC1C51A16C0079878D /* LatestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LatestViewController.swift; sourceTree = "<group>"; };
+		BF9474EE1C51A2F70079878D /* LatestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LatestView.swift; path = ../LatestView.swift; sourceTree = "<group>"; };
+		BF9474F01C51ABEC0079878D /* JSONPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONPost.swift; sourceTree = "<group>"; };
+		BF9474F21C51ABF70079878D /* JSONCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONCategory.swift; sourceTree = "<group>"; };
+		BF9474F41C51AC010079878D /* JSONComment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONComment.swift; sourceTree = "<group>"; };
+		BF9474F61C51C4EE0079878D /* JSONAuthor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONAuthor.swift; sourceTree = "<group>"; };
+		BF9474FA1C52BB790079878D /* FeaturedPostTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FeaturedPostTableViewCell.xib; path = ../FeaturedPostTableViewCell.xib; sourceTree = "<group>"; };
+		BF9474FC1C52E6370079878D /* RealmHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmHelper.swift; sourceTree = "<group>"; };
+		BF9474FF1C52F68F0079878D /* NSDateISO8601.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateISO8601.swift; sourceTree = "<group>"; };
+		BFEEBA661C500F860075BC5C /* TC Browser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TC Browser.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFEEBA691C500F860075BC5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BFEEBA6B1C500F860075BC5C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BFEEBA6E1C500F860075BC5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BFEEBA701C500F860075BC5C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BFEEBA731C500F860075BC5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +109,8 @@
 		BFEEBA851C500F860075BC5C /* TechCrunch BrowserUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TechCrunch BrowserUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFEEBA891C500F870075BC5C /* TechCrunch_BrowserUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechCrunch_BrowserUITests.swift; sourceTree = "<group>"; };
 		BFEEBA8B1C500F870075BC5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BFEEBAA01C50216C0075BC5C /* TechcrunchAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TechcrunchAPI.swift; sourceTree = "<group>"; };
+		BFEEBAA21C5043290075BC5C /* Latest.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Latest.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +156,53 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		BF32173B1C56C28100EDC50D /* Article */ = {
+			isa = PBXGroup;
+			children = (
+				BF3217371C56BF3200EDC50D /* ArticleView.swift */,
+				BF3217391C56BFA500EDC50D /* ArticleView.xib */,
+			);
+			path = Article;
+			sourceTree = "<group>";
+		};
+		BF32173C1C56C28100EDC50D /* Post */ = {
+			isa = PBXGroup;
+			children = (
+				BF9474FA1C52BB790079878D /* FeaturedPostTableViewCell.xib */,
+				BF9474EE1C51A2F70079878D /* LatestView.swift */,
+				BF9474EA1C519D100079878D /* PostTableViewCell.xib */,
+				BF32173D1C56C28100EDC50D /* PostTableViewCell.swift */,
+			);
+			path = Post;
+			sourceTree = "<group>";
+		};
+		BF3217471C57093F00EDC50D /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				BF3217451C57092700EDC50D /* SearchView.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		BF9474D61C5049C20079878D /* Designables */ = {
+			isa = PBXGroup;
+			children = (
+				BF9474D71C5049D10079878D /* DesignableTabBarItem.swift */,
+			);
+			path = Designables;
+			sourceTree = "<group>";
+		};
+		BF9474FE1C52F66C0079878D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BF9474FF1C52F68F0079878D /* NSDateISO8601.swift */,
+				BF32172F1C5438EF00EDC50D /* StringExtensionHTML.swift */,
+				BF3217331C56B74200EDC50D /* UIImageScaled.swift */,
+				BF3217431C56EC6100EDC50D /* StringArticleParser.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		BFEEBA5D1C500F860075BC5C = {
 			isa = PBXGroup;
 			children = (
@@ -111,7 +218,7 @@
 		BFEEBA671C500F860075BC5C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BFEEBA661C500F860075BC5C /* TechCrunch Browser.app */,
+				BFEEBA661C500F860075BC5C /* TC Browser.app */,
 				BFEEBA7A1C500F860075BC5C /* TechCrunch BrowserTests.xctest */,
 				BFEEBA851C500F860075BC5C /* TechCrunch BrowserUITests.xctest */,
 			);
@@ -121,11 +228,13 @@
 		BFEEBA681C500F860075BC5C /* TechCrunch Browser */ = {
 			isa = PBXGroup;
 			children = (
+				BF9474FE1C52F66C0079878D /* Extensions */,
+				BFEEBA9B1C50202A0075BC5C /* Protocols */,
+				BFEEBA9A1C50202A0075BC5C /* UI */,
+				BFEEBA981C50202A0075BC5C /* Server */,
+				BFEEBA971C50202A0075BC5C /* Persistence */,
 				BFEEBA691C500F860075BC5C /* AppDelegate.swift */,
-				BFEEBA6B1C500F860075BC5C /* ViewController.swift */,
-				BFEEBA6D1C500F860075BC5C /* Main.storyboard */,
 				BFEEBA701C500F860075BC5C /* Assets.xcassets */,
-				BFEEBA721C500F860075BC5C /* LaunchScreen.storyboard */,
 				BFEEBA751C500F860075BC5C /* Info.plist */,
 			);
 			path = "TechCrunch Browser";
@@ -149,6 +258,92 @@
 			path = "TechCrunch BrowserUITests";
 			sourceTree = "<group>";
 		};
+		BFEEBA971C50202A0075BC5C /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				BF9474D91C504F920079878D /* RealmPost.swift */,
+				BF9474DB1C504FA30079878D /* RealmCategory.swift */,
+				BF9474DF1C5080370079878D /* RealmComment.swift */,
+				BF9474FC1C52E6370079878D /* RealmHelper.swift */,
+				BF32173F1C56C32400EDC50D /* RealmCurrentPost.swift */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		BFEEBA981C50202A0075BC5C /* Server */ = {
+			isa = PBXGroup;
+			children = (
+				BFEEBA991C50202A0075BC5C /* JSON */,
+				BFEEBAA01C50216C0075BC5C /* TechcrunchAPI.swift */,
+			);
+			path = Server;
+			sourceTree = "<group>";
+		};
+		BFEEBA991C50202A0075BC5C /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				BF9474F01C51ABEC0079878D /* JSONPost.swift */,
+				BF9474F21C51ABF70079878D /* JSONCategory.swift */,
+				BF9474F41C51AC010079878D /* JSONComment.swift */,
+				BF9474F61C51C4EE0079878D /* JSONAuthor.swift */,
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
+		BFEEBA9A1C50202A0075BC5C /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				BF9474D61C5049C20079878D /* Designables */,
+				BFEEBA9C1C50202A0075BC5C /* Storyboards */,
+				BFEEBA9D1C50202A0075BC5C /* View Controllers */,
+				BFEEBA9F1C50202A0075BC5C /* Views */,
+				BF3217271C5423D500EDC50D /* LoadingHUD.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		BFEEBA9B1C50202A0075BC5C /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Protocols;
+			path = UI/Protocols;
+			sourceTree = "<group>";
+		};
+		BFEEBA9C1C50202A0075BC5C /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				BFEEBA721C500F860075BC5C /* LaunchScreen.storyboard */,
+				BFEEBA6D1C500F860075BC5C /* Main.storyboard */,
+				BFEEBAA21C5043290075BC5C /* Latest.storyboard */,
+				BF9474E11C5193CF0079878D /* Browse.storyboard */,
+				BF9474E31C5193E00079878D /* Search.storyboard */,
+				BF9474E51C5193E60079878D /* Saved.storyboard */,
+				BF3217411C56EB2100EDC50D /* Media.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		BFEEBA9D1C50202A0075BC5C /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BF9474EC1C51A16C0079878D /* LatestViewController.swift */,
+				BF3217351C56BEA200EDC50D /* ArticleViewController.swift */,
+				BF32174A1C5800ED00EDC50D /* SearchViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		BFEEBA9F1C50202A0075BC5C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BF3217471C57093F00EDC50D /* Search */,
+				BF32173B1C56C28100EDC50D /* Article */,
+				BF32173C1C56C28100EDC50D /* Post */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -169,7 +364,7 @@
 			);
 			name = "TechCrunch Browser";
 			productName = "TechCrunch Browser";
-			productReference = BFEEBA661C500F860075BC5C /* TechCrunch Browser.app */;
+			productReference = BFEEBA661C500F860075BC5C /* TC Browser.app */;
 			productType = "com.apple.product-type.application";
 		};
 		BFEEBA791C500F860075BC5C /* TechCrunch BrowserTests */ = {
@@ -257,8 +452,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFEEBA741C500F860075BC5C /* LaunchScreen.storyboard in Resources */,
+				BF9474E21C5193CF0079878D /* Browse.storyboard in Resources */,
+				BF9474FB1C52BB790079878D /* FeaturedPostTableViewCell.xib in Resources */,
 				BFEEBA711C500F860075BC5C /* Assets.xcassets in Resources */,
+				BF9474E61C5193E60079878D /* Saved.storyboard in Resources */,
+				BF32173A1C56BFA500EDC50D /* ArticleView.xib in Resources */,
 				BFEEBA6F1C500F860075BC5C /* Main.storyboard in Resources */,
+				BF3217421C56EB2100EDC50D /* Media.storyboard in Resources */,
+				BF9474E41C5193E00079878D /* Search.storyboard in Resources */,
+				BFEEBAA31C5043290075BC5C /* Latest.storyboard in Resources */,
+				BF9474EB1C519D100079878D /* PostTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,8 +534,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BFEEBA6C1C500F860075BC5C /* ViewController.swift in Sources */,
+				BF3217301C5438EF00EDC50D /* StringExtensionHTML.swift in Sources */,
+				BF3217281C5423D500EDC50D /* LoadingHUD.swift in Sources */,
+				BF9474FD1C52E6370079878D /* RealmHelper.swift in Sources */,
+				BF9474F51C51AC010079878D /* JSONComment.swift in Sources */,
+				BF9474D81C5049D10079878D /* DesignableTabBarItem.swift in Sources */,
+				BF9474DC1C504FA30079878D /* RealmCategory.swift in Sources */,
+				BF3217381C56BF3200EDC50D /* ArticleView.swift in Sources */,
+				BF9474F11C51ABEC0079878D /* JSONPost.swift in Sources */,
 				BFEEBA6A1C500F860075BC5C /* AppDelegate.swift in Sources */,
+				BF9475001C52F68F0079878D /* NSDateISO8601.swift in Sources */,
+				BF9474F71C51C4EE0079878D /* JSONAuthor.swift in Sources */,
+				BF3217401C56C32400EDC50D /* RealmCurrentPost.swift in Sources */,
+				BF3217441C56EC6100EDC50D /* StringArticleParser.swift in Sources */,
+				BF3217461C57092700EDC50D /* SearchView.swift in Sources */,
+				BF9474ED1C51A16D0079878D /* LatestViewController.swift in Sources */,
+				BF9474EF1C51A2F70079878D /* LatestView.swift in Sources */,
+				BF32173E1C56C28100EDC50D /* PostTableViewCell.swift in Sources */,
+				BF9474E01C5080370079878D /* RealmComment.swift in Sources */,
+				BF32174B1C5800ED00EDC50D /* SearchViewController.swift in Sources */,
+				BF3217361C56BEA300EDC50D /* ArticleViewController.swift in Sources */,
+				BF9474F31C51ABF70079878D /* JSONCategory.swift in Sources */,
+				BF3217341C56B74200EDC50D /* UIImageScaled.swift in Sources */,
+				BFEEBAA11C50216C0075BC5C /* TechcrunchAPI.swift in Sources */,
+				BF9474DA1C504F920079878D /* RealmPost.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,6 +599,7 @@
 				BFEEBA6E1C500F860075BC5C /* Base */,
 			);
 			name = Main.storyboard;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 		BFEEBA721C500F860075BC5C /* LaunchScreen.storyboard */ = {
@@ -382,6 +608,7 @@
 				BFEEBA731C500F860075BC5C /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -476,7 +703,7 @@
 				INFOPLIST_FILE = "TechCrunch Browser/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "JY.TechCrunch-Browser";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "TC Browser";
 			};
 			name = Debug;
 		};
@@ -488,7 +715,7 @@
 				INFOPLIST_FILE = "TechCrunch Browser/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "JY.TechCrunch-Browser";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "TC Browser";
 			};
 			name = Release;
 		};

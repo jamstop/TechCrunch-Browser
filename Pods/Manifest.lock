@@ -1,6 +1,10 @@
 PODS:
   - Alamofire (3.1.5)
+  - CCBottomRefreshControl (0.5.1):
+    - Masonry (~> 0.6.2)
   - Gloss (0.6.2)
+  - Kanna (1.0.3)
+  - Masonry (0.6.4)
   - Realm (0.97.0):
     - Realm/Headers (= 0.97.0)
   - Realm/Headers (0.97.0)
@@ -18,7 +22,9 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
-  - Gloss (~> 0.6)
+  - CCBottomRefreshControl
+  - Gloss
+  - Kanna (~> 1.0.0)
   - RealmSwift
   - RxBlocking (~> 2.1)
   - RxCocoa (~> 2.1)
@@ -28,7 +34,10 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Alamofire: 5f730ba29fd113b7ddd71c1e65d0c630acf5d7b0
+  CCBottomRefreshControl: 57a596348855260f627ffc2b311328ed15b94877
   Gloss: 22fd970682b5449e08e2f41c5087eefe7d7d084b
+  Kanna: 10c7f20762846e808ec5716e4191427bd71bf1c2
+  Masonry: 281802d04d787ea2973179ee8bcb50500579ede2
   Realm: b498a6fb9d288b171ff98d0e2d4384c295be8990
   RealmSwift: d014810dec75c9a3f1a33926d2dabfed855c582c
   RxBlocking: fa297def258d85c5beae9ed507f94645260b3747

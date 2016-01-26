@@ -85,7 +85,10 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods/Alamofire.framework"
+  install_framework "Pods/CCBottomRefreshControl.framework"
   install_framework "Pods/Gloss.framework"
+  install_framework "Pods/Kanna.framework"
+  install_framework "Pods/Masonry.framework"
   install_framework "Pods/Realm.framework"
   install_framework "Pods/RealmSwift.framework"
   install_framework "Pods/RxBlocking.framework"
@@ -96,7 +99,10 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods/Alamofire.framework"
+  install_framework "Pods/CCBottomRefreshControl.framework"
   install_framework "Pods/Gloss.framework"
+  install_framework "Pods/Kanna.framework"
+  install_framework "Pods/Masonry.framework"
   install_framework "Pods/Realm.framework"
   install_framework "Pods/RealmSwift.framework"
   install_framework "Pods/RxBlocking.framework"

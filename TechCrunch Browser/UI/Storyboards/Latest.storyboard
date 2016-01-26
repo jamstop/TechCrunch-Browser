@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="c1p-3Q-TRH">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Latest-->
+        <scene sceneID="ndR-7L-8JA">
+            <objects>
+                <navigationController id="c1p-3Q-TRH" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Latest" image="Top Stories" id="PM9-8A-q98"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vnS-7N-LWr">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="J6Y-vi-WUg" kind="relationship" relationship="rootViewController" id="4wV-tq-Ucp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GMy-Eh-Q6D" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-150" y="117"/>
+        </scene>
+        <!--Latest-->
+        <scene sceneID="2iv-W3-1pB">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="J6Y-vi-WUg" customClass="LatestViewController" customModule="TC_Browser" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="UTi-kG-kqk"/>
+                        <viewControllerLayoutGuide type="bottom" id="zjY-bY-twq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Kix-io-eL3" customClass="LatestView" customModule="TC_Browser" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IuM-07-iyG">
+                                <rect key="frame" x="-4" y="64" width="383" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="zjY-bY-twq" firstAttribute="top" secondItem="IuM-07-iyG" secondAttribute="bottom" id="6fO-EZ-8Ms"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="IuM-07-iyG" secondAttribute="trailing" constant="-20" id="M9Z-5J-HUh"/>
+                            <constraint firstItem="IuM-07-iyG" firstAttribute="leading" secondItem="Kix-io-eL3" secondAttribute="leadingMargin" constant="-20" id="QgO-2b-hsd"/>
+                            <constraint firstItem="IuM-07-iyG" firstAttribute="top" secondItem="UTi-kG-kqk" secondAttribute="bottom" id="sj0-tk-Lmr"/>
+                        </constraints>
+                        <connections>
+                            <outlet property="tableView" destination="IuM-07-iyG" id="0Wb-Sp-4HY"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" title="Latest" id="4Nn-AW-3EK"/>
+                    <connections>
+                        <outlet property="mainView" destination="Kix-io-eL3" id="W2H-4r-wBe"/>
+                        <segue destination="vZD-A4-R2z" kind="show" identifier="segueToArticle" id="7iR-ux-ZQo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vMI-XP-tdB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="677.5" y="116.5"/>
+        </scene>
+        <!--Article View Controller-->
+        <scene sceneID="DIw-cW-PsA">
+            <objects>
+                <viewController id="vZD-A4-R2z" customClass="ArticleViewController" customModule="TC_Browser" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tsi-II-XxH"/>
+                        <viewControllerLayoutGuide type="bottom" id="kcB-T9-N5b"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sbV-68-WgM" customClass="ArticleView" customModule="TC_Browser" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mYt-D3-22A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1181.5" y="116.5"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Top Stories" width="23" height="23"/>
+    </resources>
+</document>
