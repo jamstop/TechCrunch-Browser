@@ -48,6 +48,14 @@ class TechcrunchAPI {
     }
     
     /**
+     * Loading by tag
+    */
+     
+    func rx_loadPageWithQueryAndOffset(query: String, offset: Int) -> Observable<JSON> {
+        return get("posts", parameters: ["number": 20, "offset": offset, "search": query])
+    }
+    
+    /**
      * Loads recent news by offset
     */
     

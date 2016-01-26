@@ -108,7 +108,7 @@ class LatestViewController: UIViewController {
                     self.currentOffset += 10
                 },
                 onError: { (error) -> Void in
-                    print("Error logging in: \(error)")
+                    print(error)
                 },
                 onCompleted: { () -> Void in
                     print("Completed")
@@ -133,7 +133,7 @@ extension LatestViewController: UITableViewDelegate {
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
         if ((scrollView.contentOffset.y + scrollView.frame.size.height) >= scrollView.contentSize.height) {
-            if currentState == .Idle {
+            if currentState == .Idle && newPosts.count % 10 == 0{
                 currentState = .LoadingMore
                 mainView.startLoadMore()
                 loadFeed()

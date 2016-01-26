@@ -27,18 +27,18 @@
         <!--Search-->
         <scene sceneID="hlj-mS-Zeb">
             <objects>
-                <viewController id="cLj-PP-LxH" sceneMemberID="viewController">
+                <viewController id="cLj-PP-LxH" customClass="SearchViewController" customModule="TC_Browser" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MWw-x3-6JM"/>
                         <viewControllerLayoutGuide type="bottom" id="2nk-Ut-aU7"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="IOd-Is-4gp">
+                    <view key="view" contentMode="scaleToFill" id="IOd-Is-4gp" customClass="SearchView" customModule="TC_Browser" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" placeholder="Search Articles" translatesAutoresizingMaskIntoConstraints="NO" id="gDh-2t-TmG">
                                 <rect key="frame" x="-4" y="64" width="383" height="44"/>
-                                <textInputTraits key="textInputTraits" keyboardType="alphabet" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                <textInputTraits key="textInputTraits" keyboardType="alphabet" returnKeyType="done"/>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="L0K-Pk-J0K">
                                 <rect key="frame" x="-4" y="108" width="383" height="510"/>
@@ -55,13 +55,40 @@
                             <constraint firstItem="L0K-Pk-J0K" firstAttribute="top" secondItem="gDh-2t-TmG" secondAttribute="bottom" id="kp5-Ey-BbC"/>
                             <constraint firstAttribute="trailingMargin" secondItem="L0K-Pk-J0K" secondAttribute="trailing" constant="-20" id="tJL-ZW-09K"/>
                         </constraints>
+                        <connections>
+                            <outlet property="searchBar" destination="gDh-2t-TmG" id="9sd-7u-Grv"/>
+                            <outlet property="tableView" destination="L0K-Pk-J0K" id="GGV-tT-mgs"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Search" id="TlC-fh-KWF"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="mainView" destination="IOd-Is-4gp" id="9AQ-il-FY3"/>
+                        <segue destination="kQc-gK-8e9" kind="show" identifier="segueToArticleFromSearch" id="hxD-HD-8r4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sOe-EL-I4x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="622.5" y="378.5"/>
+            <point key="canvasLocation" x="701.5" y="378.5"/>
+        </scene>
+        <!--Article View Controller-->
+        <scene sceneID="FPY-0h-Wef">
+            <objects>
+                <viewController id="kQc-gK-8e9" customClass="ArticleViewController" customModule="TC_Browser" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nUx-96-GLL"/>
+                        <viewControllerLayoutGuide type="bottom" id="x6g-Tl-InZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="VUX-IF-B4o" customClass="ArticleView" customModule="TC_Browser" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KqF-a6-Jfw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1193.5" y="378.5"/>
         </scene>
     </scenes>
     <resources>
