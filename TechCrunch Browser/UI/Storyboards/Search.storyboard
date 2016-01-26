@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Search-->
@@ -32,15 +33,35 @@
                         <viewControllerLayoutGuide type="bottom" id="2nk-Ut-aU7"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="IOd-Is-4gp">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" placeholder="Search Articles" translatesAutoresizingMaskIntoConstraints="NO" id="gDh-2t-TmG">
+                                <rect key="frame" x="-4" y="64" width="383" height="44"/>
+                                <textInputTraits key="textInputTraits" keyboardType="alphabet" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="L0K-Pk-J0K">
+                                <rect key="frame" x="-4" y="108" width="383" height="510"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="L0K-Pk-J0K" firstAttribute="leading" secondItem="IOd-Is-4gp" secondAttribute="leadingMargin" constant="-20" id="Cdq-ro-o4u"/>
+                            <constraint firstItem="gDh-2t-TmG" firstAttribute="leading" secondItem="IOd-Is-4gp" secondAttribute="leadingMargin" constant="-20" id="DeX-q6-3Fr"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gDh-2t-TmG" secondAttribute="trailing" constant="-20" id="EzB-TA-3lt"/>
+                            <constraint firstItem="2nk-Ut-aU7" firstAttribute="top" secondItem="L0K-Pk-J0K" secondAttribute="bottom" id="Plp-Yd-lr2"/>
+                            <constraint firstItem="gDh-2t-TmG" firstAttribute="top" secondItem="MWw-x3-6JM" secondAttribute="bottom" id="j9k-nr-dWz"/>
+                            <constraint firstItem="L0K-Pk-J0K" firstAttribute="top" secondItem="gDh-2t-TmG" secondAttribute="bottom" id="kp5-Ey-BbC"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="L0K-Pk-J0K" secondAttribute="trailing" constant="-20" id="tJL-ZW-09K"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Search" id="TlC-fh-KWF"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sOe-EL-I4x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="623" y="379"/>
+            <point key="canvasLocation" x="622.5" y="378.5"/>
         </scene>
     </scenes>
     <resources>

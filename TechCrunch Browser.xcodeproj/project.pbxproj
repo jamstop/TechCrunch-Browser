@@ -18,6 +18,8 @@
 		BF3217401C56C32400EDC50D /* RealmCurrentPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF32173F1C56C32400EDC50D /* RealmCurrentPost.swift */; };
 		BF3217421C56EB2100EDC50D /* Media.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF3217411C56EB2100EDC50D /* Media.storyboard */; };
 		BF3217441C56EC6100EDC50D /* StringArticleParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3217431C56EC6100EDC50D /* StringArticleParser.swift */; };
+		BF3217461C57092700EDC50D /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3217451C57092700EDC50D /* SearchView.swift */; };
+		BF32174B1C5800ED00EDC50D /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF32174A1C5800ED00EDC50D /* SearchViewController.swift */; };
 		BF9474D81C5049D10079878D /* DesignableTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9474D71C5049D10079878D /* DesignableTabBarItem.swift */; };
 		BF9474DA1C504F920079878D /* RealmPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9474D91C504F920079878D /* RealmPost.swift */; };
 		BF9474DC1C504FA30079878D /* RealmCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9474DB1C504FA30079878D /* RealmCategory.swift */; };
@@ -76,6 +78,8 @@
 		BF32173F1C56C32400EDC50D /* RealmCurrentPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmCurrentPost.swift; sourceTree = "<group>"; };
 		BF3217411C56EB2100EDC50D /* Media.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Media.storyboard; sourceTree = "<group>"; };
 		BF3217431C56EC6100EDC50D /* StringArticleParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringArticleParser.swift; sourceTree = "<group>"; };
+		BF3217451C57092700EDC50D /* SearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchView.swift; path = "TechCrunch Browser/UI/Views/SearchView.swift"; sourceTree = SOURCE_ROOT; };
+		BF32174A1C5800ED00EDC50D /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		BF9474D71C5049D10079878D /* DesignableTabBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableTabBarItem.swift; sourceTree = "<group>"; };
 		BF9474D91C504F920079878D /* RealmPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmPost.swift; sourceTree = "<group>"; };
 		BF9474DB1C504FA30079878D /* RealmCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmCategory.swift; sourceTree = "<group>"; };
@@ -170,6 +174,14 @@
 				BF32173D1C56C28100EDC50D /* PostTableViewCell.swift */,
 			);
 			path = Post;
+			sourceTree = "<group>";
+		};
+		BF3217471C57093F00EDC50D /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				BF3217451C57092700EDC50D /* SearchView.swift */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 		BF9474D61C5049C20079878D /* Designables */ = {
@@ -317,6 +329,7 @@
 			children = (
 				BF9474EC1C51A16C0079878D /* LatestViewController.swift */,
 				BF3217351C56BEA200EDC50D /* ArticleViewController.swift */,
+				BF32174A1C5800ED00EDC50D /* SearchViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -324,6 +337,7 @@
 		BFEEBA9F1C50202A0075BC5C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BF3217471C57093F00EDC50D /* Search */,
 				BF32173B1C56C28100EDC50D /* Article */,
 				BF32173C1C56C28100EDC50D /* Post */,
 			);
@@ -533,10 +547,12 @@
 				BF9474F71C51C4EE0079878D /* JSONAuthor.swift in Sources */,
 				BF3217401C56C32400EDC50D /* RealmCurrentPost.swift in Sources */,
 				BF3217441C56EC6100EDC50D /* StringArticleParser.swift in Sources */,
+				BF3217461C57092700EDC50D /* SearchView.swift in Sources */,
 				BF9474ED1C51A16D0079878D /* LatestViewController.swift in Sources */,
 				BF9474EF1C51A2F70079878D /* LatestView.swift in Sources */,
 				BF32173E1C56C28100EDC50D /* PostTableViewCell.swift in Sources */,
 				BF9474E01C5080370079878D /* RealmComment.swift in Sources */,
+				BF32174B1C5800ED00EDC50D /* SearchViewController.swift in Sources */,
 				BF3217361C56BEA300EDC50D /* ArticleViewController.swift in Sources */,
 				BF9474F31C51ABF70079878D /* JSONCategory.swift in Sources */,
 				BF3217341C56B74200EDC50D /* UIImageScaled.swift in Sources */,

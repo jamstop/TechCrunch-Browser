@@ -144,6 +144,8 @@ extension LatestViewController: UITableViewDelegate {
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let currentPost = RealmCurrentPost()
         
+        print(indexPath.row)
+        print(realmPosts.count)
         currentPost.post = realmPosts[indexPath.row]
         currentPost.id = 0
         
@@ -152,6 +154,8 @@ extension LatestViewController: UITableViewDelegate {
         }
         
         currentPost.post!.content.parseArticleContent()
+        
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
         self.performSegueWithIdentifier("segueToArticle", sender: self)
         
@@ -186,7 +190,11 @@ extension LatestViewController: UITableViewDataSource {
         
         if indexPath.row < newPosts.count {
             cell.post = newPosts[indexPath.row]
-            realmPosts.append(cell.persistedPost)
+            
+            // Make sure that the post is properly aligned in its place
+            if indexPath.row == realmPosts.count{
+                realmPosts.append(cell.persistedPost)
+            }
         }
 
         
