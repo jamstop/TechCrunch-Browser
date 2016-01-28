@@ -79,7 +79,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pfW-Hz-MNN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="430.5" y="458"/>
+            <point key="canvasLocation" x="416.5" y="550"/>
         </scene>
     </scenes>
 </document>

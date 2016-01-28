@@ -105,7 +105,7 @@ class LatestViewController: UIViewController {
                     }
                     
                     self.currentState = .Idle
-                    self.currentOffset += 10
+                    self.currentOffset += 20
                 },
                 onError: { (error) -> Void in
                     print(error)
