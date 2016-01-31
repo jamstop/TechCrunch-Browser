@@ -11,6 +11,7 @@
                 <navigationController id="7ck-Es-4kJ" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Browse" image="Browse" id="Evw-zh-0s9"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="OVo-B7-8mk">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -32,16 +33,17 @@
                         <viewControllerLayoutGuide type="bottom" id="gOx-xQ-aud"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="D5G-uN-QoY">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Browse" image="Browse" id="c1p-uL-Q46"/>
                     <navigationItem key="navigationItem" title="Explore" id="IkS-Si-J5k"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Q9-vt-ZOJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="356" y="445"/>
+            <point key="canvasLocation" x="272" y="415"/>
         </scene>
     </scenes>
     <resources>

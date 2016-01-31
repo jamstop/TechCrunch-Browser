@@ -8,18 +8,83 @@
 
 import Foundation
 import RealmSwift
+import SDWebImage
+import RxSwift
 
 class RealmHelper {
     
-    let realm = try! Realm()
+    enum RealmError: ErrorType {
+        case ErrorDownloadingImage(error: NSError)
+        case ErrorParsingJSON(message: String)
+        case UnexpectedError(message: String)
+    }
     
-    func setPostsForCategory(categoryName: String, posts: [RealmPost]) {
+    let realm = try! Realm()
+    let downloader = SDWebImageDownloader()
+    
+    let disposeBag = DisposeBag()
+    
+    func setPostsForCategory(categoryName: String, posts: [JSONPost]) -> Observable<RealmCategory> {
+        
+        let postNumber = posts.count
+        var loaded = 0
+        
         let category = RealmCategory()
         category.name = categoryName
-//        category.posts = posts
         
+        return Observable.create { observer in
+            for post in posts {
+                self.JSONPostToRealmPost(post).subscribe(
+                    onNext: { post in
+                        category.posts.append(post)
+                        loaded += 1
+                        if loaded == postNumber {
+                            try! self.realm.write {
+                                self.realm.add(category, update: true)
+                            }
+                            observer.onNext(category)
+                        }
+                    },
+                    onError: { (error) -> Void in
+                        print(error)
+                    },
+                    onCompleted: {
+                        print("completed")
+                    },
+                    onDisposed: {
+                        
+                }).addDisposableTo(self.disposeBag)
+            }
+            return NopDisposable.instance
+        }
         
+    }
+    
+    // Conversion of JSONPost into a more cacheable format
+    
+    private func JSONPostToRealmPost(post: JSONPost) -> Observable<RealmPost> {
+        let newPost = RealmPost()
+        newPost.id = post.ID!
+        newPost.author = (post.author?.firstName)! + " " + (post.author?.lastName)!
+        newPost.date = post.date!
+        newPost.title = post.title!
+        newPost.excerpt = post.excerpt!
+        newPost.imageUrl = post.imageUrl!
         
+        return Observable.create { observer in
+            self.downloader.downloadImageWithURL(NSURL(string: newPost.imageUrl), options: .HighPriority, progress: nil, completed: { image, data, error, finished in
+                if let error = error {
+                    observer.onError(RealmError.ErrorDownloadingImage(error: error))
+                }
+                
+                newPost.imageData = data
+                observer.onNext(newPost)
+                
+            })
+            
+        return NopDisposable.instance
+            
+        }
     }
     
 }
