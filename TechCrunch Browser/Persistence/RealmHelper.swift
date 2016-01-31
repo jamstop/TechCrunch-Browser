@@ -22,30 +22,47 @@ class RealmHelper {
     let realm = try! Realm()
     let downloader = SDWebImageDownloader()
     
-    func setPostsForCategory(categoryName: String, posts: [JSONPost]) ->  {
+    let disposeBag = DisposeBag()
+    
+    func setPostsForCategory(categoryName: String, posts: [JSONPost]) -> Observable<RealmCategory> {
         
         let postNumber = posts.count
+        var loaded = 0
         
         let category = RealmCategory()
         category.name = categoryName
         
         return Observable.create { observer in
-            
+            for post in posts {
+                self.JSONPostToRealmPost(post).subscribe(
+                    onNext: { post in
+                        category.posts.append(post)
+                        loaded += 1
+                        if loaded == postNumber {
+                            try! self.realm.write {
+                                self.realm.add(category, update: true)
+                            }
+                            observer.onNext(category)
+                        }
+                    },
+                    onError: { (error) -> Void in
+                        print(error)
+                    },
+                    onCompleted: {
+                        print("completed")
+                    },
+                    onDisposed: {
+                        
+                }).addDisposableTo(self.disposeBag)
+            }
+            return NopDisposable.instance
         }
-        
-        return NopDisposable.instance
-        
-        
-        for post in posts {
-            
-        }
-        
         
     }
     
     // Conversion of JSONPost into a more cacheable format
     
-    func JSONPostToRealmPost(post: JSONPost) -> Observable<RealmPost> {
+    private func JSONPostToRealmPost(post: JSONPost) -> Observable<RealmPost> {
         let newPost = RealmPost()
         newPost.id = post.ID!
         newPost.author = (post.author?.firstName)! + " " + (post.author?.lastName)!

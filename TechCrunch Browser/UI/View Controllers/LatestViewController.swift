@@ -26,6 +26,7 @@ class LatestViewController: UIViewController {
     var realmPosts: [RealmPost] = []
     
     let realm = try! Realm()
+    let realmHelper = RealmHelper()
     
     enum LoadingState {
         case Idle
@@ -90,16 +91,18 @@ class LatestViewController: UIViewController {
             }.subscribe (
                 onNext: { (posts) -> Void in
                     self.newPosts.appendContentsOf(posts)
+//                    self.commitFeedToPersistence()
+                    
                     switch self.currentState {
                     case .Idle:
                         print("Cannot load without command")
-                    
+    
                     case .Loading:
                         self.mainView.endInitialLoad()
-
+    
                     case .Refreshing:
                         self.mainView.finishRefreshing()
-                    
+    
                     case .LoadingMore:
                         self.mainView.endLoadMore()
                     }
@@ -118,6 +121,38 @@ class LatestViewController: UIViewController {
             })
             .addDisposableTo(disposeBag)
     }
+    
+//    private func commitFeedToPersistence() {
+//        realmHelper.setPostsForCategory(category, posts: newPosts).subscribe(
+//            onNext: { category in
+//                self.realmPosts.appendContentsOf(category.posts)
+//                switch self.currentState {
+//                case .Idle:
+//                    print("Cannot load without command")
+//                    
+//                case .Loading:
+//                    self.mainView.endInitialLoad()
+//                    
+//                case .Refreshing:
+//                    self.mainView.finishRefreshing()
+//                    
+//                case .LoadingMore:
+//                    self.mainView.endLoadMore()
+//                }
+//                
+//                self.currentState = .Idle
+//                self.currentOffset += 20
+//            },
+//            onError: { error in
+//                print(error)
+//            },
+//            onCompleted: {
+//                print("completed")
+//            },
+//            onDisposed: {
+//                print("disposed")
+//        }).addDisposableTo(disposeBag)
+//    }
 
 }
 
