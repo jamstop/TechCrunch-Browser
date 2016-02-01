@@ -6,11 +6,11 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Search-->
+        <!--Explore-->
         <scene sceneID="cuB-eb-364">
             <objects>
                 <navigationController id="Bbp-VL-8qU" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Search" image="Search" id="bxr-up-mNK"/>
+                    <tabBarItem key="tabBarItem" title="Explore" image="Browse" id="bxr-up-mNK"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="LaS-s0-oYy">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -24,7 +24,7 @@
             </objects>
             <point key="canvasLocation" x="-167" y="364"/>
         </scene>
-        <!--Search-->
+        <!--Explore-->
         <scene sceneID="hlj-mS-Zeb">
             <objects>
                 <viewController id="cLj-PP-LxH" customClass="SearchViewController" customModule="TC_Browser" customModuleProvider="target" sceneMemberID="viewController">
@@ -60,7 +60,7 @@
                             <outlet property="tableView" destination="L0K-Pk-J0K" id="GGV-tT-mgs"/>
                         </connections>
                     </view>
-                    <navigationItem key="navigationItem" title="Search" id="TlC-fh-KWF"/>
+                    <navigationItem key="navigationItem" title="Explore" id="TlC-fh-KWF"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="mainView" destination="IOd-Is-4gp" id="9AQ-il-FY3"/>
@@ -92,6 +92,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Search" width="25" height="25"/>
+        <image name="Browse" width="48" height="32"/>
     </resources>
 </document>

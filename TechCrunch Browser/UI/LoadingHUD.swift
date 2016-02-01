@@ -8,8 +8,7 @@
 
 import UIKit
 
-class LoadingHUD: UIView
-{
+class LoadingHUD: UIView {
     
     private var backGroundView : UIView?
     private var progressIndicator : UIActivityIndicatorView?
@@ -28,23 +27,20 @@ class LoadingHUD: UIView
         return Static.instance!
     }
     
-    init()
-    {
+    init() {
         //Initialising Code
         backGroundColor = UIColor.clearColor()
         loaderColor = UIColor(red: 1, green: 128/255, blue: 128/255, alpha: 1.0)
         super.init(frame: CGRectZero)
     }
     
-    required init?(coder aDecoder: NSCoder)
-    {
+    required init?(coder aDecoder: NSCoder) {
         backGroundColor = UIColor.clearColor()
         loaderColor = UIColor(red: 1, green: 128/255, blue: 128/255, alpha: 1.0)
         super.init(coder: aDecoder)
     }
     
-    override init(frame: CGRect)
-    {
+    override init(frame: CGRect) {
         backGroundColor = UIColor.clearColor()
         loaderColor = UIColor(red: 1, green: 128/255, blue: 128/255, alpha: 1.0)
         super.init(frame: frame)
@@ -52,9 +48,8 @@ class LoadingHUD: UIView
     
     // MARK: -Public Methods
     
-    // Show the loader added to the mentioned view with the provided title and footer texts
-    func showInView(view : UIView)
-    {
+    // Show the loader added to the mentioned view
+    func showInView(view : UIView) {
         self.hide()
         self.frame = view.frame
         setIndicator()
@@ -64,17 +59,14 @@ class LoadingHUD: UIView
         view.addSubview(self)
     }
     
-    // Show the loader added to the mentioned window with the provided title and footer texts
-    func showInWindow(window : UIWindow)
-    {
+    // Show the loader added to the mentioned window
+    func showInWindow(window : UIWindow) {
         self.showInView(window)
     }
     
     // Removes the loader from its superview
-    func hide()
-    {
-        if self.superview != nil
-        {
+    func hide() {
+        if self.superview != nil {
             self.removeFromSuperview()
             progressIndicator?.stopAnimating()
         }
@@ -82,10 +74,8 @@ class LoadingHUD: UIView
     
     // MARK: -Set view properties
     
-    private func setBackGround(view : UIView)
-    {
-        if backGroundView?.superview != nil
-        {
+    private func setBackGround(view : UIView) {
+        if backGroundView?.superview != nil {
             backGroundView?.removeFromSuperview()
             let aView = backGroundView?.viewWithTag(1001) as UIView?
             aView?.removeFromSuperview()
@@ -102,10 +92,8 @@ class LoadingHUD: UIView
         self.addSubview(backGroundView!)
     }
     
-    private func setIndicator()
-    {
-        if progressIndicator?.superview != nil
-        {
+    private func setIndicator() {
+        if progressIndicator?.superview != nil {
             progressIndicator?.removeFromSuperview()
         }
         progressIndicator = UIActivityIndicatorView(activityIndicatorStyle: .WhiteLarge)
@@ -117,8 +105,7 @@ class LoadingHUD: UIView
     
     // MARK: -Get Frame
     
-    private func getBackGroundFrame(view : UIView) -> CGRect
-    {
+    private func getBackGroundFrame(view : UIView) -> CGRect {
         let side = progressIndicator!.frame.height
         let originX = view.center.x - (side/2)
         let originY = view.center.y - (side/2)
@@ -129,8 +116,7 @@ class LoadingHUD: UIView
     
     // MARK: Get Size
     
-    private func getLabelSize() -> CGSize
-    {
+    private func getLabelSize() -> CGSize {
         let width = progressIndicator!.frame.width * 3
         let height = progressIndicator!.frame.height / 1.5
         return CGSizeMake(width, height)
@@ -138,8 +124,7 @@ class LoadingHUD: UIView
     
     // MARK: -Get Origin
     
-    private func getIndicatorOrigin(view : UIView, activityIndicatorView indicator : UIActivityIndicatorView) -> CGPoint
-    {
+    private func getIndicatorOrigin(view : UIView, activityIndicatorView indicator : UIActivityIndicatorView) -> CGPoint {
         let side = indicator.frame.size.height
         let originX = (view.bounds.width/2) - (side/2)
         let originY = (view.bounds.height/2) - (side/2)

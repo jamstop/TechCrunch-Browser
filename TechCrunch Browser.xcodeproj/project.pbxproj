@@ -25,8 +25,7 @@
 		BF9474DA1C504F920079878D /* RealmPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9474D91C504F920079878D /* RealmPost.swift */; };
 		BF9474DC1C504FA30079878D /* RealmCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9474DB1C504FA30079878D /* RealmCategory.swift */; };
 		BF9474E01C5080370079878D /* RealmComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9474DF1C5080370079878D /* RealmComment.swift */; };
-		BF9474E21C5193CF0079878D /* Browse.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF9474E11C5193CF0079878D /* Browse.storyboard */; };
-		BF9474E41C5193E00079878D /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF9474E31C5193E00079878D /* Search.storyboard */; };
+		BF9474E41C5193E00079878D /* Explore.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF9474E31C5193E00079878D /* Explore.storyboard */; };
 		BF9474E61C5193E60079878D /* Saved.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF9474E51C5193E60079878D /* Saved.storyboard */; };
 		BF9474EB1C519D100079878D /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF9474EA1C519D100079878D /* PostTableViewCell.xib */; };
 		BF9474ED1C51A16D0079878D /* LatestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9474EC1C51A16C0079878D /* LatestViewController.swift */; };
@@ -86,8 +85,7 @@
 		BF9474D91C504F920079878D /* RealmPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmPost.swift; sourceTree = "<group>"; };
 		BF9474DB1C504FA30079878D /* RealmCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmCategory.swift; sourceTree = "<group>"; };
 		BF9474DF1C5080370079878D /* RealmComment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmComment.swift; sourceTree = "<group>"; };
-		BF9474E11C5193CF0079878D /* Browse.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Browse.storyboard; sourceTree = "<group>"; };
-		BF9474E31C5193E00079878D /* Search.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
+		BF9474E31C5193E00079878D /* Explore.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Explore.storyboard; sourceTree = "<group>"; };
 		BF9474E51C5193E60079878D /* Saved.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Saved.storyboard; sourceTree = "<group>"; };
 		BF9474EA1C519D100079878D /* PostTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PostTableViewCell.xib; path = "TechCrunch Browser/UI/Views/PostTableViewCell.xib"; sourceTree = SOURCE_ROOT; };
 		BF9474EC1C51A16C0079878D /* LatestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LatestViewController.swift; sourceTree = "<group>"; };
@@ -327,8 +325,7 @@
 				BFEEBA721C500F860075BC5C /* LaunchScreen.storyboard */,
 				BFEEBA6D1C500F860075BC5C /* Main.storyboard */,
 				BFEEBAA21C5043290075BC5C /* Latest.storyboard */,
-				BF9474E11C5193CF0079878D /* Browse.storyboard */,
-				BF9474E31C5193E00079878D /* Search.storyboard */,
+				BF9474E31C5193E00079878D /* Explore.storyboard */,
 				BF9474E51C5193E60079878D /* Saved.storyboard */,
 				BF3217411C56EB2100EDC50D /* Media.storyboard */,
 			);
@@ -463,14 +460,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFEEBA741C500F860075BC5C /* LaunchScreen.storyboard in Resources */,
-				BF9474E21C5193CF0079878D /* Browse.storyboard in Resources */,
 				BF9474FB1C52BB790079878D /* FeaturedPostTableViewCell.xib in Resources */,
 				BFEEBA711C500F860075BC5C /* Assets.xcassets in Resources */,
 				BF9474E61C5193E60079878D /* Saved.storyboard in Resources */,
 				BF32173A1C56BFA500EDC50D /* ArticleView.xib in Resources */,
 				BFEEBA6F1C500F860075BC5C /* Main.storyboard in Resources */,
 				BF3217421C56EB2100EDC50D /* Media.storyboard in Resources */,
-				BF9474E41C5193E00079878D /* Search.storyboard in Resources */,
+				BF9474E41C5193E00079878D /* Explore.storyboard in Resources */,
 				BFEEBAA31C5043290075BC5C /* Latest.storyboard in Resources */,
 				BF9474EB1C519D100079878D /* PostTableViewCell.xib in Resources */,
 			);
