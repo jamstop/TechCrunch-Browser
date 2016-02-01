@@ -33,7 +33,7 @@
                         <viewControllerLayoutGuide type="top" id="UTi-kG-kqk"/>
                         <viewControllerLayoutGuide type="bottom" id="zjY-bY-twq"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Kix-io-eL3" customClass="LatestView" customModule="TC_Browser" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="Kix-io-eL3" customClass="FeedView" customModule="TC_Browser" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>

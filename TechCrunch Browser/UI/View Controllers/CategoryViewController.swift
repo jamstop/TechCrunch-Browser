@@ -1,8 +1,8 @@
 //
-//  LatestViewController.swift
+//  CategoryViewController.swift
 //  TechCrunch Browser
 //
-//  Created by Jimmy Yue on 1/21/16.
+//  Created by Jimmy Yue on 2/1/16.
 //  Copyright © 2016 Jimmy Yue. All rights reserved.
 //
 
@@ -11,14 +11,14 @@ import RxSwift
 import Gloss
 import RealmSwift
 
-class LatestViewController: UIViewController {
+class CategoryViewController: UIViewController {
     
     var disposeBag = DisposeBag()
     
     let screenHeight = UIScreen.mainScreen().bounds.width
     private let API = TechcrunchAPI()
     
-    let category = "Latest"
+    var category: RealmCategory!
     
     var currentOffset = 0
     
@@ -42,7 +42,7 @@ class LatestViewController: UIViewController {
     @IBOutlet weak var mainView: FeedView!
     
     // MARK: - Overrides
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -52,11 +52,16 @@ class LatestViewController: UIViewController {
         
         currentState = .Loading
         mainView.startInitialLoad()
+        
+        self.navigationController?.navigationBar.tintColor = UIColor(red: 1, green: 128/255, blue: 128/255, alpha: 1.0)
+        self.navigationItem.title = category.name
     }
     
     // MARK: - Helpers
     
     private func setup() {
+        
+        category = realm.objects(RealmCurrentCategory)[0].category
         
         // table view setup
         mainView.tableView.delegate = self
@@ -77,7 +82,7 @@ class LatestViewController: UIViewController {
     }
     
     private func loadFeed() {
-        API.rx_loadLatestNewsByOffset(currentOffset).map { jsonResp -> [JSONPost] in
+        API.rx_loadLatestNewsByOffsetByCategory(currentOffset, category: category.name).map { jsonResp -> [JSONPost] in
             guard let postJSONArray = jsonResp["posts"] else {
                 throw TechcrunchAPI.APIError.ErrorParsingJSON
             }
@@ -91,18 +96,18 @@ class LatestViewController: UIViewController {
             }.subscribe (
                 onNext: { (posts) -> Void in
                     self.newPosts.appendContentsOf(posts)
-//                    self.commitFeedToPersistence()
+                    //                    self.commitFeedToPersistence()
                     
                     switch self.currentState {
                     case .Idle:
                         print("Cannot load without command")
-    
+                        
                     case .Loading:
                         self.mainView.endInitialLoad()
-    
+                        
                     case .Refreshing:
                         self.mainView.finishRefreshing()
-    
+                        
                     case .LoadingMore:
                         self.mainView.endLoadMore()
                     }
@@ -122,43 +127,43 @@ class LatestViewController: UIViewController {
             .addDisposableTo(disposeBag)
     }
     
-//    private func commitFeedToPersistence() {
-//        realmHelper.setPostsForCategory(category, posts: newPosts).subscribe(
-//            onNext: { category in
-//                self.realmPosts.appendContentsOf(category.posts)
-//                switch self.currentState {
-//                case .Idle:
-//                    print("Cannot load without command")
-//                    
-//                case .Loading:
-//                    self.mainView.endInitialLoad()
-//                    
-//                case .Refreshing:
-//                    self.mainView.finishRefreshing()
-//                    
-//                case .LoadingMore:
-//                    self.mainView.endLoadMore()
-//                }
-//                
-//                self.currentState = .Idle
-//                self.currentOffset += 20
-//            },
-//            onError: { error in
-//                print(error)
-//            },
-//            onCompleted: {
-//                print("completed")
-//            },
-//            onDisposed: {
-//                print("disposed")
-//        }).addDisposableTo(disposeBag)
-//    }
-
+    //    private func commitFeedToPersistence() {
+    //        realmHelper.setPostsForCategory(category, posts: newPosts).subscribe(
+    //            onNext: { category in
+    //                self.realmPosts.appendContentsOf(category.posts)
+    //                switch self.currentState {
+    //                case .Idle:
+    //                    print("Cannot load without command")
+    //
+    //                case .Loading:
+    //                    self.mainView.endInitialLoad()
+    //
+    //                case .Refreshing:
+    //                    self.mainView.finishRefreshing()
+    //
+    //                case .LoadingMore:
+    //                    self.mainView.endLoadMore()
+    //                }
+    //
+    //                self.currentState = .Idle
+    //                self.currentOffset += 20
+    //            },
+    //            onError: { error in
+    //                print(error)
+    //            },
+    //            onCompleted: {
+    //                print("completed")
+    //            },
+    //            onDisposed: {
+    //                print("disposed")
+    //        }).addDisposableTo(disposeBag)
+    //    }
+    
 }
 
 // MARK: - UITableViewDelegate
 
-extension LatestViewController: UITableViewDelegate {
+extension CategoryViewController: UITableViewDelegate {
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         if indexPath.row == 0 {
             return screenHeight
@@ -196,12 +201,12 @@ extension LatestViewController: UITableViewDelegate {
         
         
     }
-
+    
 }
 
 // MARK: - UITableViewDataSource
 
-extension LatestViewController: UITableViewDataSource {
+extension CategoryViewController: UITableViewDataSource {
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
@@ -218,18 +223,18 @@ extension LatestViewController: UITableViewDataSource {
             cell = tableView.dequeueReusableCellWithIdentifier("FeaturedPostTableViewCell") as! PostTableViewCell
             
         }
-        
+            
         else {
             cell = tableView.dequeueReusableCellWithIdentifier("PostTableViewCell") as! PostTableViewCell
         }
         
         if indexPath.row < newPosts.count {
-//            if indexPath.row < realmPosts.count {
-//                if let _ = realmPosts[indexPath.row].imageData {
-//                    cell.realmPost = realmPosts[indexPath.row]
-//                    return cell
-//                }
-//            }
+            //            if indexPath.row < realmPosts.count {
+            //                if let _ = realmPosts[indexPath.row].imageData {
+            //                    cell.realmPost = realmPosts[indexPath.row]
+            //                    return cell
+            //                }
+            //            }
             
             cell.post = newPosts[indexPath.row]
             
@@ -238,7 +243,7 @@ extension LatestViewController: UITableViewDataSource {
                 realmPosts.append(cell.persistedPost)
             }
         }
-
+        
         
         return cell
         

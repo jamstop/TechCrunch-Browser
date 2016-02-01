@@ -8,6 +8,7 @@
 
 import Foundation
 import RealmSwift
+import UIKit
 
 class RealmPost: Object {
     dynamic var id = 0

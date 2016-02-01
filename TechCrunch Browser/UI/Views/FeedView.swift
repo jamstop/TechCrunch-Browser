@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LatestView: UIView {
+class FeedView: UIView {
     
     // MARK: Properties
     
