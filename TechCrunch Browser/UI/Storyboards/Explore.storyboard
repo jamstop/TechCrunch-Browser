@@ -27,7 +27,7 @@
         <!--Explore-->
         <scene sceneID="hlj-mS-Zeb">
             <objects>
-                <viewController id="cLj-PP-LxH" customClass="SearchViewController" customModule="TC_Browser" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="cLj-PP-LxH" customClass="ExploreViewController" customModule="TC_Browser" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MWw-x3-6JM"/>
                         <viewControllerLayoutGuide type="bottom" id="2nk-Ut-aU7"/>
