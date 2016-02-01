@@ -82,7 +82,8 @@ class CategoryViewController: UIViewController {
     }
     
     private func loadFeed() {
-        API.rx_loadLatestNewsByOffsetByCategory(currentOffset, category: category.name).map { jsonResp -> [JSONPost] in
+        API.rx_loadLatestNewsByOffsetByCategory(currentOffset, category: category.slug).map { jsonResp -> [JSONPost] in
+            print(self.category)
             guard let postJSONArray = jsonResp["posts"] else {
                 throw TechcrunchAPI.APIError.ErrorParsingJSON
             }

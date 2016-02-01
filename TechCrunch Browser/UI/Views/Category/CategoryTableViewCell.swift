@@ -27,6 +27,7 @@ class CategoryTableViewCell: UITableViewCell {
             persistedCategory = RealmCategory()
             persistedCategory.name = (category!.name?.stringByDecodingHTMLEntities)!
             persistedCategory.id = category!.ID!
+            persistedCategory.slug = category!.slug!
             
         }
     }
