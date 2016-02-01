@@ -63,6 +63,22 @@ class TechcrunchAPI {
         return get("posts", parameters: ["number": 20, "offset": offset])
     }
     
+    /**
+     * Loads recent news by offset in given category
+    */
+     
+    func rx_loadLatestNewsByOffsetByCategory(offset: Int, category: String) -> Observable<JSON> {
+        return get("posts", parameters: ["number": 20, "offset": offset, "category":category])
+    }
+    
+    /**
+     * Get all of the categories
+    */
+     
+    func rx_getCategories() -> Observable<JSON> {
+        return get("categories", parameters: nil)
+    }
+    
     // MARK: - Basic HTTP Functions (RESTful TechCrunch)
     
     /**

@@ -27,6 +27,9 @@ class ExploreViewController: UIViewController {
     var newPosts: [JSONPost] = []
     var realmPosts: [RealmPost] = []
     
+    var categories: [JSONCategory] = []
+    var realmCategories: [RealmCategory] = []
+    
     let realm = try! Realm()
     
     enum LoadingState {
@@ -38,7 +41,7 @@ class ExploreViewController: UIViewController {
     
     // MARK: - Properties
     
-    @IBOutlet weak var mainView: SearchView!
+    @IBOutlet weak var mainView: ExploreView!
     
     // MARK: - Overrides
     
@@ -48,7 +51,10 @@ class ExploreViewController: UIViewController {
         setup()
         
         currentState = .Idle
-        mainView.startInitialLoad()
+        mainView.searching()
+        
+        mainView.startCategoryLoad()
+        loadCategories()
     }
     
     // MARK: - Helpers
@@ -56,8 +62,10 @@ class ExploreViewController: UIViewController {
     private func setup() {
         
         // table view setup
-        mainView.tableView.delegate = self
-        mainView.tableView.dataSource = self
+        mainView.searchTableView.delegate = self
+        mainView.searchTableView.dataSource = self
+        mainView.categoriesTableView.delegate = self
+        mainView.categoriesTableView.dataSource = self
         mainView.searchBar.delegate = self
         
         configureSearchBar()
@@ -80,16 +88,48 @@ class ExploreViewController: UIViewController {
             .driveNext { query in
                 if query != "" {
                     self.currentState = .Loading
-                    self.mainView.startInitialLoad()
+                    self.mainView.searching()
                     LoadingHUD.sharedHUD.showInView(self.view)
                     self.reset()
                     self.currentQuery = query
                     self.searchArticles()
+                } else {
+                    self.mainView.searching()
+                    self.currentState = .Idle
                 }
             }
             .addDisposableTo(disposeBag)
         
         
+    }
+    
+    private func loadCategories() {
+        API.rx_getCategories().map { jsonResp -> [JSONCategory] in
+            guard let categoryJSONArray = jsonResp["categories"] else {
+                throw TechcrunchAPI.APIError.ErrorParsingJSON
+            }
+            
+            guard let categories = JSONCategory.modelsFromJSONArray(categoryJSONArray as! [JSON]) else {
+                throw TechcrunchAPI.APIError.ErrorParsingJSON
+            }
+            
+            return categories
+            
+        }.subscribe (
+            onNext: { (categories) -> Void in
+                self.categories.appendContentsOf(categories)
+                self.mainView.endCategoryLoad()
+            },
+            onError: { (error) -> Void in
+                print(error)
+            },
+            onCompleted: { () -> Void in
+                print("Completed")
+            },
+            onDisposed: { () -> Void in
+                
+        })
+        .addDisposableTo(disposeBag)
     }
     
     private func searchArticles() {
@@ -108,7 +148,8 @@ class ExploreViewController: UIViewController {
                 onNext: { (posts) -> Void in
                     self.newPosts.appendContentsOf(posts)
                     
-                    self.mainView.endInitialLoad()
+                    self.mainView.searched()
+                    self.mainView.searchTableView.hidden = false
                     self.mainView.endLoadMore()
                     
                     self.currentState = .Idle
@@ -139,37 +180,59 @@ class ExploreViewController: UIViewController {
 
 extension ExploreViewController: UITableViewDelegate {
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        if tableView.tag == 0 {
+            return screenHeight/5
+        }
+
         return screenHeight/3
     }
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
         dismissKeyboard()
-        if ((scrollView.contentOffset.y + scrollView.frame.size.height) >= scrollView.contentSize.height) {
-            if currentState == .Idle && newPosts.count % 20 == 0 {
-                currentState = .Loading
-                mainView.startLoadMore()
-                searchArticles()
+        if scrollView.tag == 1 {
+            if ((scrollView.contentOffset.y + scrollView.frame.size.height) >= scrollView.contentSize.height) {
+                if currentState == .Idle && newPosts.count % 20 == 0 {
+                    currentState = .Loading
+                    mainView.startLoadMore()
+                    searchArticles()
+                }
             }
         }
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let currentPost = RealmCurrentPost()
-        dismissKeyboard()
-        print(indexPath.row)
-        print(realmPosts.count)
-        currentPost.post = realmPosts[indexPath.row]
-        currentPost.id = 0
-        
-        try! realm.write {
-            realm.add(currentPost, update: true)
+        if tableView.tag == 0 {
+            let currentCategory = RealmCurrentCategory()
+            dismissKeyboard()
+            currentCategory.category = realmCategories[indexPath.row]
+            currentCategory.id = 0
+            
+            try! realm.write {
+                realm.add(currentCategory, update: true)
+            }
+            
+            tableView.deselectRowAtIndexPath(indexPath, animated: true)
+            
+            self.performSegueWithIdentifier("segueToCategory", sender: self)
         }
-        
-        currentPost.post!.content.parseArticleContent()
-        
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        
-        self.performSegueWithIdentifier("segueToArticleFromSearch", sender: self)
+        if tableView.tag == 1 {
+            let currentPost = RealmCurrentPost()
+            dismissKeyboard()
+            print(indexPath.row)
+            print(realmPosts.count)
+            currentPost.post = realmPosts[indexPath.row]
+            currentPost.id = 0
+            
+            try! realm.write {
+                realm.add(currentPost, update: true)
+            }
+            
+            currentPost.post!.content.parseArticleContent()
+            
+            tableView.deselectRowAtIndexPath(indexPath, animated: true)
+            
+            self.performSegueWithIdentifier("segueToArticleFromSearch", sender: self)
+        }
         
         
     }
@@ -185,10 +248,30 @@ extension ExploreViewController: UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+
+        if tableView.tag == 0 {
+            return categories.count
+        }
         return newPosts.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        if tableView.tag == 0 {
+            var cell: CategoryTableViewCell!
+            
+            cell = tableView.dequeueReusableCellWithIdentifier("CategoryTableViewCell") as! CategoryTableViewCell
+            
+            if indexPath.row < categories.count {
+                cell.category = categories[indexPath.row]
+                
+                if indexPath.row == realmCategories.count{
+                    realmCategories.append(cell.persistedCategory)
+                }
+            }
+            
+            return cell
+        }
+        
         var cell: PostTableViewCell!
         
         cell = tableView.dequeueReusableCellWithIdentifier("PostTableViewCell") as! PostTableViewCell

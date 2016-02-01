@@ -10,7 +10,7 @@ import Foundation
 import RealmSwift
 
 class RealmCategory: Object {
-    dynamic var id = ""
+    dynamic var id = 0
     dynamic var name = ""
     let posts = List<RealmPost>()
     

@@ -32,7 +32,7 @@
                         <viewControllerLayoutGuide type="top" id="MWw-x3-6JM"/>
                         <viewControllerLayoutGuide type="bottom" id="2nk-Ut-aU7"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="IOd-Is-4gp" customClass="SearchView" customModule="TC_Browser" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="IOd-Is-4gp" customClass="ExploreView" customModule="TC_Browser" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -40,24 +40,33 @@
                                 <rect key="frame" x="-4" y="64" width="383" height="44"/>
                                 <textInputTraits key="textInputTraits" keyboardType="alphabet" returnKeyType="done"/>
                             </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="L0K-Pk-J0K">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ExA-90-ha2">
+                                <rect key="frame" x="-4" y="108" width="383" height="510"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                            <tableView clipsSubviews="YES" tag="1" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="L0K-Pk-J0K">
                                 <rect key="frame" x="-4" y="108" width="383" height="510"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="ExA-90-ha2" firstAttribute="top" secondItem="gDh-2t-TmG" secondAttribute="bottom" id="BNf-6x-l4a"/>
                             <constraint firstItem="L0K-Pk-J0K" firstAttribute="leading" secondItem="IOd-Is-4gp" secondAttribute="leadingMargin" constant="-20" id="Cdq-ro-o4u"/>
                             <constraint firstItem="gDh-2t-TmG" firstAttribute="leading" secondItem="IOd-Is-4gp" secondAttribute="leadingMargin" constant="-20" id="DeX-q6-3Fr"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ExA-90-ha2" secondAttribute="trailing" constant="-20" id="E2i-5k-geN"/>
                             <constraint firstAttribute="trailingMargin" secondItem="gDh-2t-TmG" secondAttribute="trailing" constant="-20" id="EzB-TA-3lt"/>
+                            <constraint firstItem="2nk-Ut-aU7" firstAttribute="top" secondItem="ExA-90-ha2" secondAttribute="bottom" id="Inh-fu-YqW"/>
                             <constraint firstItem="2nk-Ut-aU7" firstAttribute="top" secondItem="L0K-Pk-J0K" secondAttribute="bottom" id="Plp-Yd-lr2"/>
                             <constraint firstItem="gDh-2t-TmG" firstAttribute="top" secondItem="MWw-x3-6JM" secondAttribute="bottom" id="j9k-nr-dWz"/>
                             <constraint firstItem="L0K-Pk-J0K" firstAttribute="top" secondItem="gDh-2t-TmG" secondAttribute="bottom" id="kp5-Ey-BbC"/>
                             <constraint firstAttribute="trailingMargin" secondItem="L0K-Pk-J0K" secondAttribute="trailing" constant="-20" id="tJL-ZW-09K"/>
+                            <constraint firstItem="ExA-90-ha2" firstAttribute="leading" secondItem="IOd-Is-4gp" secondAttribute="leadingMargin" constant="-20" id="tnN-C7-l7a"/>
                         </constraints>
                         <connections>
+                            <outlet property="categoriesTableView" destination="ExA-90-ha2" id="oiv-qb-wze"/>
                             <outlet property="searchBar" destination="gDh-2t-TmG" id="9sd-7u-Grv"/>
-                            <outlet property="tableView" destination="L0K-Pk-J0K" id="GGV-tT-mgs"/>
+                            <outlet property="searchTableView" destination="L0K-Pk-J0K" id="m9T-wy-OXV"/>
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Explore" id="TlC-fh-KWF"/>
@@ -65,11 +74,70 @@
                     <connections>
                         <outlet property="mainView" destination="IOd-Is-4gp" id="9AQ-il-FY3"/>
                         <segue destination="kQc-gK-8e9" kind="show" identifier="segueToArticleFromSearch" id="hxD-HD-8r4"/>
+                        <segue destination="peG-yf-EOS" kind="show" identifier="segueToCategory" id="WHM-Ot-qDZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sOe-EL-I4x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="701.5" y="378.5"/>
+            <point key="canvasLocation" x="623.5" y="378.5"/>
+        </scene>
+        <!--Category Title-->
+        <scene sceneID="j2u-Sq-Xlo">
+            <objects>
+                <viewController id="peG-yf-EOS" customClass="CategoryViewController" customModule="TC_Browser" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8vu-6q-Xeu"/>
+                        <viewControllerLayoutGuide type="bottom" id="Pmx-gY-zel"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ifb-XD-2SC" customClass="FeedView" customModule="TC_Browser" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nWH-Be-QzE">
+                                <rect key="frame" x="-4" y="64" width="383" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="nWH-Be-QzE" firstAttribute="top" secondItem="8vu-6q-Xeu" secondAttribute="bottom" id="PRK-0Y-2BR"/>
+                            <constraint firstItem="Pmx-gY-zel" firstAttribute="top" secondItem="nWH-Be-QzE" secondAttribute="bottom" id="lHP-J2-G2F"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="nWH-Be-QzE" secondAttribute="trailing" constant="-20" id="p9c-ST-tZ1"/>
+                            <constraint firstItem="nWH-Be-QzE" firstAttribute="leading" secondItem="ifb-XD-2SC" secondAttribute="leadingMargin" constant="-20" id="tOZ-vS-wn9"/>
+                        </constraints>
+                        <connections>
+                            <outlet property="tableView" destination="nWH-Be-QzE" id="S9v-6J-yOa"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" title="Category Title" id="L3M-vN-g0T"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="mainView" destination="ifb-XD-2SC" id="690-JQ-H5T"/>
+                        <segue destination="8zY-9t-AaM" kind="show" identifier="segueToArticle" id="VG9-6q-sql"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U8J-6n-dfM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1180.5" y="378.5"/>
+        </scene>
+        <!--Article View Controller-->
+        <scene sceneID="2V1-dZ-HYN">
+            <objects>
+                <viewController id="8zY-9t-AaM" customClass="ArticleViewController" customModule="TC_Browser" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="348-DW-WAc"/>
+                        <viewControllerLayoutGuide type="bottom" id="5n7-Lk-pRx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="EL2-Ja-MYr" customClass="ArticleView" customModule="TC_Browser" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HuR-Ap-XK6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1643.5" y="378.5"/>
         </scene>
         <!--Article View Controller-->
         <scene sceneID="FPY-0h-Wef">
@@ -88,7 +156,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KqF-a6-Jfw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1193.5" y="378.5"/>
+            <point key="canvasLocation" x="623.5" y="1286.5"/>
         </scene>
     </scenes>
     <resources>
