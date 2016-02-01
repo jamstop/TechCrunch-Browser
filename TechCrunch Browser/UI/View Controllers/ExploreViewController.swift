@@ -12,7 +12,7 @@ import RxCocoa
 import Gloss
 import RealmSwift
 
-class SearchViewController: UIViewController {
+class ExploreViewController: UIViewController {
     
     var disposeBag = DisposeBag()
     
@@ -137,7 +137,7 @@ class SearchViewController: UIViewController {
 
 // MARK: - UITableViewDelegate
 
-extension SearchViewController: UITableViewDelegate {
+extension ExploreViewController: UITableViewDelegate {
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return screenHeight/3
     }
@@ -178,7 +178,7 @@ extension SearchViewController: UITableViewDelegate {
 
 // MARK: - UITableViewDataSource
 
-extension SearchViewController: UITableViewDataSource {
+extension ExploreViewController: UITableViewDataSource {
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
@@ -211,7 +211,7 @@ extension SearchViewController: UITableViewDataSource {
 
 // MARK: - UISearchBarDelegate
 
-extension SearchViewController: UISearchBarDelegate {
+extension ExploreViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
         dismissKeyboard()
     }
