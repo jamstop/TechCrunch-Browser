@@ -109,7 +109,13 @@
                             <outlet property="tableView" destination="nWH-Be-QzE" id="S9v-6J-yOa"/>
                         </connections>
                     </view>
-                    <navigationItem key="navigationItem" title="Category Title" id="L3M-vN-g0T"/>
+                    <navigationItem key="navigationItem" title="Category Title" id="L3M-vN-g0T">
+                        <barButtonItem key="rightBarButtonItem" image="Saved" id="Dcy-qu-xMw">
+                            <connections>
+                                <action selector="saveCategoryPressed:" destination="peG-yf-EOS" id="c7w-xp-006"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="mainView" destination="ifb-XD-2SC" id="690-JQ-H5T"/>
@@ -161,5 +167,6 @@
     </scenes>
     <resources>
         <image name="Browse" width="48" height="32"/>
+        <image name="Saved" width="48" height="32"/>
     </resources>
 </document>

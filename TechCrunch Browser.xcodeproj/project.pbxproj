@@ -41,6 +41,8 @@
 		BF9474FB1C52BB790079878D /* FeaturedPostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF9474FA1C52BB790079878D /* FeaturedPostTableViewCell.xib */; };
 		BF9474FD1C52E6370079878D /* RealmHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9474FC1C52E6370079878D /* RealmHelper.swift */; };
 		BF9475001C52F68F0079878D /* NSDateISO8601.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9474FF1C52F68F0079878D /* NSDateISO8601.swift */; };
+		BFB8F3081C60878200964394 /* RealmSavedCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB8F3071C60878200964394 /* RealmSavedCategories.swift */; };
+		BFB8F30A1C60878E00964394 /* RealmSavedPosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB8F3091C60878E00964394 /* RealmSavedPosts.swift */; };
 		BFEEBA6A1C500F860075BC5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEEBA691C500F860075BC5C /* AppDelegate.swift */; };
 		BFEEBA6F1C500F860075BC5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFEEBA6D1C500F860075BC5C /* Main.storyboard */; };
 		BFEEBA711C500F860075BC5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFEEBA701C500F860075BC5C /* Assets.xcassets */; };
@@ -105,6 +107,8 @@
 		BF9474FA1C52BB790079878D /* FeaturedPostTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FeaturedPostTableViewCell.xib; path = ../FeaturedPostTableViewCell.xib; sourceTree = "<group>"; };
 		BF9474FC1C52E6370079878D /* RealmHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmHelper.swift; sourceTree = "<group>"; };
 		BF9474FF1C52F68F0079878D /* NSDateISO8601.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateISO8601.swift; sourceTree = "<group>"; };
+		BFB8F3071C60878200964394 /* RealmSavedCategories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmSavedCategories.swift; sourceTree = "<group>"; };
+		BFB8F3091C60878E00964394 /* RealmSavedPosts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmSavedPosts.swift; sourceTree = "<group>"; };
 		BFEEBA661C500F860075BC5C /* TC Browser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TC Browser.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFEEBA691C500F860075BC5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFEEBA6E1C500F860075BC5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -293,6 +297,8 @@
 				BF9474FC1C52E6370079878D /* RealmHelper.swift */,
 				BF32173F1C56C32400EDC50D /* RealmCurrentPost.swift */,
 				BF4AF29D1C5F53B700D958B7 /* RealmCurrentCategory.swift */,
+				BFB8F3071C60878200964394 /* RealmSavedCategories.swift */,
+				BFB8F3091C60878E00964394 /* RealmSavedPosts.swift */,
 			);
 			path = Persistence;
 			sourceTree = "<group>";
@@ -570,6 +576,7 @@
 				BF9474F51C51AC010079878D /* JSONComment.swift in Sources */,
 				BF9474D81C5049D10079878D /* DesignableTabBarItem.swift in Sources */,
 				BF9474DC1C504FA30079878D /* RealmCategory.swift in Sources */,
+				BFB8F3081C60878200964394 /* RealmSavedCategories.swift in Sources */,
 				BF3217381C56BF3200EDC50D /* ArticleView.swift in Sources */,
 				BF9474F11C51ABEC0079878D /* JSONPost.swift in Sources */,
 				BFEEBA6A1C500F860075BC5C /* AppDelegate.swift in Sources */,
@@ -581,6 +588,7 @@
 				BF3217461C57092700EDC50D /* ExploreView.swift in Sources */,
 				BF9474ED1C51A16D0079878D /* LatestViewController.swift in Sources */,
 				BF4AF29A1C5F520B00D958B7 /* CategoryViewController.swift in Sources */,
+				BFB8F30A1C60878E00964394 /* RealmSavedPosts.swift in Sources */,
 				BF9474EF1C51A2F70079878D /* FeedView.swift in Sources */,
 				BF32173E1C56C28100EDC50D /* PostTableViewCell.swift in Sources */,
 				BF9474E01C5080370079878D /* RealmComment.swift in Sources */,

@@ -28,6 +28,8 @@ class CategoryViewController: UIViewController {
     let realm = try! Realm()
     let realmHelper = RealmHelper()
     
+    let saveAlert = UIAlertController(title: "Subscribe to category?", message: "You will receive push notifications when new posts are added.", preferredStyle: .Alert)
+    
     enum LoadingState {
         case Idle
         case Loading
@@ -41,6 +43,11 @@ class CategoryViewController: UIViewController {
     
     @IBOutlet weak var mainView: FeedView!
     
+    @IBAction func saveCategoryPressed(sender: AnyObject) {
+        presentViewController(saveAlert, animated: true, completion: nil)
+    }
+    
+    
     // MARK: - Overrides
     
     override func viewDidLoad() {
@@ -49,12 +56,6 @@ class CategoryViewController: UIViewController {
         setup()
         
         loadFeed()
-        
-        currentState = .Loading
-        mainView.startInitialLoad()
-        
-        self.navigationController?.navigationBar.tintColor = UIColor(red: 1, green: 128/255, blue: 128/255, alpha: 1.0)
-        self.navigationItem.title = category.name
     }
     
     // MARK: - Helpers
@@ -67,6 +68,22 @@ class CategoryViewController: UIViewController {
         mainView.tableView.delegate = self
         mainView.tableView.dataSource = self
         mainView.refreshControl.addTarget(self, action: "pullToRefresh:", forControlEvents: .ValueChanged)
+        
+        // Etc. setup
+        currentState = .Loading
+        mainView.startInitialLoad()
+        
+        self.navigationController?.navigationBar.tintColor = UIColor(red: 1, green: 128/255, blue: 128/255, alpha: 1.0)
+        self.navigationItem.title = category.name
+        
+        saveAlert.addAction(UIAlertAction(title: "Yes", style: .Cancel, handler: { Void in
+            self.saveCategory()
+        }))
+        saveAlert.addAction(UIAlertAction(title: "No", style: .Cancel, handler: nil))
+        
+    }
+    
+    func saveCategory() {
         
     }
     
@@ -127,38 +144,6 @@ class CategoryViewController: UIViewController {
             })
             .addDisposableTo(disposeBag)
     }
-    
-    //    private func commitFeedToPersistence() {
-    //        realmHelper.setPostsForCategory(category, posts: newPosts).subscribe(
-    //            onNext: { category in
-    //                self.realmPosts.appendContentsOf(category.posts)
-    //                switch self.currentState {
-    //                case .Idle:
-    //                    print("Cannot load without command")
-    //
-    //                case .Loading:
-    //                    self.mainView.endInitialLoad()
-    //
-    //                case .Refreshing:
-    //                    self.mainView.finishRefreshing()
-    //
-    //                case .LoadingMore:
-    //                    self.mainView.endLoadMore()
-    //                }
-    //
-    //                self.currentState = .Idle
-    //                self.currentOffset += 20
-    //            },
-    //            onError: { error in
-    //                print(error)
-    //            },
-    //            onCompleted: {
-    //                print("completed")
-    //            },
-    //            onDisposed: {
-    //                print("disposed")
-    //        }).addDisposableTo(disposeBag)
-    //    }
     
 }
 
