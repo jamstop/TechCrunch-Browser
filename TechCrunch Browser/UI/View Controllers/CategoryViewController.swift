@@ -76,7 +76,7 @@ class CategoryViewController: UIViewController {
         self.navigationController?.navigationBar.tintColor = UIColor(red: 1, green: 128/255, blue: 128/255, alpha: 1.0)
         self.navigationItem.title = category.name
         
-        saveAlert.addAction(UIAlertAction(title: "Yes", style: .Cancel, handler: { Void in
+        saveAlert.addAction(UIAlertAction(title: "Yes", style: .Default, handler: { Void in
             self.saveCategory()
         }))
         saveAlert.addAction(UIAlertAction(title: "No", style: .Cancel, handler: nil))
@@ -84,7 +84,7 @@ class CategoryViewController: UIViewController {
     }
     
     func saveCategory() {
-        
+        realmHelper.addPostToSaved(category)
     }
     
     func pullToRefresh(sender: UIRefreshControl) {
