@@ -1,21 +1,17 @@
 //
-//  RealmComment.swift
+//  RealmCurrentCategory.swift
 //  TechCrunch Browser
 //
-//  Created by Jimmy Yue on 1/20/16.
+//  Created by Jimmy Yue on 2/1/16.
 //  Copyright © 2016 Jimmy Yue. All rights reserved.
 //
 
 import Foundation
 import RealmSwift
 
-class RealmComment: Object {
+class RealmCurrentCategory: Object {
     dynamic var id = 0
-    dynamic var name = ""
-    dynamic var avatarUrl = ""
-    dynamic var content = ""
-    dynamic var date = ""
-    dynamic var likecount = 0
+    dynamic var category: RealmCategory?
     
     override static func primaryKey() -> String? {
         return "id"

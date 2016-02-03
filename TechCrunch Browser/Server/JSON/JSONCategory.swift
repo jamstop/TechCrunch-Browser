@@ -15,16 +15,19 @@ struct JSONCategory: Decodable {
     
     let ID: Int?
     let name: String?
+    let slug: String?
     
     init?(json: JSON) {
         self.ID = "ID" <~~ json
         self.name = "name" <~~ json
+        self.slug = "slug" <~~ json
     }
     
     func toJSON() -> JSON? {
         return jsonify([
             "ID" ~~> self.ID,
-            "name" ~~> self.name
+            "name" ~~> self.name,
+            "slug" ~~> self.slug
             ])
     }
 }

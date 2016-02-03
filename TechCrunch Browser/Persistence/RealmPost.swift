@@ -8,6 +8,7 @@
 
 import Foundation
 import RealmSwift
+import UIKit
 
 class RealmPost: Object {
     dynamic var id = 0
@@ -18,6 +19,7 @@ class RealmPost: Object {
     dynamic var excerpt = ""
     dynamic var likes = 0
     dynamic var imageUrl = ""
+    dynamic var imageData: NSData?
     var categories: [RealmCategory] {
         return linkingObjects(RealmCategory.self, forProperty: "posts")
     }

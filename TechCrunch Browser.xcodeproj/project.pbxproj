@@ -18,18 +18,22 @@
 		BF3217401C56C32400EDC50D /* RealmCurrentPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF32173F1C56C32400EDC50D /* RealmCurrentPost.swift */; };
 		BF3217421C56EB2100EDC50D /* Media.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF3217411C56EB2100EDC50D /* Media.storyboard */; };
 		BF3217441C56EC6100EDC50D /* StringArticleParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3217431C56EC6100EDC50D /* StringArticleParser.swift */; };
-		BF3217461C57092700EDC50D /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3217451C57092700EDC50D /* SearchView.swift */; };
-		BF32174B1C5800ED00EDC50D /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF32174A1C5800ED00EDC50D /* SearchViewController.swift */; };
+		BF3217461C57092700EDC50D /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3217451C57092700EDC50D /* ExploreView.swift */; };
+		BF32174B1C5800ED00EDC50D /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF32174A1C5800ED00EDC50D /* ExploreViewController.swift */; };
+		BF4AF29A1C5F520B00D958B7 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4AF2991C5F520B00D958B7 /* CategoryViewController.swift */; };
+		BF4AF29E1C5F53B700D958B7 /* RealmCurrentCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4AF29D1C5F53B700D958B7 /* RealmCurrentCategory.swift */; };
+		BF81ADB81C5A9C5000F75F30 /* LatestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF81ADB71C5A9C4F00F75F30 /* LatestViewModel.swift */; };
+		BF81ADC61C5EDD8000F75F30 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF81ADC51C5EDD8000F75F30 /* CategoryTableViewCell.swift */; };
+		BF81ADC81C5EDD8D00F75F30 /* CategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF81ADC71C5EDD8D00F75F30 /* CategoryTableViewCell.xib */; };
 		BF9474D81C5049D10079878D /* DesignableTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9474D71C5049D10079878D /* DesignableTabBarItem.swift */; };
 		BF9474DA1C504F920079878D /* RealmPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9474D91C504F920079878D /* RealmPost.swift */; };
 		BF9474DC1C504FA30079878D /* RealmCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9474DB1C504FA30079878D /* RealmCategory.swift */; };
 		BF9474E01C5080370079878D /* RealmComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9474DF1C5080370079878D /* RealmComment.swift */; };
-		BF9474E21C5193CF0079878D /* Browse.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF9474E11C5193CF0079878D /* Browse.storyboard */; };
-		BF9474E41C5193E00079878D /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF9474E31C5193E00079878D /* Search.storyboard */; };
+		BF9474E41C5193E00079878D /* Explore.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF9474E31C5193E00079878D /* Explore.storyboard */; };
 		BF9474E61C5193E60079878D /* Saved.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF9474E51C5193E60079878D /* Saved.storyboard */; };
 		BF9474EB1C519D100079878D /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF9474EA1C519D100079878D /* PostTableViewCell.xib */; };
 		BF9474ED1C51A16D0079878D /* LatestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9474EC1C51A16C0079878D /* LatestViewController.swift */; };
-		BF9474EF1C51A2F70079878D /* LatestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9474EE1C51A2F70079878D /* LatestView.swift */; };
+		BF9474EF1C51A2F70079878D /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9474EE1C51A2F70079878D /* FeedView.swift */; };
 		BF9474F11C51ABEC0079878D /* JSONPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9474F01C51ABEC0079878D /* JSONPost.swift */; };
 		BF9474F31C51ABF70079878D /* JSONCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9474F21C51ABF70079878D /* JSONCategory.swift */; };
 		BF9474F51C51AC010079878D /* JSONComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9474F41C51AC010079878D /* JSONComment.swift */; };
@@ -37,6 +41,13 @@
 		BF9474FB1C52BB790079878D /* FeaturedPostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF9474FA1C52BB790079878D /* FeaturedPostTableViewCell.xib */; };
 		BF9474FD1C52E6370079878D /* RealmHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9474FC1C52E6370079878D /* RealmHelper.swift */; };
 		BF9475001C52F68F0079878D /* NSDateISO8601.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9474FF1C52F68F0079878D /* NSDateISO8601.swift */; };
+		BFB8F3081C60878200964394 /* RealmSavedCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB8F3071C60878200964394 /* RealmSavedCategories.swift */; };
+		BFB8F30A1C60878E00964394 /* RealmSavedPosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB8F3091C60878E00964394 /* RealmSavedPosts.swift */; };
+		BFE415F01C61935A007C662F /* SavedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE415EF1C61935A007C662F /* SavedView.swift */; };
+		BFE415F21C61938F007C662F /* SavedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE415F11C61938F007C662F /* SavedViewController.swift */; };
+		BFE415F41C619509007C662F /* SavedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE415F31C619509007C662F /* SavedViewModel.swift */; };
+		BFE415F61C62B726007C662F /* EmptyFeedHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE415F51C62B726007C662F /* EmptyFeedHUD.swift */; };
+		BFE415F81C62B7AA007C662F /* EmptyFeedHUD.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFE415F71C62B7AA007C662F /* EmptyFeedHUD.xib */; };
 		BFEEBA6A1C500F860075BC5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEEBA691C500F860075BC5C /* AppDelegate.swift */; };
 		BFEEBA6F1C500F860075BC5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFEEBA6D1C500F860075BC5C /* Main.storyboard */; };
 		BFEEBA711C500F860075BC5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFEEBA701C500F860075BC5C /* Assets.xcassets */; };
@@ -78,18 +89,22 @@
 		BF32173F1C56C32400EDC50D /* RealmCurrentPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmCurrentPost.swift; sourceTree = "<group>"; };
 		BF3217411C56EB2100EDC50D /* Media.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Media.storyboard; sourceTree = "<group>"; };
 		BF3217431C56EC6100EDC50D /* StringArticleParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringArticleParser.swift; sourceTree = "<group>"; };
-		BF3217451C57092700EDC50D /* SearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchView.swift; path = "TechCrunch Browser/UI/Views/SearchView.swift"; sourceTree = SOURCE_ROOT; };
-		BF32174A1C5800ED00EDC50D /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		BF3217451C57092700EDC50D /* ExploreView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExploreView.swift; path = "TechCrunch Browser/UI/Views/ExploreView.swift"; sourceTree = SOURCE_ROOT; };
+		BF32174A1C5800ED00EDC50D /* ExploreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
+		BF4AF2991C5F520B00D958B7 /* CategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
+		BF4AF29D1C5F53B700D958B7 /* RealmCurrentCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmCurrentCategory.swift; sourceTree = "<group>"; };
+		BF81ADB71C5A9C4F00F75F30 /* LatestViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LatestViewModel.swift; sourceTree = "<group>"; };
+		BF81ADC51C5EDD8000F75F30 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
+		BF81ADC71C5EDD8D00F75F30 /* CategoryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryTableViewCell.xib; sourceTree = "<group>"; };
 		BF9474D71C5049D10079878D /* DesignableTabBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableTabBarItem.swift; sourceTree = "<group>"; };
 		BF9474D91C504F920079878D /* RealmPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmPost.swift; sourceTree = "<group>"; };
 		BF9474DB1C504FA30079878D /* RealmCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmCategory.swift; sourceTree = "<group>"; };
 		BF9474DF1C5080370079878D /* RealmComment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmComment.swift; sourceTree = "<group>"; };
-		BF9474E11C5193CF0079878D /* Browse.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Browse.storyboard; sourceTree = "<group>"; };
-		BF9474E31C5193E00079878D /* Search.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
+		BF9474E31C5193E00079878D /* Explore.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Explore.storyboard; sourceTree = "<group>"; };
 		BF9474E51C5193E60079878D /* Saved.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Saved.storyboard; sourceTree = "<group>"; };
 		BF9474EA1C519D100079878D /* PostTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PostTableViewCell.xib; path = "TechCrunch Browser/UI/Views/PostTableViewCell.xib"; sourceTree = SOURCE_ROOT; };
 		BF9474EC1C51A16C0079878D /* LatestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LatestViewController.swift; sourceTree = "<group>"; };
-		BF9474EE1C51A2F70079878D /* LatestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LatestView.swift; path = ../LatestView.swift; sourceTree = "<group>"; };
+		BF9474EE1C51A2F70079878D /* FeedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FeedView.swift; path = ../FeedView.swift; sourceTree = "<group>"; };
 		BF9474F01C51ABEC0079878D /* JSONPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONPost.swift; sourceTree = "<group>"; };
 		BF9474F21C51ABF70079878D /* JSONCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONCategory.swift; sourceTree = "<group>"; };
 		BF9474F41C51AC010079878D /* JSONComment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONComment.swift; sourceTree = "<group>"; };
@@ -97,6 +112,13 @@
 		BF9474FA1C52BB790079878D /* FeaturedPostTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FeaturedPostTableViewCell.xib; path = ../FeaturedPostTableViewCell.xib; sourceTree = "<group>"; };
 		BF9474FC1C52E6370079878D /* RealmHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmHelper.swift; sourceTree = "<group>"; };
 		BF9474FF1C52F68F0079878D /* NSDateISO8601.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateISO8601.swift; sourceTree = "<group>"; };
+		BFB8F3071C60878200964394 /* RealmSavedCategories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmSavedCategories.swift; sourceTree = "<group>"; };
+		BFB8F3091C60878E00964394 /* RealmSavedPosts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmSavedPosts.swift; sourceTree = "<group>"; };
+		BFE415EF1C61935A007C662F /* SavedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedView.swift; sourceTree = "<group>"; };
+		BFE415F11C61938F007C662F /* SavedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedViewController.swift; sourceTree = "<group>"; };
+		BFE415F31C619509007C662F /* SavedViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedViewModel.swift; sourceTree = "<group>"; };
+		BFE415F51C62B726007C662F /* EmptyFeedHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmptyFeedHUD.swift; path = ../EmptyFeedHUD.swift; sourceTree = "<group>"; };
+		BFE415F71C62B7AA007C662F /* EmptyFeedHUD.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmptyFeedHUD.xib; sourceTree = "<group>"; };
 		BFEEBA661C500F860075BC5C /* TC Browser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TC Browser.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFEEBA691C500F860075BC5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFEEBA6E1C500F860075BC5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -169,19 +191,38 @@
 			isa = PBXGroup;
 			children = (
 				BF9474FA1C52BB790079878D /* FeaturedPostTableViewCell.xib */,
-				BF9474EE1C51A2F70079878D /* LatestView.swift */,
+				BF9474EE1C51A2F70079878D /* FeedView.swift */,
 				BF9474EA1C519D100079878D /* PostTableViewCell.xib */,
 				BF32173D1C56C28100EDC50D /* PostTableViewCell.swift */,
 			);
 			path = Post;
 			sourceTree = "<group>";
 		};
-		BF3217471C57093F00EDC50D /* Search */ = {
+		BF3217471C57093F00EDC50D /* Explore */ = {
 			isa = PBXGroup;
 			children = (
-				BF3217451C57092700EDC50D /* SearchView.swift */,
+				BF3217451C57092700EDC50D /* ExploreView.swift */,
 			);
+			name = Explore;
 			path = Search;
+			sourceTree = "<group>";
+		};
+		BF81ADB61C5A9C3600F75F30 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				BF81ADB71C5A9C4F00F75F30 /* LatestViewModel.swift */,
+				BFE415F31C619509007C662F /* SavedViewModel.swift */,
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		BF81ADC41C5EDD6000F75F30 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				BF81ADC51C5EDD8000F75F30 /* CategoryTableViewCell.swift */,
+				BF81ADC71C5EDD8D00F75F30 /* CategoryTableViewCell.xib */,
+			);
+			path = Category;
 			sourceTree = "<group>";
 		};
 		BF9474D61C5049C20079878D /* Designables */ = {
@@ -201,6 +242,14 @@
 				BF3217431C56EC6100EDC50D /* StringArticleParser.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		BFE415EE1C619352007C662F /* Saved */ = {
+			isa = PBXGroup;
+			children = (
+				BFE415EF1C61935A007C662F /* SavedView.swift */,
+			);
+			path = Saved;
 			sourceTree = "<group>";
 		};
 		BFEEBA5D1C500F860075BC5C = {
@@ -266,6 +315,9 @@
 				BF9474DF1C5080370079878D /* RealmComment.swift */,
 				BF9474FC1C52E6370079878D /* RealmHelper.swift */,
 				BF32173F1C56C32400EDC50D /* RealmCurrentPost.swift */,
+				BF4AF29D1C5F53B700D958B7 /* RealmCurrentCategory.swift */,
+				BFB8F3071C60878200964394 /* RealmSavedCategories.swift */,
+				BFB8F3091C60878E00964394 /* RealmSavedPosts.swift */,
 			);
 			path = Persistence;
 			sourceTree = "<group>";
@@ -293,11 +345,14 @@
 		BFEEBA9A1C50202A0075BC5C /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				BF81ADB61C5A9C3600F75F30 /* View Models */,
 				BF9474D61C5049C20079878D /* Designables */,
 				BFEEBA9C1C50202A0075BC5C /* Storyboards */,
 				BFEEBA9D1C50202A0075BC5C /* View Controllers */,
 				BFEEBA9F1C50202A0075BC5C /* Views */,
 				BF3217271C5423D500EDC50D /* LoadingHUD.swift */,
+				BFE415F51C62B726007C662F /* EmptyFeedHUD.swift */,
+				BFE415F71C62B7AA007C662F /* EmptyFeedHUD.xib */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -316,8 +371,7 @@
 				BFEEBA721C500F860075BC5C /* LaunchScreen.storyboard */,
 				BFEEBA6D1C500F860075BC5C /* Main.storyboard */,
 				BFEEBAA21C5043290075BC5C /* Latest.storyboard */,
-				BF9474E11C5193CF0079878D /* Browse.storyboard */,
-				BF9474E31C5193E00079878D /* Search.storyboard */,
+				BF9474E31C5193E00079878D /* Explore.storyboard */,
 				BF9474E51C5193E60079878D /* Saved.storyboard */,
 				BF3217411C56EB2100EDC50D /* Media.storyboard */,
 			);
@@ -329,7 +383,9 @@
 			children = (
 				BF9474EC1C51A16C0079878D /* LatestViewController.swift */,
 				BF3217351C56BEA200EDC50D /* ArticleViewController.swift */,
-				BF32174A1C5800ED00EDC50D /* SearchViewController.swift */,
+				BF32174A1C5800ED00EDC50D /* ExploreViewController.swift */,
+				BF4AF2991C5F520B00D958B7 /* CategoryViewController.swift */,
+				BFE415F11C61938F007C662F /* SavedViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -337,7 +393,9 @@
 		BFEEBA9F1C50202A0075BC5C /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				BF3217471C57093F00EDC50D /* Search */,
+				BFE415EE1C619352007C662F /* Saved */,
+				BF81ADC41C5EDD6000F75F30 /* Category */,
+				BF3217471C57093F00EDC50D /* Explore */,
 				BF32173B1C56C28100EDC50D /* Article */,
 				BF32173C1C56C28100EDC50D /* Post */,
 			);
@@ -451,15 +509,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF81ADC81C5EDD8D00F75F30 /* CategoryTableViewCell.xib in Resources */,
+				BFE415F81C62B7AA007C662F /* EmptyFeedHUD.xib in Resources */,
 				BFEEBA741C500F860075BC5C /* LaunchScreen.storyboard in Resources */,
-				BF9474E21C5193CF0079878D /* Browse.storyboard in Resources */,
 				BF9474FB1C52BB790079878D /* FeaturedPostTableViewCell.xib in Resources */,
 				BFEEBA711C500F860075BC5C /* Assets.xcassets in Resources */,
 				BF9474E61C5193E60079878D /* Saved.storyboard in Resources */,
 				BF32173A1C56BFA500EDC50D /* ArticleView.xib in Resources */,
 				BFEEBA6F1C500F860075BC5C /* Main.storyboard in Resources */,
 				BF3217421C56EB2100EDC50D /* Media.storyboard in Resources */,
-				BF9474E41C5193E00079878D /* Search.storyboard in Resources */,
+				BF9474E41C5193E00079878D /* Explore.storyboard in Resources */,
 				BFEEBAA31C5043290075BC5C /* Latest.storyboard in Resources */,
 				BF9474EB1C519D100079878D /* PostTableViewCell.xib in Resources */,
 			);
@@ -537,24 +596,34 @@
 				BF3217301C5438EF00EDC50D /* StringExtensionHTML.swift in Sources */,
 				BF3217281C5423D500EDC50D /* LoadingHUD.swift in Sources */,
 				BF9474FD1C52E6370079878D /* RealmHelper.swift in Sources */,
+				BF4AF29E1C5F53B700D958B7 /* RealmCurrentCategory.swift in Sources */,
 				BF9474F51C51AC010079878D /* JSONComment.swift in Sources */,
 				BF9474D81C5049D10079878D /* DesignableTabBarItem.swift in Sources */,
+				BFE415F21C61938F007C662F /* SavedViewController.swift in Sources */,
 				BF9474DC1C504FA30079878D /* RealmCategory.swift in Sources */,
+				BFB8F3081C60878200964394 /* RealmSavedCategories.swift in Sources */,
 				BF3217381C56BF3200EDC50D /* ArticleView.swift in Sources */,
 				BF9474F11C51ABEC0079878D /* JSONPost.swift in Sources */,
 				BFEEBA6A1C500F860075BC5C /* AppDelegate.swift in Sources */,
 				BF9475001C52F68F0079878D /* NSDateISO8601.swift in Sources */,
 				BF9474F71C51C4EE0079878D /* JSONAuthor.swift in Sources */,
+				BF81ADC61C5EDD8000F75F30 /* CategoryTableViewCell.swift in Sources */,
+				BFE415F01C61935A007C662F /* SavedView.swift in Sources */,
+				BFE415F41C619509007C662F /* SavedViewModel.swift in Sources */,
+				BFE415F61C62B726007C662F /* EmptyFeedHUD.swift in Sources */,
 				BF3217401C56C32400EDC50D /* RealmCurrentPost.swift in Sources */,
 				BF3217441C56EC6100EDC50D /* StringArticleParser.swift in Sources */,
-				BF3217461C57092700EDC50D /* SearchView.swift in Sources */,
+				BF3217461C57092700EDC50D /* ExploreView.swift in Sources */,
 				BF9474ED1C51A16D0079878D /* LatestViewController.swift in Sources */,
-				BF9474EF1C51A2F70079878D /* LatestView.swift in Sources */,
+				BF4AF29A1C5F520B00D958B7 /* CategoryViewController.swift in Sources */,
+				BFB8F30A1C60878E00964394 /* RealmSavedPosts.swift in Sources */,
+				BF9474EF1C51A2F70079878D /* FeedView.swift in Sources */,
 				BF32173E1C56C28100EDC50D /* PostTableViewCell.swift in Sources */,
 				BF9474E01C5080370079878D /* RealmComment.swift in Sources */,
-				BF32174B1C5800ED00EDC50D /* SearchViewController.swift in Sources */,
+				BF32174B1C5800ED00EDC50D /* ExploreViewController.swift in Sources */,
 				BF3217361C56BEA300EDC50D /* ArticleViewController.swift in Sources */,
 				BF9474F31C51ABF70079878D /* JSONCategory.swift in Sources */,
+				BF81ADB81C5A9C5000F75F30 /* LatestViewModel.swift in Sources */,
 				BF3217341C56B74200EDC50D /* UIImageScaled.swift in Sources */,
 				BFEEBAA11C50216C0075BC5C /* TechcrunchAPI.swift in Sources */,
 				BF9474DA1C504F920079878D /* RealmPost.swift in Sources */,

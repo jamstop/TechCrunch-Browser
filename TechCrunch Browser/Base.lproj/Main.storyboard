@@ -21,7 +21,6 @@
                     </tabBar>
                     <connections>
                         <segue destination="hTX-Hu-mYj" kind="relationship" relationship="viewControllers" id="3ts-lx-VDl"/>
-                        <segue destination="lgc-I9-gCg" kind="relationship" relationship="viewControllers" id="iq1-0t-pmN"/>
                         <segue destination="Es2-nc-MyV" kind="relationship" relationship="viewControllers" id="Sl4-bY-DvU"/>
                         <segue destination="33S-RK-tFR" kind="relationship" relationship="viewControllers" id="3oF-oV-weX"/>
                         <segue destination="L1h-md-ueG" kind="relationship" relationship="viewControllers" id="fxv-wJ-99t"/>
@@ -41,25 +40,15 @@
             </objects>
             <point key="canvasLocation" x="433.5" y="-297"/>
         </scene>
-        <!--Browse-->
-        <scene sceneID="F8z-WK-ujl">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Browse" id="lgc-I9-gCg" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="AWT-cY-1fN"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="DqQ-1f-ExT" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="433" y="-32"/>
-        </scene>
-        <!--Search-->
+        <!--Explore-->
         <scene sceneID="KGz-cj-AjL">
             <objects>
-                <viewControllerPlaceholder storyboardName="Search" id="Es2-nc-MyV" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Explore" id="Es2-nc-MyV" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="jCq-7D-fjk"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9E4-ix-xLP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="433.5" y="140"/>
+            <point key="canvasLocation" x="416.5" y="2"/>
         </scene>
         <!--Saved-->
         <scene sceneID="gcB-Zt-kHm">
@@ -79,7 +68,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pfW-Hz-MNN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="430.5" y="458"/>
+            <point key="canvasLocation" x="416.5" y="550"/>
         </scene>
     </scenes>
 </document>
