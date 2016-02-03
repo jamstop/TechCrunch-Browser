@@ -120,7 +120,7 @@
                     <connections>
                         <outlet property="mainView" destination="ifb-XD-2SC" id="690-JQ-H5T"/>
                         <outlet property="saveCategoryButton" destination="Dcy-qu-xMw" id="iKR-k1-byF"/>
-                        <segue destination="8zY-9t-AaM" kind="show" identifier="segueToArticle" id="VG9-6q-sql"/>
+                        <segue destination="8zY-9t-AaM" kind="show" identifier="segueToArticleFromCategory" id="VG9-6q-sql"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U8J-6n-dfM" userLabel="First Responder" sceneMemberID="firstResponder"/>

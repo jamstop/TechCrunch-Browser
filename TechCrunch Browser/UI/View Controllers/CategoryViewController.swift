@@ -221,7 +221,7 @@ extension CategoryViewController: UITableViewDelegate {
         
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
-        self.performSegueWithIdentifier("segueToArticle", sender: self)
+        self.performSegueWithIdentifier("segueToArticleFromCategory", sender: self)
         
         
     }

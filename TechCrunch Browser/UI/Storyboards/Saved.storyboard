@@ -92,23 +92,49 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HLL-4c-Seo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="829.5" y="-44.5"/>
+            <point key="canvasLocation" x="829.5" y="-26.5"/>
         </scene>
         <!--Category Title-->
         <scene sceneID="vgj-yh-JZW">
             <objects>
-                <viewController id="mYa-02-wrc" customClass="CategoryViewController" customModule="TC_Browser" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="mYa-02-wrc" customClass="CategoryViewController" customModule="TC_Browser" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Yzo-HU-xaW"/>
                         <viewControllerLayoutGuide type="bottom" id="yOq-3B-VnW"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="cTD-04-HQn">
+                    <view key="view" contentMode="scaleToFill" id="cTD-04-HQn" customClass="FeedView" customModule="TC_Browser" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bfF-Wj-9dc">
+                                <rect key="frame" x="-4" y="64" width="383" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="yOq-3B-VnW" firstAttribute="top" secondItem="bfF-Wj-9dc" secondAttribute="bottom" id="5CK-lF-MnX"/>
+                            <constraint firstItem="bfF-Wj-9dc" firstAttribute="leading" secondItem="cTD-04-HQn" secondAttribute="leadingMargin" constant="-20" id="Tai-a6-YSm"/>
+                            <constraint firstItem="bfF-Wj-9dc" firstAttribute="top" secondItem="Yzo-HU-xaW" secondAttribute="bottom" id="cqm-W9-CIu"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bfF-Wj-9dc" secondAttribute="trailing" constant="-20" id="jV3-f3-UaR"/>
+                        </constraints>
+                        <connections>
+                            <outlet property="tableView" destination="bfF-Wj-9dc" id="TFG-p2-IZM"/>
+                        </connections>
                     </view>
-                    <navigationItem key="navigationItem" title="Category Title" id="mo7-EX-tgm"/>
+                    <navigationItem key="navigationItem" title="Category Title" id="mo7-EX-tgm">
+                        <barButtonItem key="rightBarButtonItem" image="Saved" id="1qH-Gp-iOP">
+                            <connections>
+                                <action selector="saveCategoryPressed:" destination="mYa-02-wrc" id="Xkr-5p-gT9"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="mainView" destination="cTD-04-HQn" id="hp3-qK-sK0"/>
+                        <outlet property="saveCategoryButton" destination="1qH-Gp-iOP" id="iHk-tu-LKn"/>
+                        <segue destination="MUA-lJ-bVX" kind="show" identifier="segueToArticleFromCategory" id="IzZ-2Y-P2g"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3GF-Sg-op7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -118,4 +144,7 @@
     <resources>
         <image name="Saved" width="48" height="32"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="IzZ-2Y-P2g"/>
+    </inferredMetricsTieBreakers>
 </document>
