@@ -119,6 +119,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="mainView" destination="ifb-XD-2SC" id="690-JQ-H5T"/>
+                        <outlet property="saveCategoryButton" destination="Dcy-qu-xMw" id="iKR-k1-byF"/>
                         <segue destination="8zY-9t-AaM" kind="show" identifier="segueToArticle" id="VG9-6q-sql"/>
                     </connections>
                 </viewController>
@@ -147,6 +148,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="savePostButton" destination="DVV-s0-TSt" id="5am-6u-f9C"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuR-Ap-XK6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

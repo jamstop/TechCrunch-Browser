@@ -22,6 +22,18 @@ class CategoryViewController: UIViewController {
     
     var currentOffset = 0
     
+    var isSaved = false {
+        didSet {
+            if isSaved {
+                saveCategoryButton.image = UIImage(named: "Unsave")
+            }
+            
+            else {
+                saveCategoryButton.image = UIImage(named: "Saved")
+            }
+        }
+    }
+    
     var newPosts: [JSONPost] = []
     var realmPosts: [RealmPost] = []
     
@@ -29,6 +41,7 @@ class CategoryViewController: UIViewController {
     let realmHelper = RealmHelper()
     
     let saveAlert = UIAlertController(title: "Subscribe to category?", message: "You will receive push notifications when new posts are added.", preferredStyle: .Alert)
+    let unsaveAlert = UIAlertController(title: "Unsubscribe from category?", message: "You will stop receiving notifications from this category.", preferredStyle: .Alert)
     
     enum LoadingState {
         case Idle
@@ -43,8 +56,15 @@ class CategoryViewController: UIViewController {
     
     @IBOutlet weak var mainView: FeedView!
     
+    @IBOutlet weak var saveCategoryButton: UIBarButtonItem!
+    
     @IBAction func saveCategoryPressed(sender: AnyObject) {
-        presentViewController(saveAlert, animated: true, completion: nil)
+        if isSaved {
+            presentViewController(unsaveAlert, animated: true, completion: nil)
+        }
+        else {
+            presentViewController(saveAlert, animated: true, completion: nil)
+        }
     }
     
     
@@ -56,6 +76,13 @@ class CategoryViewController: UIViewController {
         setup()
         
         loadFeed()
+        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        if realmHelper.categoryIsSaved(category) {
+            isSaved = true
+        }
     }
     
     // MARK: - Helpers
@@ -81,10 +108,21 @@ class CategoryViewController: UIViewController {
         }))
         saveAlert.addAction(UIAlertAction(title: "No", style: .Cancel, handler: nil))
         
+        unsaveAlert.addAction(UIAlertAction(title: "Yes", style: .Default, handler: { Void in
+            self.unsaveCategory()
+        }))
+        unsaveAlert.addAction(UIAlertAction(title: "No", style: .Cancel, handler: nil))
+        
     }
     
     func saveCategory() {
         realmHelper.saveCategory(category)
+        isSaved = true
+    }
+    
+    func unsaveCategory() {
+        realmHelper.unsaveCategory(category)
+        isSaved = false
     }
     
     func pullToRefresh(sender: UIRefreshControl) {

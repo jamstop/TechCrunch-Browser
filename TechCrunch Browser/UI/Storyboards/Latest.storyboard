@@ -86,6 +86,9 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="savePostButton" destination="75d-Wk-MxX" id="SFR-oL-s73"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mYt-D3-22A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

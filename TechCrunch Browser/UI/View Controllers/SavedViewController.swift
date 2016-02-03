@@ -39,6 +39,8 @@ class SavedViewController: UIViewController {
     private func setup() {
         mainView.savedTableView.delegate = self
         mainView.savedTableView.dataSource = self
+        
+        self.navigationController?.navigationBar.tintColor = UIColor(red: 1, green: 128/255, blue: 128/255, alpha: 1.0)
     }
     
     private func load() {

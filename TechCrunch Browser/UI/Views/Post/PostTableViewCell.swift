@@ -32,15 +32,15 @@ class PostTableViewCell: UITableViewCell {
 //                self.persistedPost.imageData = UIImagePNGRepresentation(image)
             })
             
+            postedBy.text = post?.name.stringByDecodingHTMLEntities
+            title.text = post?.title?.stringByDecodingHTMLEntities
+            
             self.persistedPost = RealmPost()
             self.persistedPost.title = self.post!.title!
             self.persistedPost.id = self.post!.ID!
             self.persistedPost.author = self.postedBy.text!
             self.persistedPost.content = self.post!.content!
             self.persistedPost.imageUrl = (self.post?.imageUrl)!
-            
-            postedBy.text = post?.name.stringByDecodingHTMLEntities
-            title.text = post?.title?.stringByDecodingHTMLEntities
             
         }
     }

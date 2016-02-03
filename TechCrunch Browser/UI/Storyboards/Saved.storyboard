@@ -57,11 +57,62 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="mainView" destination="znZ-jr-Rgi" id="xM6-P7-LIZ"/>
+                        <segue destination="MUA-lJ-bVX" kind="show" identifier="segueToArticle" id="EaQ-Av-Dp6"/>
+                        <segue destination="mYa-02-wrc" kind="show" identifier="segueToCategory" id="GnY-Gt-kj4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="838-zl-FUo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="321.5" y="304.5"/>
+            <point key="canvasLocation" x="323.5" y="304.5"/>
+        </scene>
+        <!--Article View Controller-->
+        <scene sceneID="Kn8-Fy-R6h">
+            <objects>
+                <viewController id="MUA-lJ-bVX" customClass="ArticleViewController" customModule="TC_Browser" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9EW-xx-Vzb"/>
+                        <viewControllerLayoutGuide type="bottom" id="0CL-z0-Igy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="OSF-1p-Sv9" customClass="ArticleView" customModule="TC_Browser" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="n2b-B2-9Up">
+                        <barButtonItem key="rightBarButtonItem" image="Saved" id="Dct-fK-iTP">
+                            <connections>
+                                <action selector="savePostPressed:" destination="MUA-lJ-bVX" id="63R-Ws-WY5"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="savePostButton" destination="Dct-fK-iTP" id="8Bg-20-O9g"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HLL-4c-Seo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="829.5" y="-44.5"/>
+        </scene>
+        <!--Category Title-->
+        <scene sceneID="vgj-yh-JZW">
+            <objects>
+                <viewController id="mYa-02-wrc" customClass="CategoryViewController" customModule="TC_Browser" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Yzo-HU-xaW"/>
+                        <viewControllerLayoutGuide type="bottom" id="yOq-3B-VnW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cTD-04-HQn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Category Title" id="mo7-EX-tgm"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3GF-Sg-op7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="829.5" y="759.5"/>
         </scene>
     </scenes>
     <resources>
