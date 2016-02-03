@@ -24,6 +24,114 @@ class RealmHelper {
     
     let disposeBag = DisposeBag()
     
+    func postIsSaved(post: RealmPost) -> Bool {
+        let saved = realm.objects(RealmSavedPosts)
+        if saved.count == 0 {
+            return false
+        }
+            
+        else {
+            for item in saved[0].posts {
+                if item.id == post.id {
+                    return true
+                }
+            }
+            return false
+        }
+    }
+    
+    func categoryIsSaved(category: RealmCategory) -> Bool {
+        let saved = realm.objects(RealmSavedCategories)
+        if saved.count == 0 {
+            return false
+        }
+        
+        else {
+            for item in saved[0].categories {
+                if item.name == category.name {
+                    return true
+                }
+            }
+            return false
+        }
+    }
+    
+    func saveCategory(category: RealmCategory) {
+        let saved = realm.objects(RealmSavedCategories)
+        var savedCategories: RealmSavedCategories
+        if saved.count == 0 {
+            savedCategories = RealmSavedCategories()
+            savedCategories.id = 0
+        }
+        else {
+            savedCategories = saved[0]
+        }
+        
+        for item in savedCategories.categories {
+            if item.name == category.name {
+                return
+            }
+        }
+        
+        try! realm.write({
+            savedCategories.categories.append(category)
+            realm.add(savedCategories, update: true)
+        })
+    }
+    
+    func savePost(post: RealmPost) {
+        let saved = realm.objects(RealmSavedPosts)
+        var savedPosts: RealmSavedPosts
+        if saved.count == 0 {
+            savedPosts = RealmSavedPosts()
+            savedPosts.id = 0
+        }
+        else {
+            savedPosts = saved[0]
+        }
+        
+        for item in savedPosts.posts {
+            if item.id == post.id {
+                return
+            }
+        }
+        
+        try! realm.write({
+            savedPosts.posts.append(post)
+            realm.add(savedPosts, update: true)
+        })
+    }
+    
+    func unsaveCategory(category: RealmCategory) {
+        if categoryIsSaved(category) {
+            let savedCategories = realm.objects(RealmSavedCategories)[0].categories
+            for x in 0..<savedCategories.count {
+                if savedCategories[x] == category {
+                    try! realm.write({
+                        savedCategories.removeAtIndex(x)
+                    })
+                    return
+                }
+            }
+        }
+    }
+    
+    func unsavePost(post: RealmPost) {
+        if postIsSaved(post) {
+            let savedPosts = realm.objects(RealmSavedPosts)[0].posts
+            for x in 0..<savedPosts.count {
+                if savedPosts[x] == post {
+                    try! realm.write({
+                        savedPosts.removeAtIndex(x)
+                    })
+                    return
+                }
+            }
+        }
+    }
+    
+    
+    
     func setPostsForCategory(categoryName: String, posts: [JSONPost]) -> Observable<RealmCategory> {
         
         let postNumber = posts.count

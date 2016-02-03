@@ -32,6 +32,9 @@ class PostTableViewCell: UITableViewCell {
 //                self.persistedPost.imageData = UIImagePNGRepresentation(image)
             })
             
+            postedBy.text = post?.name.stringByDecodingHTMLEntities
+            title.text = post?.title?.stringByDecodingHTMLEntities
+            
             self.persistedPost = RealmPost()
             self.persistedPost.title = self.post!.title!
             self.persistedPost.id = self.post!.ID!
@@ -39,17 +42,21 @@ class PostTableViewCell: UITableViewCell {
             self.persistedPost.content = self.post!.content!
             self.persistedPost.imageUrl = (self.post?.imageUrl)!
             
-            postedBy.text = post?.name.stringByDecodingHTMLEntities
-            title.text = post?.title?.stringByDecodingHTMLEntities
-            
         }
     }
     
     var realmPost: RealmPost? {
         didSet {
+            thumbnail.sd_setImageWithURL(NSURL(string: (realmPost?.imageUrl)!)!, placeholderImage: nil, options: SDWebImageOptions.HighPriority, completed: { image, error, cache, finished in
+                //                self.persistedPost.imageData = UIImagePNGRepresentation(image)
+            })
             postedBy.text = realmPost?.author
             title.text = realmPost?.title
-            thumbnail.image = UIImage(data: realmPost!.imageData!)
+            
+            persistedPost = realmPost
+            
+            
+//            thumbnail.image = UIImage(data: realmPost!.imageData!)
         }
     }
 

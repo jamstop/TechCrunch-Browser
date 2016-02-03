@@ -16,7 +16,7 @@ class ExploreViewController: UIViewController {
     
     var disposeBag = DisposeBag()
     
-    let screenHeight = UIScreen.mainScreen().bounds.width
+    let screenWidth = UIScreen.mainScreen().bounds.width
     private let API = TechcrunchAPI()
     
     let category = "Search"
@@ -181,10 +181,10 @@ class ExploreViewController: UIViewController {
 extension ExploreViewController: UITableViewDelegate {
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         if tableView.tag == 0 {
-            return screenHeight/5
+            return screenWidth/5
         }
 
-        return screenHeight/3
+        return screenWidth/3
     }
     
     func scrollViewDidScroll(scrollView: UIScrollView) {

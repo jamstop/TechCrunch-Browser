@@ -68,7 +68,7 @@ class TechcrunchAPI {
     */
      
     func rx_loadLatestNewsByOffsetByCategory(offset: Int, category: String) -> Observable<JSON> {
-        return get("posts", parameters: ["number": 20, "offset": offset, "category":category])
+        return get("posts", parameters: ["number": 20, "offset": offset, "category": category])
     }
     
     /**

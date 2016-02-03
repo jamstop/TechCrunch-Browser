@@ -15,18 +15,33 @@ class CategoryViewController: UIViewController {
     
     var disposeBag = DisposeBag()
     
-    let screenHeight = UIScreen.mainScreen().bounds.width
+    let screenWidth = UIScreen.mainScreen().bounds.width
     private let API = TechcrunchAPI()
     
     var category: RealmCategory!
     
     var currentOffset = 0
     
+    var isSaved = false {
+        didSet {
+            if isSaved {
+                saveCategoryButton.image = UIImage(named: "Unsave")
+            }
+            
+            else {
+                saveCategoryButton.image = UIImage(named: "Saved")
+            }
+        }
+    }
+    
     var newPosts: [JSONPost] = []
     var realmPosts: [RealmPost] = []
     
     let realm = try! Realm()
     let realmHelper = RealmHelper()
+    
+    let saveAlert = UIAlertController(title: "Subscribe to category?", message: "You will receive push notifications when new posts are added.", preferredStyle: .Alert)
+    let unsaveAlert = UIAlertController(title: "Unsubscribe from category?", message: "You will stop receiving notifications from this category.", preferredStyle: .Alert)
     
     enum LoadingState {
         case Idle
@@ -41,6 +56,18 @@ class CategoryViewController: UIViewController {
     
     @IBOutlet weak var mainView: FeedView!
     
+    @IBOutlet weak var saveCategoryButton: UIBarButtonItem!
+    
+    @IBAction func saveCategoryPressed(sender: AnyObject) {
+        if isSaved {
+            presentViewController(unsaveAlert, animated: true, completion: nil)
+        }
+        else {
+            presentViewController(saveAlert, animated: true, completion: nil)
+        }
+    }
+    
+    
     // MARK: - Overrides
     
     override func viewDidLoad() {
@@ -50,11 +77,12 @@ class CategoryViewController: UIViewController {
         
         loadFeed()
         
-        currentState = .Loading
-        mainView.startInitialLoad()
-        
-        self.navigationController?.navigationBar.tintColor = UIColor(red: 1, green: 128/255, blue: 128/255, alpha: 1.0)
-        self.navigationItem.title = category.name
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        if realmHelper.categoryIsSaved(category) {
+            isSaved = true
+        }
     }
     
     // MARK: - Helpers
@@ -68,6 +96,33 @@ class CategoryViewController: UIViewController {
         mainView.tableView.dataSource = self
         mainView.refreshControl.addTarget(self, action: "pullToRefresh:", forControlEvents: .ValueChanged)
         
+        // Etc. setup
+        currentState = .Loading
+        mainView.startInitialLoad()
+        
+        self.navigationController?.navigationBar.tintColor = UIColor(red: 1, green: 128/255, blue: 128/255, alpha: 1.0)
+        self.navigationItem.title = category.name
+        
+        saveAlert.addAction(UIAlertAction(title: "Yes", style: .Default, handler: { Void in
+            self.saveCategory()
+        }))
+        saveAlert.addAction(UIAlertAction(title: "No", style: .Cancel, handler: nil))
+        
+        unsaveAlert.addAction(UIAlertAction(title: "Yes", style: .Default, handler: { Void in
+            self.unsaveCategory()
+        }))
+        unsaveAlert.addAction(UIAlertAction(title: "No", style: .Cancel, handler: nil))
+        
+    }
+    
+    func saveCategory() {
+        realmHelper.saveCategory(category)
+        isSaved = true
+    }
+    
+    func unsaveCategory() {
+        realmHelper.unsaveCategory(category)
+        isSaved = false
     }
     
     func pullToRefresh(sender: UIRefreshControl) {
@@ -82,7 +137,8 @@ class CategoryViewController: UIViewController {
     }
     
     private func loadFeed() {
-        API.rx_loadLatestNewsByOffsetByCategory(currentOffset, category: category.name).map { jsonResp -> [JSONPost] in
+        API.rx_loadLatestNewsByOffsetByCategory(currentOffset, category: category.slug).map { jsonResp -> [JSONPost] in
+            print(self.category)
             guard let postJSONArray = jsonResp["posts"] else {
                 throw TechcrunchAPI.APIError.ErrorParsingJSON
             }
@@ -127,38 +183,6 @@ class CategoryViewController: UIViewController {
             .addDisposableTo(disposeBag)
     }
     
-    //    private func commitFeedToPersistence() {
-    //        realmHelper.setPostsForCategory(category, posts: newPosts).subscribe(
-    //            onNext: { category in
-    //                self.realmPosts.appendContentsOf(category.posts)
-    //                switch self.currentState {
-    //                case .Idle:
-    //                    print("Cannot load without command")
-    //
-    //                case .Loading:
-    //                    self.mainView.endInitialLoad()
-    //
-    //                case .Refreshing:
-    //                    self.mainView.finishRefreshing()
-    //
-    //                case .LoadingMore:
-    //                    self.mainView.endLoadMore()
-    //                }
-    //
-    //                self.currentState = .Idle
-    //                self.currentOffset += 20
-    //            },
-    //            onError: { error in
-    //                print(error)
-    //            },
-    //            onCompleted: {
-    //                print("completed")
-    //            },
-    //            onDisposed: {
-    //                print("disposed")
-    //        }).addDisposableTo(disposeBag)
-    //    }
-    
 }
 
 // MARK: - UITableViewDelegate
@@ -166,9 +190,9 @@ class CategoryViewController: UIViewController {
 extension CategoryViewController: UITableViewDelegate {
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         if indexPath.row == 0 {
-            return screenHeight
+            return screenWidth
         }
-        return screenHeight/3
+        return screenWidth/3
     }
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
@@ -197,7 +221,7 @@ extension CategoryViewController: UITableViewDelegate {
         
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
-        self.performSegueWithIdentifier("segueToArticle", sender: self)
+        self.performSegueWithIdentifier("segueToArticleFromCategory", sender: self)
         
         
     }

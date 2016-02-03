@@ -15,7 +15,6 @@ class LatestViewModel {
     
     var disposeBag = DisposeBag()
     
-    let screenHeight = UIScreen.mainScreen().bounds.width
     private let API = TechcrunchAPI()
     
     var newPosts: [JSONPost] = []

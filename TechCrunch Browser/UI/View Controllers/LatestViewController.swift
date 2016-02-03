@@ -15,7 +15,7 @@ class LatestViewController: UIViewController {
     
     var disposeBag = DisposeBag()
     
-    let screenHeight = UIScreen.mainScreen().bounds.width
+    let screenWidth = UIScreen.mainScreen().bounds.width
     private let API = TechcrunchAPI()
     
     let category = "Latest"
@@ -161,9 +161,9 @@ class LatestViewController: UIViewController {
 extension LatestViewController: UITableViewDelegate {
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         if indexPath.row == 0 {
-            return screenHeight
+            return screenWidth
         }
-        return screenHeight/3
+        return screenWidth/3
     }
     
     func scrollViewDidScroll(scrollView: UIScrollView) {

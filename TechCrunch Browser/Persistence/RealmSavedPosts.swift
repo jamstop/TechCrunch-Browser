@@ -1,21 +1,19 @@
 //
-//  RealmCategory.swift
+//  RealmSavedPosts.swift
 //  TechCrunch Browser
 //
-//  Created by Jimmy Yue on 1/20/16.
+//  Created by Jimmy Yue on 2/1/16.
 //  Copyright © 2016 Jimmy Yue. All rights reserved.
 //
 
 import Foundation
 import RealmSwift
 
-class RealmCategory: Object {
+class RealmSavedPosts: Object {
     dynamic var id = 0
-    dynamic var name = ""
-    dynamic var slug = ""
-    let posts = List<RealmPost>()
+    let posts =  List<RealmPost>()
     
     override static func primaryKey() -> String? {
-        return "name"
+        return "id"
     }
 }

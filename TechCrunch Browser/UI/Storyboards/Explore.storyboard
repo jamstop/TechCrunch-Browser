@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Bbp-VL-8qU">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Bbp-VL-8qU">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -109,11 +109,18 @@
                             <outlet property="tableView" destination="nWH-Be-QzE" id="S9v-6J-yOa"/>
                         </connections>
                     </view>
-                    <navigationItem key="navigationItem" title="Category Title" id="L3M-vN-g0T"/>
+                    <navigationItem key="navigationItem" title="Category Title" id="L3M-vN-g0T">
+                        <barButtonItem key="rightBarButtonItem" image="Saved" id="Dcy-qu-xMw">
+                            <connections>
+                                <action selector="saveCategoryPressed:" destination="peG-yf-EOS" id="c7w-xp-006"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="mainView" destination="ifb-XD-2SC" id="690-JQ-H5T"/>
-                        <segue destination="8zY-9t-AaM" kind="show" identifier="segueToArticle" id="VG9-6q-sql"/>
+                        <outlet property="saveCategoryButton" destination="Dcy-qu-xMw" id="iKR-k1-byF"/>
+                        <segue destination="8zY-9t-AaM" kind="show" identifier="segueToArticleFromCategory" id="VG9-6q-sql"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U8J-6n-dfM" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -133,7 +140,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="sk8-X6-BeQ">
+                        <barButtonItem key="rightBarButtonItem" image="Saved" id="DVV-s0-TSt">
+                            <connections>
+                                <action selector="savePostPressed:" destination="8zY-9t-AaM" id="y20-ec-uIW"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="savePostButton" destination="DVV-s0-TSt" id="5am-6u-f9C"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuR-Ap-XK6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -161,5 +178,6 @@
     </scenes>
     <resources>
         <image name="Browse" width="48" height="32"/>
+        <image name="Saved" width="48" height="32"/>
     </resources>
 </document>
