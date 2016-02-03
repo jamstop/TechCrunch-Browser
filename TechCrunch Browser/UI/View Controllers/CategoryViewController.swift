@@ -84,7 +84,7 @@ class CategoryViewController: UIViewController {
     }
     
     func saveCategory() {
-        realmHelper.addPostToSaved(category)
+        realmHelper.saveCategory(category)
     }
     
     func pullToRefresh(sender: UIRefreshControl) {

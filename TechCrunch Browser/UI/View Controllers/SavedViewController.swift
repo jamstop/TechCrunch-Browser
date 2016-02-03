@@ -8,8 +8,11 @@
 
 import UIKit
 import RxSwift
+import RealmSwift
 
 class SavedViewController: UIViewController {
+    
+    let realm = try! Realm()
     
     let disposeBag = DisposeBag()
     
@@ -67,6 +70,43 @@ extension SavedViewController: UITableViewDelegate {
         // Post table view cell height
         return screenWidth/3
 
+        
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if indexPath.section == 0 {
+            let selectedCell = tableView.cellForRowAtIndexPath(indexPath) as! CategoryTableViewCell
+            let currentCategory = RealmCurrentCategory()
+            currentCategory.category = selectedCell.realmCategory
+            currentCategory.id = 0
+            
+            try! realm.write {
+                realm.add(currentCategory, update: true)
+            }
+            
+            tableView.deselectRowAtIndexPath(indexPath, animated: true)
+            
+            self.performSegueWithIdentifier("segueToCategory", sender: self)
+        }
+        
+        else {
+            let selectedCell = tableView.cellForRowAtIndexPath(indexPath) as! PostTableViewCell
+            
+            let currentPost = RealmCurrentPost()
+            currentPost.post = selectedCell.realmPost
+            currentPost.id = 0
+            
+            try! realm.write {
+                realm.add(currentPost, update: true)
+            }
+            
+            currentPost.post!.content.parseArticleContent()
+            
+            tableView.deselectRowAtIndexPath(indexPath, animated: true)
+            
+            self.performSegueWithIdentifier("segueToArticle", sender: self)
+        }
+        
         
     }
     

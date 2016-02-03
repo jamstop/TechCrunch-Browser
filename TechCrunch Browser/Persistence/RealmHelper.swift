@@ -24,7 +24,7 @@ class RealmHelper {
     
     let disposeBag = DisposeBag()
     
-    func addPostToSaved(category: RealmCategory) {
+    func saveCategory(category: RealmCategory) {
         let saved = realm.objects(RealmSavedCategories)
         var savedCategories: RealmSavedCategories
         if saved.count == 0 {
@@ -46,6 +46,33 @@ class RealmHelper {
             realm.add(savedCategories, update: true)
         })
     }
+    
+    func savePost(post: RealmPost) {
+        let saved = realm.objects(RealmSavedPosts)
+        var savedPosts: RealmSavedPosts
+        if saved.count == 0 {
+            savedPosts = RealmSavedPosts()
+            savedPosts.id = 0
+        }
+        else {
+            savedPosts = saved[0]
+        }
+        
+        for item in savedPosts.posts {
+            if item.id == post.id {
+                return
+            }
+        }
+        
+        try! realm.write({
+            savedPosts.posts.append(post)
+            realm.add(savedPosts, update: true)
+        })
+    }
+    
+    
+    
+    
     
     func setPostsForCategory(categoryName: String, posts: [JSONPost]) -> Observable<RealmCategory> {
         
