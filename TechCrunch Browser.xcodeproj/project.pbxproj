@@ -43,6 +43,8 @@
 		BF9475001C52F68F0079878D /* NSDateISO8601.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9474FF1C52F68F0079878D /* NSDateISO8601.swift */; };
 		BFB8F3081C60878200964394 /* RealmSavedCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB8F3071C60878200964394 /* RealmSavedCategories.swift */; };
 		BFB8F30A1C60878E00964394 /* RealmSavedPosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB8F3091C60878E00964394 /* RealmSavedPosts.swift */; };
+		BFE415F01C61935A007C662F /* SavedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE415EF1C61935A007C662F /* SavedView.swift */; };
+		BFE415F21C61938F007C662F /* SavedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE415F11C61938F007C662F /* SavedViewController.swift */; };
 		BFEEBA6A1C500F860075BC5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEEBA691C500F860075BC5C /* AppDelegate.swift */; };
 		BFEEBA6F1C500F860075BC5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFEEBA6D1C500F860075BC5C /* Main.storyboard */; };
 		BFEEBA711C500F860075BC5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFEEBA701C500F860075BC5C /* Assets.xcassets */; };
@@ -109,6 +111,8 @@
 		BF9474FF1C52F68F0079878D /* NSDateISO8601.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateISO8601.swift; sourceTree = "<group>"; };
 		BFB8F3071C60878200964394 /* RealmSavedCategories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmSavedCategories.swift; sourceTree = "<group>"; };
 		BFB8F3091C60878E00964394 /* RealmSavedPosts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmSavedPosts.swift; sourceTree = "<group>"; };
+		BFE415EF1C61935A007C662F /* SavedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedView.swift; sourceTree = "<group>"; };
+		BFE415F11C61938F007C662F /* SavedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedViewController.swift; sourceTree = "<group>"; };
 		BFEEBA661C500F860075BC5C /* TC Browser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TC Browser.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFEEBA691C500F860075BC5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFEEBA6E1C500F860075BC5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -231,6 +235,14 @@
 				BF3217431C56EC6100EDC50D /* StringArticleParser.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		BFE415EE1C619352007C662F /* Saved */ = {
+			isa = PBXGroup;
+			children = (
+				BFE415EF1C61935A007C662F /* SavedView.swift */,
+			);
+			path = Saved;
 			sourceTree = "<group>";
 		};
 		BFEEBA5D1C500F860075BC5C = {
@@ -364,6 +376,7 @@
 				BF3217351C56BEA200EDC50D /* ArticleViewController.swift */,
 				BF32174A1C5800ED00EDC50D /* ExploreViewController.swift */,
 				BF4AF2991C5F520B00D958B7 /* CategoryViewController.swift */,
+				BFE415F11C61938F007C662F /* SavedViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -371,6 +384,7 @@
 		BFEEBA9F1C50202A0075BC5C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BFE415EE1C619352007C662F /* Saved */,
 				BF81ADC41C5EDD6000F75F30 /* Category */,
 				BF3217471C57093F00EDC50D /* Explore */,
 				BF32173B1C56C28100EDC50D /* Article */,
@@ -575,6 +589,7 @@
 				BF4AF29E1C5F53B700D958B7 /* RealmCurrentCategory.swift in Sources */,
 				BF9474F51C51AC010079878D /* JSONComment.swift in Sources */,
 				BF9474D81C5049D10079878D /* DesignableTabBarItem.swift in Sources */,
+				BFE415F21C61938F007C662F /* SavedViewController.swift in Sources */,
 				BF9474DC1C504FA30079878D /* RealmCategory.swift in Sources */,
 				BFB8F3081C60878200964394 /* RealmSavedCategories.swift in Sources */,
 				BF3217381C56BF3200EDC50D /* ArticleView.swift in Sources */,
@@ -583,6 +598,7 @@
 				BF9475001C52F68F0079878D /* NSDateISO8601.swift in Sources */,
 				BF9474F71C51C4EE0079878D /* JSONAuthor.swift in Sources */,
 				BF81ADC61C5EDD8000F75F30 /* CategoryTableViewCell.swift in Sources */,
+				BFE415F01C61935A007C662F /* SavedView.swift in Sources */,
 				BF3217401C56C32400EDC50D /* RealmCurrentPost.swift in Sources */,
 				BF3217441C56EC6100EDC50D /* StringArticleParser.swift in Sources */,
 				BF3217461C57092700EDC50D /* ExploreView.swift in Sources */,
