@@ -47,9 +47,16 @@ class PostTableViewCell: UITableViewCell {
     
     var realmPost: RealmPost? {
         didSet {
+            thumbnail.sd_setImageWithURL(NSURL(string: (realmPost?.imageUrl)!)!, placeholderImage: nil, options: SDWebImageOptions.HighPriority, completed: { image, error, cache, finished in
+                //                self.persistedPost.imageData = UIImagePNGRepresentation(image)
+            })
             postedBy.text = realmPost?.author
             title.text = realmPost?.title
-            thumbnail.image = UIImage(data: realmPost!.imageData!)
+            
+            persistedPost = realmPost
+            
+            
+//            thumbnail.image = UIImage(data: realmPost!.imageData!)
         }
     }
 

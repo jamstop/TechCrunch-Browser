@@ -32,6 +32,14 @@ class CategoryTableViewCell: UITableViewCell {
         }
     }
     
+    var realmCategory: RealmCategory? {
+        didSet {
+            categoryLabel.text = realmCategory!.name
+            
+            persistedCategory = realmCategory
+        }
+    }
+    
     // MARK: - Awake from nib
     
     override func awakeFromNib() {

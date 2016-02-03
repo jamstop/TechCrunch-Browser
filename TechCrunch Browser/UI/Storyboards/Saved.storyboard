@@ -28,12 +28,12 @@
         <!--Saved-->
         <scene sceneID="0jR-x3-ZvC">
             <objects>
-                <viewController id="c3T-n4-Aus" customClass="SavedViewController" customModule="TC_Browser" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="c3T-n4-Aus" customClass="SavedViewController" customModule="TC_Browser" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Xzr-DO-G9t"/>
                         <viewControllerLayoutGuide type="bottom" id="W6i-uh-U4r"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="znZ-jr-Rgi" customClass="SavedView">
+                    <view key="view" contentMode="scaleToFill" id="znZ-jr-Rgi" customClass="SavedView" customModule="TC_Browser" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -49,9 +49,15 @@
                             <constraint firstItem="W6i-uh-U4r" firstAttribute="top" secondItem="emH-ec-APG" secondAttribute="bottom" id="Qm9-Jy-iUY"/>
                             <constraint firstAttribute="trailingMargin" secondItem="emH-ec-APG" secondAttribute="trailing" constant="-20" id="gqD-56-vZM"/>
                         </constraints>
+                        <connections>
+                            <outlet property="savedTableView" destination="emH-ec-APG" id="qQM-g7-YDZ"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Saved" id="4SC-oZ-ek3"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="mainView" destination="znZ-jr-Rgi" id="xM6-P7-LIZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="838-zl-FUo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -16,16 +16,22 @@ class SavedViewModel {
     
     let realm = try! Realm()
     
-    var categories: List<RealmCategory>!
-    var posts: List<RealmPost>!
+    var categories = List<RealmCategory>()
+    var posts = List<RealmPost>()
     
-    func loadSavedItems() {
-        if realm.objects(RealmSavedCategories).count != 0 {
-            categories = realm.objects(RealmSavedCategories)[0].categories
-        }
-        
-        if realm.objects(RealmSavedPosts).count != 0 {
-            posts = realm.objects(RealmSavedPosts)[0].posts
+    func loadSavedItems() -> Observable<AnyObject> {
+        return Observable.create { observer in
+            if self.realm.objects(RealmSavedCategories).count != 0 {
+                self.categories = self.realm.objects(RealmSavedCategories)[0].categories
+                observer.onCompleted()
+            }
+            
+            if self.realm.objects(RealmSavedPosts).count != 0 {
+                self.posts = self.realm.objects(RealmSavedPosts)[0].posts
+                observer.onCompleted()
+            }
+            
+            return NopDisposable.instance
         }
     }
     
