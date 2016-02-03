@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Saved-->
@@ -27,15 +28,27 @@
         <!--Saved-->
         <scene sceneID="0jR-x3-ZvC">
             <objects>
-                <viewController id="c3T-n4-Aus" sceneMemberID="viewController">
+                <viewController id="c3T-n4-Aus" customClass="SavedViewController" customModule="TC_Browser" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Xzr-DO-G9t"/>
                         <viewControllerLayoutGuide type="bottom" id="W6i-uh-U4r"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="znZ-jr-Rgi">
+                    <view key="view" contentMode="scaleToFill" id="znZ-jr-Rgi" customClass="SavedView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="emH-ec-APG">
+                                <rect key="frame" x="-4" y="64" width="383" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="emH-ec-APG" firstAttribute="leading" secondItem="znZ-jr-Rgi" secondAttribute="leadingMargin" constant="-20" id="9FY-QM-gay"/>
+                            <constraint firstItem="emH-ec-APG" firstAttribute="top" secondItem="Xzr-DO-G9t" secondAttribute="bottom" id="FlW-Dc-qcR"/>
+                            <constraint firstItem="W6i-uh-U4r" firstAttribute="top" secondItem="emH-ec-APG" secondAttribute="bottom" id="Qm9-Jy-iUY"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="emH-ec-APG" secondAttribute="trailing" constant="-20" id="gqD-56-vZM"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Saved" id="4SC-oZ-ek3"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>

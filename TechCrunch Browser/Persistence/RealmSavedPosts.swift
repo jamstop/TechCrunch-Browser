@@ -11,7 +11,7 @@ import RealmSwift
 
 class RealmSavedPosts: Object {
     dynamic var id = 0
-    let categories =  List<RealmPost>()
+    let posts =  List<RealmPost>()
     
     override static func primaryKey() -> String? {
         return "id"
