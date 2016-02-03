@@ -24,17 +24,32 @@ class SavedViewController: UIViewController {
 
         setup()
         
-        viewModel.loadSavedItems().subscribe(
-            onCompleted: { () -> Void in
-                self.mainView.savedTableView.reloadData()
-            })
-        .addDisposableTo(disposeBag)
+        LoadingHUD.sharedHUD.showInView(mainView)
 
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        load()
+        mainView.savedTableView.reloadData()
     }
     
     private func setup() {
         mainView.savedTableView.delegate = self
         mainView.savedTableView.dataSource = self
+    }
+    
+    private func load() {
+        viewModel.loadSavedItems().subscribe(
+            onCompleted: { () -> Void in
+                LoadingHUD.sharedHUD.hide()
+                self.mainView.savedTableView.reloadData()
+                EmptyFeedHUD.sharedHUD.hide()
+            },
+            onError: { error in
+                LoadingHUD.sharedHUD.hide()
+                EmptyFeedHUD.sharedHUD.showInView(self.mainView)
+        })
+        .addDisposableTo(disposeBag)
     }
 
 
@@ -90,6 +105,13 @@ extension SavedViewController: UITableViewDataSource {
         }
     }
     
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section == 0 {
+            return "Saved Categories"
+        }
+        
+        return "Saved Posts"
+    }
     
     
 }

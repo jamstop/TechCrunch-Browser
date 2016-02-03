@@ -12,6 +12,11 @@ import RealmSwift
 
 class SavedViewModel {
     
+    enum LoadError: ErrorType {
+        case NoResponse
+        case NothingSaved
+    }
+    
     let disposeBag = DisposeBag()
     
     let realm = try! Realm()
@@ -30,6 +35,7 @@ class SavedViewModel {
                 self.posts = self.realm.objects(RealmSavedPosts)[0].posts
                 observer.onCompleted()
             }
+            observer.onError(LoadError.NothingSaved)
             
             return NopDisposable.instance
         }

@@ -46,6 +46,8 @@
 		BFE415F01C61935A007C662F /* SavedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE415EF1C61935A007C662F /* SavedView.swift */; };
 		BFE415F21C61938F007C662F /* SavedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE415F11C61938F007C662F /* SavedViewController.swift */; };
 		BFE415F41C619509007C662F /* SavedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE415F31C619509007C662F /* SavedViewModel.swift */; };
+		BFE415F61C62B726007C662F /* EmptyFeedHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE415F51C62B726007C662F /* EmptyFeedHUD.swift */; };
+		BFE415F81C62B7AA007C662F /* EmptyFeedHUD.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFE415F71C62B7AA007C662F /* EmptyFeedHUD.xib */; };
 		BFEEBA6A1C500F860075BC5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEEBA691C500F860075BC5C /* AppDelegate.swift */; };
 		BFEEBA6F1C500F860075BC5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFEEBA6D1C500F860075BC5C /* Main.storyboard */; };
 		BFEEBA711C500F860075BC5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFEEBA701C500F860075BC5C /* Assets.xcassets */; };
@@ -115,6 +117,8 @@
 		BFE415EF1C61935A007C662F /* SavedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedView.swift; sourceTree = "<group>"; };
 		BFE415F11C61938F007C662F /* SavedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedViewController.swift; sourceTree = "<group>"; };
 		BFE415F31C619509007C662F /* SavedViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedViewModel.swift; sourceTree = "<group>"; };
+		BFE415F51C62B726007C662F /* EmptyFeedHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmptyFeedHUD.swift; path = ../EmptyFeedHUD.swift; sourceTree = "<group>"; };
+		BFE415F71C62B7AA007C662F /* EmptyFeedHUD.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmptyFeedHUD.xib; sourceTree = "<group>"; };
 		BFEEBA661C500F860075BC5C /* TC Browser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TC Browser.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFEEBA691C500F860075BC5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFEEBA6E1C500F860075BC5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -347,6 +351,8 @@
 				BFEEBA9D1C50202A0075BC5C /* View Controllers */,
 				BFEEBA9F1C50202A0075BC5C /* Views */,
 				BF3217271C5423D500EDC50D /* LoadingHUD.swift */,
+				BFE415F51C62B726007C662F /* EmptyFeedHUD.swift */,
+				BFE415F71C62B7AA007C662F /* EmptyFeedHUD.xib */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -504,6 +510,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF81ADC81C5EDD8D00F75F30 /* CategoryTableViewCell.xib in Resources */,
+				BFE415F81C62B7AA007C662F /* EmptyFeedHUD.xib in Resources */,
 				BFEEBA741C500F860075BC5C /* LaunchScreen.storyboard in Resources */,
 				BF9474FB1C52BB790079878D /* FeaturedPostTableViewCell.xib in Resources */,
 				BFEEBA711C500F860075BC5C /* Assets.xcassets in Resources */,
@@ -603,6 +610,7 @@
 				BF81ADC61C5EDD8000F75F30 /* CategoryTableViewCell.swift in Sources */,
 				BFE415F01C61935A007C662F /* SavedView.swift in Sources */,
 				BFE415F41C619509007C662F /* SavedViewModel.swift in Sources */,
+				BFE415F61C62B726007C662F /* EmptyFeedHUD.swift in Sources */,
 				BF3217401C56C32400EDC50D /* RealmCurrentPost.swift in Sources */,
 				BF3217441C56EC6100EDC50D /* StringArticleParser.swift in Sources */,
 				BF3217461C57092700EDC50D /* ExploreView.swift in Sources */,
