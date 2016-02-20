@@ -51,19 +51,6 @@ class LatestViewModel {
             }.subscribe (
                 onNext: { (posts) -> Void in
                     self.newPosts.appendContentsOf(posts)
-//                    switch self.currentState {
-//                    case .Idle:
-//                        print("Cannot load without command")
-//                        
-//                    case .Loading:
-//                        self.mainView.endInitialLoad()
-//                        
-//                    case .Refreshing:
-//                        self.mainView.finishRefreshing()
-//                        
-//                    case .LoadingMore:
-//                        self.mainView.endLoadMore()
-//                    }
                     
                     self.currentState = .Idle
                     self.currentOffset += 20
