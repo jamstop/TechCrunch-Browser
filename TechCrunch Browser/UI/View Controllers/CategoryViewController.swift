@@ -25,11 +25,11 @@ class CategoryViewController: UIViewController {
     var isSaved = false {
         didSet {
             if isSaved {
-                saveCategoryButton.image = UIImage(named: "Unsave")
+                saveCategoryButton.image = UIImage(named: "Remove")
             }
             
             else {
-                saveCategoryButton.image = UIImage(named: "Saved")
+                saveCategoryButton.image = UIImage(named: "Add")
             }
         }
     }
