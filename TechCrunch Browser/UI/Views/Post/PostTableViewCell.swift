@@ -29,7 +29,7 @@ class PostTableViewCell: UITableViewCell {
 
             
             thumbnail.sd_setImageWithURL(NSURL(string: (post?.imageUrl!)!)!, placeholderImage: nil, options: SDWebImageOptions.HighPriority, completed: { image, error, cache, finished in
-//                self.persistedPost.imageData = UIImagePNGRepresentation(image)
+                self.thumbnail.backgroundColor = UIColor.clearColor()
             })
             
             postedBy.text = post?.name.stringByDecodingHTMLEntities
@@ -48,7 +48,7 @@ class PostTableViewCell: UITableViewCell {
     var realmPost: RealmPost? {
         didSet {
             thumbnail.sd_setImageWithURL(NSURL(string: (realmPost?.imageUrl)!)!, placeholderImage: nil, options: SDWebImageOptions.HighPriority, completed: { image, error, cache, finished in
-                //                self.persistedPost.imageData = UIImagePNGRepresentation(image)
+                self.thumbnail.backgroundColor = UIColor.clearColor()
             })
             postedBy.text = realmPost?.author
             title.text = realmPost?.title

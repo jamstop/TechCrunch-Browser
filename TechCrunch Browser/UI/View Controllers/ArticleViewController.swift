@@ -11,8 +11,8 @@ import RealmSwift
 
 class ArticleViewController: UIViewController {
     
-    let saveAlert = UIAlertController(title: "Subscribe to post?", message: "", preferredStyle: .Alert)
-    let unsaveAlert = UIAlertController(title: "Unsubscribe from post?", message: "", preferredStyle: .Alert)
+    let saveAlert = UIAlertController(title: "Save post?", message: "", preferredStyle: .Alert)
+    let unsaveAlert = UIAlertController(title: "Unsave post?", message: "", preferredStyle: .Alert)
     
     let realm = try! Realm()
     let realmHelper = RealmHelper()

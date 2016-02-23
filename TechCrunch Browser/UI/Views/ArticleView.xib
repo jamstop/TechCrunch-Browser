@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
@@ -25,7 +25,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zxW-ma-onL">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="499"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="489.5"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TUH-8D-FCw">
                                     <rect key="frame" x="15" y="15" width="345" height="235.5"/>
@@ -39,8 +39,8 @@
                                     <variation key="default">
                                         <mask key="constraints">
                                             <exclude reference="Jnb-jx-0Ah"/>
-                                            <exclude reference="fyo-qR-9BA"/>
                                             <exclude reference="Y0m-wM-2pm"/>
+                                            <exclude reference="fyo-qR-9BA"/>
                                         </mask>
                                     </variation>
                                 </imageView>
@@ -56,9 +56,9 @@
                                     <color key="textColor" red="1" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FEATURED TITLE FEATURED TITLE FEATURED TITLE FEATURED TITLE FEATURED TITLE" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J00-aT-cfH">
-                                    <rect key="frame" x="32" y="428" width="310.5" height="61"/>
-                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FEATURED TITLE FEATURED TITLE FEATURED TITLE FEATURED TITLE FEATURED TITLE" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J00-aT-cfH">
+                                    <rect key="frame" x="32" y="428" width="310.5" height="51.5"/>
+                                    <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="14"/>
                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>

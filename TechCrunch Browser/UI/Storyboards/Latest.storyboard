@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="c1p-3Q-TRH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="c1p-3Q-TRH">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -25,7 +25,7 @@
             </objects>
             <point key="canvasLocation" x="-150" y="117"/>
         </scene>
-        <!--Latest-->
+        <!--Latest View Controller-->
         <scene sceneID="2iv-W3-1pB">
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="J6Y-vi-WUg" customClass="LatestViewController" customModule="TC_Browser" customModuleProvider="target" sceneMemberID="viewController">
@@ -53,7 +53,18 @@
                             <outlet property="tableView" destination="IuM-07-iyG" id="0Wb-Sp-4HY"/>
                         </connections>
                     </view>
-                    <navigationItem key="navigationItem" title="Latest" id="4Nn-AW-3EK"/>
+                    <navigationItem key="navigationItem" id="4Nn-AW-3EK">
+                        <nil key="title"/>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="hcs-44-u2v">
+                            <rect key="frame" x="37.5" y="7" width="300" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="Latest"/>
+                                <segment title="My Feed"/>
+                            </segments>
+                            <color key="tintColor" red="1" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
+                        </segmentedControl>
+                    </navigationItem>
                     <connections>
                         <outlet property="mainView" destination="Kix-io-eL3" id="W2H-4r-wBe"/>
                         <segue destination="vZD-A4-R2z" kind="show" identifier="segueToArticle" id="7iR-ux-ZQo"/>
